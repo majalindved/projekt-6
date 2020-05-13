@@ -159,3 +159,13 @@ main h2{
 .blue{
     background-color: #347AB5;
 }
+
+/*Typography*/
+.typography-headline{
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.typography-content{
+    padding-top: 5px; 
+}
