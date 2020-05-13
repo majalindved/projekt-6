@@ -6,12 +6,30 @@
     font-size: 16px; 
 }
 
+:root{
+    --main-text-colour: #3B3B3B; 
+    --trendlog-green: #00C52D;
+    --black: #000000;
+    --white: #FFFFFF;
+    --dark-grey: #3B3B3B;
+    --light-grey: #F3F3F3;
+    --grey-white: #F8F7FD;
+    --green: #5BB95B;
+    --red: #D9544F;
+    --yellow: #EEAE4D;
+    --blue: #347AB5;
+}
+
+h1, h2, p{
+    color: var(--main-text-colour); 
+}
+
 /*nav*/
 .sidebar{
     position: fixed; 
     width: 15vw; 
     height: 100%;
-    background-color: #F3F3F3; 
+    background-color: var(--light-grey); 
     overflow-x: hidden; 
     padding: 40px 20px;
     top: 0; 
@@ -25,16 +43,16 @@ nav ul li a{
     padding: 10px; 
     text-decoration: none; 
     font-size: 16px; 
-    color: #000; 
+    color: var(--main-text-colour);  
     display: block; 
 }
 
 nav ul li a:hover{
-    color: #00C52D; 
+    color: var(--trendlog-green); 
 }
 
 .active{
-    border-bottom: 1px solid #00C52D;  
+    border-bottom: 1px solid var(--trendlog-green);  
 }
 
 /*main*/
@@ -121,43 +139,43 @@ main h2{
 }
 
 .trendlog-green{
-    background-color: #00C52D;
+    background-color: var(--trendlog-green); 
 }
 
 .black{
-    background-color: #000; 
+    background-color: var(--black); 
 }
 
 .white{
-    background-color: #fff;
+    background-color: var(--white);
 }
 
 .dark-grey{
-    background-color: #3B3B3B; 
+    background-color: var(--dark-grey); 
 }
 
 .light-grey{
-    background-color: #F3F3F3; 
+    background-color: var(--light-grey); 
 }
 
 .grey-white{
-    background-color: #F8F7FD; 
+    background-color: var(--grey-white); 
 }
 
 .green{
-    background-color: #5BB95B;
+    background-color: var(--green);
 }
 
 .red{
-    background-color: #D9544F;
+    background-color: var(--red);
 }
 
 .yellow{
-    background-color: #EEAE4D;
+    background-color: var(--yellow);
 }
 
 .blue{
-    background-color: #347AB5;
+    background-color: var(--blue);
 }
 
 /*Typography*/
