@@ -52,6 +52,11 @@ main h1{
     font-size: 40px;
 }
 
+main h2{
+    font-size: 26px; 
+    padding-bottom: 20px;
+}
+
 /*design principles*/
 .principles-wrapper{
     display: flex; 
@@ -80,15 +85,15 @@ main h1{
     flex-wrap: wrap;
 }
 
-.farve{
+.colour{
     margin-right: 25px;
     border: 1px solid #F3F3F3;
     box-shadow: 1px 1px 4px #ebebeb; 
     margin-bottom: 30px; 
 }
 
-.farve-navn{
-    font-size: 1.3em;
+.colour-name{
+    font-size: 16px;
     text-align: left; 
     padding: 5px 15px; 
 }
@@ -101,6 +106,45 @@ main h1{
 
 .box{
     width: 200px; 
-    height:100px; 
-    
+    height:150px; 
+}
+
+.trendlog-green{
+    background-color: #00C52D;
+}
+
+.black{
+    background-color: #000; 
+}
+
+.white{
+    background-color: #fff;
+}
+
+.dark-grey{
+    background-color: #3B3B3B; 
+}
+
+.light-grey{
+    background-color: #F3F3F3; 
+}
+
+.grey-white{
+    background-color: #F8F7FD; 
+}
+
+.green{
+    background-color: #5BB95B;
+}
+
+.red{
+    background-color: #D9544F;
+}
+
+.yellow{
+    background-color: #EEAE4D;
+}
+
+.blue{
+    background-color: #347AB5;
 }
