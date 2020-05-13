@@ -33,6 +33,20 @@
     --fontsize-s: 14px;
     --fontsize-xs: 12px;
     --fontsize-xxs: 10px;
+    
+    --margin-xl: margin: 80ox; 
+    --margin-l: margin: 40px; 
+    --margin-r: margin: 20px; 
+    --margin-s: margin: 15px; 
+    --margin-xs: margin: 10px; 
+    --margin-xxs: margin: 5px;
+    
+    --padding-xl: padding: 80px;
+    --padding-l: padding: 40px;
+    --padding-r: padding: 20px;
+    --padding-s: padding: 15px;
+    --padding-xs: padding: 10px;
+    --padding-xxs: padding: 5px;
 }
 
 h1, h2, p{
@@ -191,16 +205,16 @@ main h1{
 }
 
 /*Typography*/
-.typography-headline, .fontsize-headline{
+.typography-headline, .fontsize-headline, .spacing-headline{
     font-size: var(--subheadline-font-size);
     font-weight: bold;
 }
 
-.typography-content, .fontsize-content{
+.typography-content, .fontsize-content, .spacing-content{
     padding: 5px 0; 
 }
 
-.typeface, .fontsize{
+.typeface, .fontsize, .spacing{
     margin-right: 25px;
     border: 1px solid #F3F3F3;
     box-shadow: 1px 1px 4px #ebebeb; 
@@ -213,20 +227,21 @@ main h1{
     padding: 20px; 
 }
 
-.typeface-code, .fontsize-code { 
+.typeface-code, .fontsize-code, .spacing-code { 
     text-align: left;
     padding: 20px;
     border: 1px solid #F3F3F3;
     background-color: var(--code-colour);  
 }
 
-.typeface-code b, .fontsize-code b{
+.typeface-code b, .fontsize-code b, .spacing-code b{
     color: var(--trendlog-green); 
     font-size: var(--code-text); 
 }
 
-.typeface-code p, .typeface-code xmp, .fontsize-code xmp{
-    font-size: var(--code-text); 
+.typeface-code p, .typeface-code xmp, .fontsize-code xmp, .spacing-code xmp, .spacing-code p{
+    font-size: var(--code-text);
+    color: var(--main-text-colour);
 }
 
 code{
@@ -279,4 +294,24 @@ code{
 
 .fontsize-box{
     border: 1px solid #F3F3F3;
+}
+
+/*spacing*/
+.spacing{
+    margin-right: 25px;
+    border: 1px solid #F3F3F3;
+    box-shadow: 1px 1px 4px #ebebeb; 
+}
+
+.spacing-img-area{ 
+    display: flex; 
+    flex-wrap: wrap; 
+    flex-direction:row; 
+    align-items: center; 
+    justify-content: center;
+    margin-bottom: 30px;
+}
+
+.spacing-single-img{
+    margin: 20px; /*space om hvert billede*/
 }
