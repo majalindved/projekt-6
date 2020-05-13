@@ -18,10 +18,16 @@
     --red: #D9544F;
     --yellow: #EEAE4D;
     --blue: #347AB5;
+    --headline-font-size: 40px; 
+    --subheadline-font-size: 20px; 
 }
 
 h1, h2, p{
     color: var(--main-text-colour); 
+}
+
+h1{
+    font-size: var(--headline-font-size); 
 }
 
 /*nav*/
@@ -42,7 +48,6 @@ nav ul{
 nav ul li a{
     padding: 10px; 
     text-decoration: none; 
-    font-size: 16px; 
     color: var(--main-text-colour);  
     display: block; 
 }
@@ -68,12 +73,6 @@ main{
 
 main h1{
     padding-bottom: 45px; 
-    font-size: 40px;
-}
-
-main h2{
-    font-size: 26px; 
-    padding-bottom: 20px;
 }
 
 /*design principles*/
@@ -90,7 +89,7 @@ main h2{
 }
 
 .principles-headline{
-    font-size: 20px;
+    font-size: var(--subheadline-font-size);
     font-weight: bold;
 }
 
@@ -105,7 +104,7 @@ main h2{
 }
 
 .colour-headline{
-    font-size: 20px;
+    font-size: var(--subheadline-font-size);
     font-weight: bold;
     padding-bottom: 5px;
 }
@@ -122,9 +121,9 @@ main h2{
 }
 
 .colour-name{
-    font-size: 16px;
     text-align: left; 
     padding: 5px 15px; 
+    color: var(--main-text-colour); 
 }
 
 .description { 
@@ -180,7 +179,7 @@ main h2{
 
 /*Typography*/
 .typography-headline{
-    font-size: 20px;
+    font-size: var(--subheadline-font-size);
     font-weight: bold;
 }
 
