@@ -47,6 +47,62 @@
     --padding-s: padding: 15px;
     --padding-xs: padding: 10px;
     --padding-xxs: padding: 5px;
+    
+    --margin-top-xl: margin: 80px;
+    --margin-top-l: margin: 40px;
+    --margin-top-r: margin: 20px;
+    --margin-top-s: margin: 15px;
+    --margin-top-xs: margin: 10px;
+    --margin-top-xxs: margin: 5px;
+    
+    --padding-top-xl: padding: 80px;
+    --padding-top-l: padding: 40px;
+    --padding-top-r: padding: 20px;
+    --padding-top-s: padding: 15px;
+    --padding-top-xs: padding: 10px;
+    --padding-top-xxs: padding: 5px;
+    
+    --margin-right-xl: margin: 80px;
+    --margin-right-l: margin: 40px;
+    --margin-right-r: margin: 20px;
+    --margin-right-s: margin: 15px;
+    --margin-right-xs: margin: 10px;
+    --margin-right-xxs: margin: 5px;
+    
+    --padding-right-xl: padding: 80px;
+    --padding-right-l: padding: 40px;
+    --padding-right-r: padding: 20px;
+    --padding-right-s: padding: 15px;
+    --padding-right-xs: padding: 10px;
+    --padding-right-xxs: padding: 5px;
+    
+    --margin-bottom-xl: margin: 80px;
+    --margin-bottom-l: margin: 40px;
+    --margin-bottom-r: margin: 20px;
+    --margin-bottom-s: margin: 15px;
+    --margin-bottom-xs: margin: 10px;
+    --margin-bottom-xxs: margin: 5px;
+    
+    --padding-bottom-xl: padding: 80px;
+    --padding-bottom-l: padding: 40px;
+    --padding-bottom-r: padding: 20px;
+    --padding-bottom-s: padding: 15px;
+    --padding-bottom-xs: padding: 10px;
+    --padding-bottom-xxs: padding: 5px;
+    
+    --margin-left-xl: margin: 80px;
+    --margin-left-l: margin: 40px;
+    --margin-left-r: margin: 20px;
+    --margin-left-s: margin: 15px;
+    --margin-left-xs: margin: 10px;
+    --margin-left-xxs: margin: 5px;
+    
+    --padding-left-xl: padding: 80px;
+    --padding-left-l: padding: 40px;
+    --padding-left-r: padding: 20px;
+    --padding-left-s: padding: 15px;
+    --padding-left-xs: padding: 10px;
+    --padding-left-xxs: padding: 5px;
 }
 
 h1, h2, p{
