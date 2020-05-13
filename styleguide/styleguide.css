@@ -18,10 +18,21 @@
     --red: #D9544F;
     --yellow: #EEAE4D;
     --blue: #347AB5;
+    --code-colour: rgb(248, 248, 248, 0.5);
+    
     --headline-font-size: 40px; 
     --subheadline-font-size: 20px;
     --code-text: 13px; 
-    --code-colour: rgb(248, 248, 248, 0.5);
+    
+    --fontsize-xxxxl: 46px;
+    --fontsize-xxxl: 38px;
+    --fontsize-xxl: 28px;
+    --fontsize-xl: 20px;
+    --fontsize-l: 18px; 
+    --fontsize-r: 16px; 
+    --fontsize-s: 14px;
+    --fontsize-xs: 12px;
+    --fontsize-xxs: 10px;
 }
 
 h1, h2, p{
@@ -180,16 +191,16 @@ main h1{
 }
 
 /*Typography*/
-.typography-headline{
+.typography-headline, .fontsize-headline{
     font-size: var(--subheadline-font-size);
     font-weight: bold;
 }
 
-.typography-content{
+.typography-content, .fontsize-content{
     padding: 5px 0; 
 }
 
-.typeface{
+.typeface, .fontsize{
     margin-right: 25px;
     border: 1px solid #F3F3F3;
     box-shadow: 1px 1px 4px #ebebeb; 
@@ -197,30 +208,75 @@ main h1{
     width: auto; 
 }
 
-.typeface-box p{
+.typeface-box p, .fontsize-box p{
     text-align: left;
-    padding: 20px;
-    border-bottom: 1px solid var(--light-grey); 
+    padding: 20px; 
 }
 
-.typeface-code { 
+.typeface-code, .fontsize-code { 
     text-align: left;
     padding: 20px;
     border: 1px solid #F3F3F3;
     background-color: var(--code-colour);  
 }
 
-.typeface-code b{
+.typeface-code b, .fontsize-code b{
     color: var(--trendlog-green); 
     font-size: var(--code-text); 
 }
 
-.typeface-code p, .typeface-code xmp{
-    font-size: var(--code-text);     
+.typeface-code p, .typeface-code xmp, .fontsize-code xmp{
+    font-size: var(--code-text); 
 }
 
 code{
     font-size: var(--code-text); 
     background-color: var(--light-grey);
-    padding: 0 3px; 
+    padding: 0 3px;
+    color: var(--trendlog-green); 
+}
+
+.fontsize-xxxxl{
+    font-size: var(--fontsize-xxxxl);
+}
+
+.fontsize-xxxl{
+    font-size: var(--fontsize-xxxl);
+}
+
+.fontsize-xxl{
+    font-size: var(--fontsize-xxl);
+}
+
+.fontsize-xl{
+    font-size: var(--fontsize-xl);
+}
+
+.fontsize-l{
+    font-size: var(--fontsize-l);
+}
+
+.fontsize-r{
+    font-size: var(--fontsize-r);
+}
+
+.fontsize-s{
+    font-size: var(--fontsize-s);
+}
+
+.fontsize-xs{
+    font-size: var(--fontsize-xs);
+}
+
+.fontsize-xxs{
+    font-size: var(--fontsize-xxs);
+}
+
+.fontsize-description{
+    font-size: var(--code-text); 
+    color: #8e8e8e; 
+}
+
+.fontsize-box{
+    border: 1px solid #F3F3F3;
 }
