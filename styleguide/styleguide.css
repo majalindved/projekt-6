@@ -3,6 +3,7 @@
     box-sizing: border-box; 
     margin: 0; 
     padding: 0; 
+    font-size: 16px; 
 }
 
 /*nav*/
@@ -85,11 +86,21 @@ main h2{
     flex-wrap: wrap;
 }
 
+.colour-headline{
+    font-size: 20px;
+    font-weight: bold;
+    padding-bottom: 5px;
+}
+
+.colour-content{
+    padding-bottom: 5px; 
+}
+
 .colour{
     margin-right: 25px;
     border: 1px solid #F3F3F3;
     box-shadow: 1px 1px 4px #ebebeb; 
-    margin-bottom: 30px; 
+    margin-bottom: 30px;
 }
 
 .colour-name{
