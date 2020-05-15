@@ -34,75 +34,75 @@
     --fontsize-xs: 12px;
     --fontsize-xxs: 10px;
     
-    --margin-xl: margin: 80ox; 
-    --margin-l: margin: 40px; 
-    --margin-r: margin: 20px; 
-    --margin-s: margin: 15px; 
-    --margin-xs: margin: 10px; 
-    --margin-xxs: margin: 5px;
+    --margin-xl: 80ox; 
+    --margin-l: 40px; 
+    --margin-r: 20px; 
+    --margin-s: 15px; 
+    --margin-xs: 10px; 
+    --margin-xxs: 5px;
     
-    --padding-xl: padding: 80px;
-    --padding-l: padding: 40px;
-    --padding-r: padding: 20px;
-    --padding-s: padding: 15px;
-    --padding-xs: padding: 10px;
-    --padding-xxs: padding: 5px;
+    --padding-xl: 80px;
+    --padding-l: 40px;
+    --padding-r: 20px;
+    --padding-s: 15px;
+    --padding-xs: 10px;
+    --padding-xxs: 5px;
     
-    --margin-top-xl: margin: 80px;
-    --margin-top-l: margin: 40px;
-    --margin-top-r: margin: 20px;
-    --margin-top-s: margin: 15px;
-    --margin-top-xs: margin: 10px;
-    --margin-top-xxs: margin: 5px;
+    --margin-top-xl: 80px;
+    --margin-top-l: 40px;
+    --margin-top-r: 20px;
+    --margin-top-s: 15px;
+    --margin-top-xs: 10px;
+    --margin-top-xxs: 5px;
     
-    --padding-top-xl: padding: 80px;
-    --padding-top-l: padding: 40px;
-    --padding-top-r: padding: 20px;
-    --padding-top-s: padding: 15px;
-    --padding-top-xs: padding: 10px;
-    --padding-top-xxs: padding: 5px;
+    --padding-top-xl: 80px;
+    --padding-top-l: 40px;
+    --padding-top-r: 20px;
+    --padding-top-s: 15px;
+    --padding-top-xs: 10px;
+    --padding-top-xxs: 5px;
     
-    --margin-right-xl: margin: 80px;
-    --margin-right-l: margin: 40px;
-    --margin-right-r: margin: 20px;
-    --margin-right-s: margin: 15px;
-    --margin-right-xs: margin: 10px;
-    --margin-right-xxs: margin: 5px;
+    --margin-right-xl: 80px;
+    --margin-right-l: 40px;
+    --margin-right-r: 20px;
+    --margin-right-s: 15px;
+    --margin-right-xs: 10px;
+    --margin-right-xxs: 5px;
     
-    --padding-right-xl: padding: 80px;
-    --padding-right-l: padding: 40px;
-    --padding-right-r: padding: 20px;
-    --padding-right-s: padding: 15px;
-    --padding-right-xs: padding: 10px;
-    --padding-right-xxs: padding: 5px;
+    --padding-right-xl: 80px;
+    --padding-right-l: 40px;
+    --padding-right-r: 20px;
+    --padding-right-s: 15px;
+    --padding-right-xs: 10px;
+    --padding-right-xxs: 5px;
     
-    --margin-bottom-xl: margin: 80px;
-    --margin-bottom-l: margin: 40px;
-    --margin-bottom-r: margin: 20px;
-    --margin-bottom-s: margin: 15px;
-    --margin-bottom-xs: margin: 10px;
-    --margin-bottom-xxs: margin: 5px;
+    --margin-bottom-xl: 80px;
+    --margin-bottom-l: 40px;
+    --margin-bottom-r: 20px;
+    --margin-bottom-s: 15px;
+    --margin-bottom-xs: 10px;
+    --margin-bottom-xxs: 5px;
     
-    --padding-bottom-xl: padding: 80px;
-    --padding-bottom-l: padding: 40px;
-    --padding-bottom-r: padding: 20px;
-    --padding-bottom-s: padding: 15px;
-    --padding-bottom-xs: padding: 10px;
-    --padding-bottom-xxs: padding: 5px;
+    --padding-bottom-xl: 80px;
+    --padding-bottom-l: 40px;
+    --padding-bottom-r: 20px;
+    --padding-bottom-s: 15px;
+    --padding-bottom-xs: 10px;
+    --padding-bottom-xxs: 5px;
     
-    --margin-left-xl: margin: 80px;
-    --margin-left-l: margin: 40px;
-    --margin-left-r: margin: 20px;
-    --margin-left-s: margin: 15px;
-    --margin-left-xs: margin: 10px;
-    --margin-left-xxs: margin: 5px;
+    --margin-left-xl: 80px;
+    --margin-left-l: 40px;
+    --margin-left-r: 20px;
+    --margin-left-s: 15px;
+    --margin-left-xs: 10px;
+    --margin-left-xxs: 5px;
     
-    --padding-left-xl: padding: 80px;
-    --padding-left-l: padding: 40px;
-    --padding-left-r: padding: 20px;
-    --padding-left-s: padding: 15px;
-    --padding-left-xs: padding: 10px;
-    --padding-left-xxs: padding: 5px;
+    --padding-left-xl: 80px;
+    --padding-left-l: 40px;
+    --padding-left-r: 20px;
+    --padding-left-s: 15px;
+    --padding-left-xs: 10px;
+    --padding-left-xxs: 5px;
 }
 
 h1, h2, p{
@@ -370,5 +370,5 @@ main h1{
 }
 
 .spacing-single-img{
-    margin: 20px; /*space om hvert billede*/
+    margin: 20px; 
 }
