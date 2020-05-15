@@ -5,3 +5,46 @@
     padding: 0; 
     font-size: 16px; 
 }
+
+:root{
+    /*colours*/
+    --main-text-colour: #3B3B3B; 
+    --trendlog-green: #00C52D;
+    --black: #000000;
+    --white: #FFFFFF;
+    --dark-grey: #3B3B3B;
+    --light-grey: #F3F3F3;
+    --grey-white: #F8F7FD;
+    --green: #5BB95B;
+    --red: #D9544F;
+    --yellow: #EEAE4D;
+    --blue: #347AB5;
+    
+    /*font size*/
+    --fontsize-xxxxl: 46px;
+    --fontsize-xxxl: 38px;
+    --fontsize-xxl: 28px;
+    --fontsize-xl: 20px;
+    --fontsize-l: 18px; 
+    --fontsize-r: 16px; 
+    --fontsize-s: 14px;
+    --fontsize-xs: 12px;
+    --fontsize-xxs: 10px;
+    
+    /*margin*/
+    --margin-xl: margin: 80ox; 
+    --margin-l: margin: 40px; 
+    --margin-r: margin: 20px; 
+    --margin-s: margin: 15px; 
+    --margin-xs: margin: 10px; 
+    --margin-xxs: margin: 5px;
+    
+    /*padding*/
+    --padding-xl: padding: 80px;
+    --padding-l: padding: 40px;
+    --padding-r: padding: 20px;
+    --padding-s: padding: 15px;
+    --padding-xs: padding: 10px;
+    --padding-xxs: padding: 5px;
+    
+}
