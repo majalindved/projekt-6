@@ -32,20 +32,20 @@
     --fontsize-xxs: 10px;
     
     /*margin*/
-    --margin-xl: margin: 80ox; 
-    --margin-l: margin: 40px; 
-    --margin-r: margin: 20px; 
-    --margin-s: margin: 15px; 
-    --margin-xs: margin: 10px; 
-    --margin-xxs: margin: 5px;
+    --margin-xl: 80px; 
+    --margin-l: 40px; 
+    --margin-r: 20px; 
+    --margin-s: 15px; 
+    --margin-xs: 10px; 
+    --margin-xxs: 5px; 
     
     /*padding*/
-    --padding-xl: padding: 80px;
-    --padding-l: padding: 40px;
-    --padding-r: padding: 20px;
-    --padding-s: padding: 15px;
-    --padding-xs: padding: 10px;
-    --padding-xxs: padding: 5px;
+    --padding-xl: 80px;
+    --padding-l: 40px;
+    --padding-r: 20px;
+    --padding-s: 15px;
+    --padding-xs: 10px;
+    --padding-xxs: 5px;
 }
 
 h1, h2, h3, p{
