@@ -295,12 +295,13 @@ main h1{
     font-size: var(--code-text); 
 }
 
-.typeface-code p, .typeface-code xmp, .fontsize-code xmp, .spacing-code xmp, .spacing-code p{
+.typeface-code p, .typeface-code code, .fontsize-code p, .fontsize-code code, .spacing-code p, .spacing-code code{
     font-size: var(--code-text);
     color: var(--main-text-colour);
+    display: block; 
 }
 
-code{
+.code{
     font-size: var(--code-text); 
     background-color: var(--light-grey);
     padding: 0 3px;
