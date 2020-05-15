@@ -46,5 +46,12 @@
     --padding-s: padding: 15px;
     --padding-xs: padding: 10px;
     --padding-xxs: padding: 5px;
-    
+}
+
+h1, h2, h3, p{
+    color: var(--main-text-colour); 
+}
+
+h1{
+    font-size: var(--fontsize-xxxxl);
 }
