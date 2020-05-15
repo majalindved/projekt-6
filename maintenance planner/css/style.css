@@ -55,3 +55,70 @@ h1, h2, h3, p{
 h1{
     font-size: var(--fontsize-xxxxl);
 }
+
+/*main nav*/
+.header-index{
+    display: flex; 
+    justify-content: space-between; 
+    align-items: center; 
+    padding: 30px 5%; 
+    background-color: var(--dark-grey); 
+    max-height: 50px; 
+}
+
+.nav-logo{
+    cursor: pointer;
+    height: 25px; 
+    width: 130px; 
+}
+
+.nav-links, nav-right{
+    list-style-type: none; 
+}
+
+.nav-links li, .nav-right li{
+    display: inline-block;
+    padding: 0 20px; 
+}
+
+.nav-links li a{
+    text-decoration: none;
+    color: var(--white); 
+    transition: all 0.3s ease 0s; 
+}
+
+.nav-links li a:hover{
+     color: var(--trendlog-green); 
+}
+
+.nav-right input{
+    cursor: pointer;  
+}
+
+.nav-right input::placeholder{
+    padding: 0 5px; 
+}
+
+.nav-channel, .user-name, .user-profile{
+    color: var(--white); 
+}
+
+.user-profile{
+    cursor: pointer; 
+    transition: all 0.3s ease 0s;
+}
+
+.user-profile:hover{
+    cursor: pointer; 
+    color: var(--trendlog-green); 
+    transition: all 0.3s ease 0s;
+}
+
+
+
+
+
+
+
+
+
