@@ -118,10 +118,10 @@ h1{
 }
 
 main{
-    margin: var(--margin-l) var(--margin-side) 0;
+    margin: var(--margin-l) var(--margin-side) 0; 
 }
 
-/*fixed header and functions*/
+/*Overskrift og +-knappen*/
 .heading-index{
     display: flex; 
     justify-content: space-between; 
@@ -140,12 +140,57 @@ main{
     color: var(--white);
 }
 
+/*funktioner*/
 .functions-index{
     display: flex; 
     justify-content: space-between; 
     align-items: center; 
 }
 
+/*filterfunktion*/
+.filter-and-search{
+    display: inline-flex; 
+}
+
+.filters-index{
+    margin-right: var(--margin-r);
+}
+
+.filters-index button{ 
+    border: none; 
+    padding: 0 var(--padding-xs);
+    background-color: var(--white); 
+    cursor: pointer;
+}
+
+.filters-index .fa-sort-amount-down-alt{
+    background-color: var(--white); 
+    color: var(--dark-grey); 
+    font-size: 20px;
+    text-align: center;
+    padding-left: var(--padding-xs);
+}
+
+/*drop-down filter*/
+.filters-index{
+    position: relative; 
+    display: inline-block; 
+}
+
+.dropdown-filter-content{
+    display: none; 
+    position: absolute; 
+    background-color: var(--white); 
+    box-shadow: 1px 1px 10px 0px rgba(0,0,0,0.2); 
+    min-width: 300px;
+    z-index: 1; 
+}
+
+.show-filter-content{
+    display: block; 
+}
+
+/*søgefunktion*/
 .search-index ::placeholder{
     font-size: var(--fontsize-xxs); 
     padding: var(--padding-xxs); 
@@ -171,6 +216,7 @@ table{
 th{
     text-align: left;
     padding: 0 0 var(--padding-s) 0; 
+    cursor: pointer; 
 }
 
 th .fa-sort{
