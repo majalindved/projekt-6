@@ -8,6 +8,8 @@
     <link rel="stylesheet" href="../css/style.css">
     <link href="https://fonts.googleapis.com/css2?family=Titillium+Web&display=swap" rel="stylesheet">
     <script src="https://kit.fontawesome.com/9068d98231.js" crossorigin="anonymous"></script>
+    <script src="../js/sorttable.js" defer></script>
+    <script src="../js/filter.js" defer></script>
 </head>
 <body>
     <header class="header-index">
@@ -42,102 +44,115 @@
                 <input placeholder="10">
                 <i class="fas fa-sort-down"></i>
             </div>
-            <div class="search-index">
-                <p>Filters</p>
-                <button><i class="fas fa-search"></i></button>
-                <input type="text" placeholder="Search for name, type, date etc.">
-                <button><i class="fas fa-search"></i></button>
+            <div class="filter-and-search">
+                <div class="filters-index">
+                    <button onclick="filter()" class="dropbtn">Filters<i class="fas fa-sort-amount-down-alt"></i></button>
+                    <div id="dropdown-filter" class="dropdown-filter-content">
+                        <p>hhh</p>
+                        <p>hhh</p>
+                        <p>hhh</p>
+                        <p>hhh</p>
+                    </div>
+                </div>
+                <div class="search-index">
+                    <input type="search" id="search" onsearch="searchFunction()" placeholder="Search for name, type, date etc.">
+                    <button><i class="fas fa-search"></i></button>
+                </div>
             </div>
         </div>
         <div class="table-container">
-            <table>
+            <table id="resourcesTable">
                 <thead>
-                    <th>Enable<i class="fas fa-sort"></i></th>
-                    <th>Name<i class="fas fa-sort"></i></th>
-                    <th>Type<i class="fas fa-sort"></i></th>
-                    <th>Group<i class="fas fa-sort"></i></th>
-                    <th>Next service<i class="fas fa-sort"></i></th>
-                    <th>Last service<i class="fas fa-sort"></i></th>
+                    <tr>
+                        <th onclick="sortTable(0)">Enable<i class="fas fa-sort"></i></th>
+                        <th onclick="sortTable(1)">Name<i class="fas fa-sort"></i></th>
+                        <th onclick="sortTable(2)">Type<i class="fas fa-sort"></i></th>
+                        <th onclick="sortTable(3)">Group<i class="fas fa-sort"></i></th>
+                        <th onclick="sortTable(4)">Next service<i class="fas fa-sort"></i></th>
+                        <th onclick="sortTable(5)">Last service<i class="fas fa-sort"></i></th>
+                    </tr>
                 </thead>
                 <tbody>
-                    <td><i class="fas fa-circle"></i></td>
-                    <td>Robot</td>
-                    <td>Preventive</td>
-                    <td>Machine</td>
-                    <td>In 1 day</td>
-                    <td>16-04-2020</td>
-                </tbody>
-                <tbody>
-                    <td><i class="fas fa-circle"></i></td>
-                    <td>Robot</td>
-                    <td>Preventive</td>
-                    <td>Machine</td>
-                    <td>In 1 day</td>
-                    <td>16-04-2020</td>
-                </tbody>
-                <tbody>
-                    <td><i class="fas fa-circle"></i></td>
-                    <td>Robot</td>
-                    <td>Preventive</td>
-                    <td>Machine</td>
-                    <td>In 1 day</td>
-                    <td>16-04-2020</td>
-                </tbody>
-                <tbody>
-                    <td><i class="fas fa-circle"></i></td>
-                    <td>Robot</td>
-                    <td>Preventive</td>
-                    <td>Machine</td>
-                    <td>In 1 day</td>
-                    <td>16-04-2020</td>
-                </tbody>
-                <tbody>
-                    <td><i class="fas fa-circle"></i></td>
-                    <td>Robot</td>
-                    <td>Preventive</td>
-                    <td>Machine</td>
-                    <td>In 1 day</td>
-                    <td>16-04-2020</td>
-                </tbody>
-                <tbody>
-                    <td><i class="fas fa-circle"></i></td>
-                    <td>Robot</td>
-                    <td>Preventive</td>
-                    <td>Machine</td>
-                    <td>In 1 day</td>
-                    <td>16-04-2020</td>
-                </tbody>
-                <tbody>
-                    <td><i class="fas fa-circle"></i></td>
-                    <td>Robot</td>
-                    <td>Preventive</td>
-                    <td>Machine</td>
-                    <td>In 1 day</td>
-                    <td>16-04-2020</td>
-                </tbody>
-                <tbody>
-                    <td><i class="fas fa-circle"></i></td>
-                    <td>Robot</td>
-                    <td>Preventive</td>
-                    <td>Machine</td>
-                    <td>In 1 day</td>
-                    <td>16-04-2020</td>
-                </tbody>
-                <tbody>
-                    <td><i class="fas fa-circle"></i></td>
-                    <td>Robot</td>
-                    <td>Preventive</td>
-                    <td>Machine</td>
-                    <td>In 1 day</td>
-                    <td>16-04-2020</td>
-                </tbody>
-                <tbody>
-                    <td><i class="fas fa-circle"></i></td>
-                    <td>Robot</td>
-                    <td>Preventive</td>
-                    <td>Machine</td>
-                    <td>In 1 day</td>
-                    <td>16-04-2020</td>
+                    <tr>
+                        <td><i class="fas fa-circle"></i></td>
+                        <td>Robot</td>
+                        <td>Preventive</td>
+                        <td>Machine</td>
+                        <td>In 1 day</td>
+                        <td>16-04-2020</td>
+                    </tr>
+                    <tr>
+                        <td><i class="fas fa-circle"></i></td>
+                        <td>Robot</td>
+                        <td>Preventive</td>
+                        <td>Machine</td>
+                        <td>In 2 days</td>
+                        <td>17-04-2020</td>
+                    </tr>
+                    <tr>
+                        <td><i class="fas fa-circle"></i></td>
+                        <td>Robot</td>
+                        <td>Preventive</td>
+                        <td>Machine</td>
+                        <td>In 3 days</td>
+                        <td>18-04-2020</td>
+                    </tr>
+                    <tr>
+                        <td><i class="fas fa-circle"></i></td>
+                        <td>Maskine</td>
+                        <td>Preventive</td>
+                        <td>Machine</td>
+                        <td>In 1 day</td>
+                        <td>19-04-2020</td>
+                    </tr>
+                    <tr>
+                        <td><i class="fas fa-circle"></i></td>
+                        <td>Bil</td>
+                        <td>Preventive</td>
+                        <td>Car</td>
+                        <td>In 1 day</td>
+                        <td>21-04-2020</td>
+                    </tr>
+                    <tr>
+                        <td><i class="fas fa-circle"></i></td>
+                        <td>Kaffemaskine</td>
+                        <td>Preventive</td>
+                        <td>Machine</td>
+                        <td>In 1 day</td>
+                        <td>29-04-2020</td>
+                    </tr>
+                    <tr>
+                        <td><i class="fas fa-circle"></i></td>
+                        <td>Pakkemaskine</td>
+                        <td>Preventive</td>
+                        <td>Machine</td>
+                        <td>In 1 day</td>
+                        <td>16-05-2020</td>
+                    </tr>
+                    <tr>
+                        <td><i class="fas fa-circle"></i></td>
+                        <td>Bil</td>
+                        <td>Preventive</td>
+                        <td>Car</td>
+                        <td>In 1 day</td>
+                        <td>16-05-2020</td>
+                    </tr>
+                    <tr>
+                        <td><i class="fas fa-circle"></i></td>
+                        <td>Maskine</td>
+                        <td>Preventive</td>
+                        <td>Machine</td>
+                        <td>In 1 day</td>
+                        <td>18-05-2020</td>
+                    </tr>
+                    <tr>
+                        <td><i class="fas fa-circle"></i></td>
+                        <td>Robot</td>
+                        <td>Preventive</td>
+                        <td>Machine</td>
+                        <td>In 1 day</td>
+                        <td>16-04-2020</td>
+                    </tr>
                 </tbody>
             </table>
         </div>
