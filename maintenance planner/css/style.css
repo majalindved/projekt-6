@@ -323,23 +323,49 @@ tbody tr:nth-child(odd){
     margin-bottom: var(--margin-r); 
 }
 
-.edit-general-information-form-left, .edit-general-information-form-right{
+.edit-general-information-form{
     display: flex; 
-    flex-direction: column; 
+    flex-direction: row; 
+    justify-content: space-between; 
 }
 
-.edit-general-information-form, .edit-service-information-form{
+.edit-general-information-form-left, .edit-general-information-form-right{
     display: flex; 
-    flex-direction: column; 
+    flex-direction: column;
+}
+
+.edit-general-information-form-left{
+    width: 45%; 
+}
+
+.edit-general-information-form-right{
+    width: 45%; 
+}
+
+.edit-general-information-form-right input{
+    height: 170px;
+}
+
+.edit-general-information-form-left input, .edit-general-information-form-right input, .edit-service-information-form input{
+    margin-bottom: var(--margin-s); 
+}
+
+.edit-service-information-form{
+    display: flex; 
+    flex-direction: column;
 }
 
 .checklist-service-information, .checklist-checklist, .checklist-comments, .edit-checklist, .search-edit, .edit-general-information-form, .edit-service-information-form{
     padding: 0 var(--padding-l);
 }
 
+.search-edit{
+    margin-bottom: var(--margin-xxs); 
+}
+
 .search-edit ::placeholder{
     font-size: var(--fontsize-xxs); 
-    padding: var(--padding-xxs); 
+    padding: var(--padding-xxs);
 }
 
 .search-edit button{
