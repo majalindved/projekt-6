@@ -82,7 +82,67 @@
                         <td><div>In 1 day</div></td>
                         <td>16-04-2020</td>
                         <td>
-                            <a class="fas fa-pen"></a>
+                            <a class="fas fa-pen modal-button" href="#myModalEdit"></a>
+                                <div id="myModalEdit" class="modal">
+                                    <div class="modal-content">
+                                        <div class="header-edit">
+                                            <h1>Edit resource</h1>
+                                            <span class="header-edit-text close">&times;</span>
+                                        </div>
+                                        <div class="modal-body">
+                                            <p class="edit-heading heading-line">General information</p>
+                                            <div class="general-information-content">
+                                                <form class="edit-general-information-form">
+                                                    <div class="edit-general-information-form-left">
+                                                        <label>Name</label>
+                                                        <input type="text">
+                                                        <label>Type</label>
+                                                        <input type="text">
+                                                        <label>Group</label>
+                                                        <input type="text">
+                                                    </div>
+                                                    <div class="edit-general-information-form-right">
+                                                        <label>Description</label>
+                                                        <input class="general-information-description" type="text">
+                                                    </div>
+                                                </form>
+                                            </div>
+                                            <p class="edit-heading heading-line">Service information</p>
+                                            <form>
+                                                <div class="edit-service-information-form">
+                                                    <label>Last service</label>
+                                                    <input type="text">
+                                                    <label>Service interval</label>
+                                                    <input type="text">
+                                                    <label>Time interval</label>
+                                                    <input type="text">
+                                                    <label>Next service</label>
+                                                    <input type="text">
+                                                    <label>Notify days</label>
+                                                    <input type="text">
+                                                    <label>Notify to email</label>
+                                                    <input type="text">
+                                                </div>
+                                            </form>
+                                            <p class="edit-heading heading-line">Checklist</p>
+                                            <div class="search-edit">
+                                                <input type="search" id="search" onsearch="searchFunction()" placeholder="Write your new to-do ">
+                                                <button><i class="fas fa-plus"></i></button>
+                                            </div>
+                                            <div class="edit-checklist">
+                                                <ul class="edit-checklist-list">
+                                                    <li>Oil check<i class="fas fa-pen"><i class="fas fa-trash"></i></i></li>
+                                                    <li>Check filter<i class="fas fa-pen"><i class="fas fa-trash"></i></i></li>
+                                                    <li>Sharpen knives<i class="fas fa-pen"><i class="fas fa-trash"></i></i></li>
+                                                </ul>
+                                            </div>
+                                            <div class="edit-btns">
+                                                <button class="cancel-btn">Cancel</button>
+                                                <button class="save-btn">Save</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
                             <a class="fas fa-list modal-button" href="#myModalChecklist"></a>
                                 <div id="myModalChecklist" class="modal">
                                     <div class="modal-content">

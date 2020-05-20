@@ -303,14 +303,14 @@ tbody tr:nth-child(odd){
     height: auto;
 }
 
-/*checklist*/ 
-.header-checklist {
+/*edit + checklist*/ 
+.header-checklist, .header-edit {
     display: flex; 
     justify-content: space-between; 
     padding: var(--padding-l);
 }
 
-.checklist-heading{
+.checklist-heading, .edit-heading{
     padding: 0 var(--padding-l);
     font-size: var(--fontsize-l);
     font-weight: 900;
@@ -323,8 +323,31 @@ tbody tr:nth-child(odd){
     margin-bottom: var(--margin-r); 
 }
 
-.checklist-service-information, .checklist-checklist, .checklist-comments{
+.edit-general-information-form-left, .edit-general-information-form-right{
+    display: flex; 
+    flex-direction: column; 
+}
+
+.edit-general-information-form, .edit-service-information-form{
+    display: flex; 
+    flex-direction: column; 
+}
+
+.checklist-service-information, .checklist-checklist, .checklist-comments, .edit-checklist, .search-edit, .edit-general-information-form, .edit-service-information-form{
     padding: 0 var(--padding-l);
+}
+
+.search-edit ::placeholder{
+    font-size: var(--fontsize-xxs); 
+    padding: var(--padding-xxs); 
+}
+
+.search-edit button{
+    width: 30px; 
+    height: 30px; 
+    background-color: var(--blue); 
+    color: var(--white);
+    border: none; 
 }
 
 .checklist-service-information-text{
@@ -336,7 +359,7 @@ tbody tr:nth-child(odd){
     margin-right: var(--margin-xl);
 }
 
-.checklist-service-information-description, .checklist-checklist{
+.checklist-service-information-description, .checklist-checklist, .edit-checklist, .edit-general-information-form{
     margin-bottom: var(--margin-r); 
 }
 
@@ -344,13 +367,13 @@ tbody tr:nth-child(odd){
     margin-bottom: var(--margin-r);
 }
 
-.checklist-list{
+.checklist-list, .edit-checklist-list{
     border: 1px solid var(--dark-grey);
     display: flex; 
     flex-direction: column;
 }
 
-.checklist-list li{
+.checklist-list li, .edit-checklist-list li{
     cursor: pointer; 
     list-style-type: none;
     padding: var(--padding-xs); 
@@ -373,7 +396,7 @@ tbody tr:nth-child(odd){
     margin-right: var(--margin-xs); 
 }
 
-.checklist-btns{
+.checklist-btns, .edit-btns{
     padding: var(--padding-r) var(--padding-l);
     display: flex; 
     justify-content: flex-end;
