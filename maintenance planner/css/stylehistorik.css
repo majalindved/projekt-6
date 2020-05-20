@@ -1,0 +1,166 @@
+*{
+    font-family: 'Titillium Web', sans-serif;
+    box-sizing: border-box; 
+    margin: 0; 
+    padding: 0; 
+    font-size: 16px; 
+}
+
+:root{
+    /*colours*/
+    --main-text-colour: #3B3B3B; 
+    --trendlog-green: #00C52D;
+    --black: #000000;
+    --white: #FFFFFF;
+    --dark-grey: #3B3B3B;
+    --light-grey: #F3F3F3;
+    --grey-white: #F8F7FD;
+    --green: #5BB95B;
+    --red: #D9544F;
+    --yellow: #EEAE4D;
+    --blue: #347AB5;
+    --lightblue: #B8D0E5;
+    
+    /*font size*/
+    --fontsize-xxxxl: 46px;
+    --fontsize-xxxl: 38px;
+    --fontsize-xxl: 28px;
+    --fontsize-xl: 20px;
+    --fontsize-l: 18px; 
+    --fontsize-r: 16px; 
+    --fontsize-s: 14px;
+    --fontsize-xs: 12px;
+    --fontsize-xxs: 10px;
+    
+    /*margin*/
+    --margin-xl: 80px; 
+    --margin-l: 40px; 
+    --margin-r: 20px; 
+    --margin-s: 15px; 
+    --margin-xs: 10px; 
+    --margin-xxs: 5px; 
+    --margin-side: 5%; 
+    
+    /*padding*/
+    --padding-xl: 80px;
+    --padding-l: 40px;
+    --padding-r: 20px;
+    --padding-s: 15px;
+    --padding-xs: 10px;
+    --padding-xxs: 5px;
+    --padding-side: 5%; 
+}
+
+.quantity-index {
+    display: flex;
+}
+
+#searchbar {
+    border: none;
+}
+
+.search-index {
+    border: solid 1px var(--dark-grey);
+}
+
+.keyword {
+    overflow: hidden;
+}
+
+.bar-lightblue{ 
+    height: auto; 
+    background-color: var(--lightblue);
+    margin: 0;
+    display: flex;
+    justify-content: space-between;
+}
+
+/* The Modal (background) */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    padding-top: 100px; /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content */
+.modal-content {
+    position: relative;
+    background-color: var(--white);
+    margin: auto;
+    padding: 0;
+    border: 1px solid #888;
+    width: 50vw;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+}
+
+/* The Close Button */
+.close {
+    color: var(--black);
+    padding: 0;
+    margin: 0;
+}
+
+.close:hover,
+.close:focus {
+    color: var(--dark-grey);
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.modal-body {
+    height: 60vh;
+
+}
+
+iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+    padding: 0 var(--padding-s);
+}
+
+.header-history {
+    display: flex; 
+    justify-content: space-between; 
+    padding: var(--padding-s);
+}
+
+.header-history-text {
+    font-size: 30px;  
+}
+
+.modal-button {
+    text-decoration: none;
+    color: var(--black);
+}
+
+#servicerapport {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */    
+}
+
+.modal-content {
+    position: relative;
+    background-color: var(--white);
+    margin: auto;
+    padding: 0;
+    border: 1px solid #888;
+    width: 50vw;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);    
+}
