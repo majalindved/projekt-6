@@ -246,7 +246,156 @@ tbody tr:nth-child(odd){
 
 .fa-pen,.fa-list, .fa-history,.fa-ellipsis-h{
     padding: 0 var(--padding-xs); 
-    color: var(--dark-grey); 
+    color: var(--dark-grey);
+    cursor: pointer; 
+}
+
+/*checklist*/
+/* The Modal (background) */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    padding-top: 100px; /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/*modal bokse*/ 
+
+/* Modal Content */
+.modal-content {
+    position: relative;
+    background-color: var(--white);
+    margin: auto;
+    padding: 0;
+    border: 1px solid #888;
+    width: 50vw;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+}
+
+/* The Close Button */
+.close {
+    color: var(--dark-grey);
+    padding: 0;
+    margin: 0;
+    font-size: var(--fontsize-xxl)
+}
+
+.close:hover,
+.close:focus {
+    color: var(--dark-grey);
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.modal-button {
+    text-decoration: none;
+    color: var(--black);
+}
+
+.modal-body {
+    height: auto;
+}
+
+/*checklist*/ 
+.header-checklist {
+    display: flex; 
+    justify-content: space-between; 
+    padding: var(--padding-l);
+}
+
+.checklist-heading{
+    padding: 0 var(--padding-l);
+    font-size: var(--fontsize-l);
+    font-weight: 900;
+}
+
+.heading-line{
+    border-bottom: 1px solid var(--dark-grey); 
+    width: 250px; 
+    color: var(--dark-grey);
+    margin-bottom: var(--margin-r); 
+}
+
+.checklist-service-information, .checklist-checklist, .checklist-comments{
+    padding: 0 var(--padding-l);
+}
+
+.checklist-service-information-text{
+    display: flex; 
+    margin-bottom: var(--margin-r);
+}
+
+.checklist-service-information-text-single{
+    margin-right: var(--margin-xl);
+}
+
+.checklist-service-information-description, .checklist-checklist{
+    margin-bottom: var(--margin-r); 
+}
+
+.checklist-service-information-description-text{
+    margin-bottom: var(--margin-r);
+}
+
+.checklist-list{
+    border: 1px solid var(--dark-grey);
+    display: flex; 
+    flex-direction: column;
+}
+
+.checklist-list li{
+    cursor: pointer; 
+    list-style-type: none;
+    padding: var(--padding-xs); 
+    border-bottom: 1px solid var(--light-grey); 
+}
+
+.checklist-comments-textarea{
+    width: 100%; 
+    height: 200px; 
+}
+
+.checklist-comments-pictures{
+    border: none; 
+    background-color: var(--blue); 
+    color: var(--white);
+    font-size: var(--fontsize-xs);
+}
+
+.fa-camera{
+    margin-right: var(--margin-xs); 
+}
+
+.checklist-btns{
+    padding: var(--padding-r) var(--padding-l);
+    display: flex; 
+    justify-content: flex-end;
+    align-items: center; 
+}
+
+.cancel-btn, .save-btn{
+    border: none;
+    height: 50px;
+    width: 100px;
+    font-size: var(--fontsize-l);
+}
+
+.cancel-btn{
+    margin-right: var(--margin-l); 
+    background-color: var(--white);
+}
+
+.save-btn{
+    background-color: var(--green);
+    font-weight: 900; 
+    color: var(--white); 
 }
 
 /*pagination*/
