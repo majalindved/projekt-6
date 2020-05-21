@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/styleResource.css">
+    <link href="https://fonts.googleapis.com/css2?family=Titillium+Web&display=swap" rel="stylesheet">
+</head>
+<body>
+
+   <button type="button1">+</button>
+
+<div id="myModal" class="modal">
+
+  <div class="modal-content">
+<body>
+    <div class="left-resource">
+    <title>Create Resource</title>
+    <form action="index.html" id="form1" enctype="multipart/form-data">
+      <div>
+        <p>Gemeral Information</p>
+      <label for="name">Name</label>
+      <input name="name" id="name" required>
+          </div>
+    <div>
+      <label for="type">Type</label>
+      <input name="type" id="type">
+        <option value="predictive">Predictive</option>
+        <option value="preventive">Preventive</option>
+        </div>
+    <div>
+      <label for="group">Group</label> 
+        <button type="button2">+</button>
+      <input name="group" id="group">
+        <option value="group1">Group1</option>
+        <option value="group2">Group2</option>
+        </div>
+        </div>
+    <div class="right-resource">
+    <label for="description">Description</label>
+    <textarea id="description" name="description" style="height: 300px"></textarea>
+</div>
+    <div>
+    <label for="file">Attach documents</label>
+    <input id="file" type="file" name="file">
+    </div>
+    </form>
+    </div>
+    
+    
+    <p>Service Information</p>
+    <form id="form2">
+    <div>
+    <label for="last-service">Last service</label>
+    <input type="date" name="last-service" id="last-service">
+    </div>
+    <div>
+    <label for="service-interval">Service interval</label>
+    <input type="number" name="service-interval" id="service-interval">
+    </div>
+    <div>
+    <label for="time-interval">Time interval</label>   
+    <input name="time-interval" id="time-interval">
+        </div>
+    <div>
+    <label for="next-service">Next service</label>
+    </div>
+    </form>
+    <form id="form3">
+    <div>
+    <label for="notify-days">Notify days</label>
+    <input type="number" name="notify-days" id="notify-days">
+    </div>
+    <div>
+    <label for="notify-to-email">Notify to email</label>
+    <input name="notify-to-email" id="notify-to-email">
+    </div>
+    </form>
+    
+    <p>Checklist</p>
+    <label for="checklist-box"></label>
+    <input name="checklist-box" id="checklist-box">
+    <button type="button2">+</button>
+    </div>
+    
+    </div>
+<script>
+var modal = document.getElementById("myModal");
+var btn = document.getElementById("myBtn");
+var span = document.getElementsByClassName("close")[0];
+btn.onclick = function() {
+  modal.style.display = "block";
+}
+span.onclick = function() {
+  modal.style.display = "none";
+}
+window.onclick = function(event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
+  }
+}
+</script>
+
+</body>
+    
