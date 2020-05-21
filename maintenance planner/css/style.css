@@ -485,6 +485,17 @@ tbody tr:nth-child(odd){
     margin-right: var(--margin-xs); 
 }
 
+.service-flag{
+    background-color: var(--green);
+    font-size: 6px; 
+    color: var(--white);
+    width: 20px;
+    height: 10px;
+    display: inline-block;
+    margin-right: var(--margin-xxs);
+    text-align: center;
+}
+
 .show{
     display: block; 
 }
