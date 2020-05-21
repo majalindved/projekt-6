@@ -19,7 +19,7 @@
     --red: #D9544F;
     --yellow: #EEAE4D;
     --blue: #347AB5;
-    --lightblue: #B8D0E5;
+    --light-blue: #B8D0E5;
     
     /*font size*/
     --fontsize-xxxxl: 46px;
@@ -63,6 +63,15 @@
     border: solid 1px var(--dark-grey);
 }
 
+.tablewrap {
+    display: grid;  
+    grid-template-columns: repeat(auto-fill, minmax(110px, 1fr));
+}
+
+.tablewrap th{
+    width: 130px;
+}
+
 .keyword {
     overflow: hidden;
 }
@@ -73,6 +82,18 @@
     margin: 0;
     display: flex;
     justify-content: space-between;
+}
+
+.bar100 {
+    background: linear-gradient(90deg, var(--light-blue) 100%, rgba(256,256,256,0.0) 0%);    
+}
+
+.bar50 {
+    background: linear-gradient(90deg, var(--light-blue) 50%, rgba(256,256,256,0.0) 0%);    
+}
+
+.bar75 {
+    background: linear-gradient(90deg, var(--light-blue) 75%, rgba(256,256,256,0.0) 0%);    
 }
 
 /* The Modal (background) */
@@ -98,6 +119,7 @@
     padding: 0;
     border: 1px solid #888;
     width: 50vw;
+    height: auto;
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
 }
 
@@ -116,7 +138,7 @@
 }
 
 .modal-body {
-    height: 60vh;
+    height: auto;    
 }
 
 iframe {
@@ -178,7 +200,7 @@ iframe {
     padding: var(--padding-xxs);
     color: white;
     border-bottom: solid 1px var(--light-grey);
-    background: linear-gradient(90deg, var(--blue) 100%, var(--lightblue) 0%);    
+    background: linear-gradient(90deg, var(--blue) 100%, var(--light-blue) 0%);    
 }
 
 .service-checklist-wrap {
@@ -204,11 +226,11 @@ iframe {
 }
 
 .service-images img {
-    width: 25vw;
+    width: 10vw;
 }
 
 .service-line {
-    width: 50vw;
+    width: 50%;
     margin-bottom: var(--padding-s);
     color: var(--dark-gray);
 }
@@ -218,13 +240,14 @@ iframe {
 }
 
 .servicerapport-modal-body {
-    height: auto;
+    height: auto;    
 }
 
-.service-header-history {
+.service-header-history {   
     display: flex; 
     justify-content: space-between; 
-    padding: 0;    
+    padding: 0 var(--padding-s);  
+    background-color: var(--white);      
 }
 
 .tabcontent {
@@ -236,5 +259,26 @@ section[class*="tabcontent"]:first-of-type {
 }
 
 .tabcontent {
-    padding: var(--padding-s); 
+
+}
+
+.history-content {
+    height: 70vh;
+    overflow: auto; 
+    padding: var(--padding-r) var(--padding-s) 0 var(--padding-s);     
+}
+
+.tablinks {
+    cursor: pointer;    
+}
+
+.printicon {
+    width: 100%;
+}
+
+.fa-print {
+    float: right;    
+    font-size: 4vw;
+    padding: var(--padding-r) 0 0 0;   
+    margin-bottom: var(--padding-r)
 }

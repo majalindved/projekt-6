@@ -11,10 +11,16 @@
     <script src="https://kit.fontawesome.com/9068d98231.js" crossorigin="anonymous"></script>
     <script src="../js/sorttable.js" defer></script>
     <script src="../js/filter.js" defer></script>
-    <script src="../js/search.js" defer></script>       
+    <script src="../js/search.js" defer></script>     
+    <script src="../js/modal.js" defer></script>    
+    <script src="../js/tab.js" defer></script>        
 </head>
     <body>     
-        <section id="history-section" class="tabcontent">           
+        <section id="history-section" class="tabcontent">   
+            <div class="header-history">        
+                <h2 class="header-history-text">History - Robot ID: #312</h2>
+                <span class="header-history-text close">×</span>        
+            </div>            
             <div class="functions-index">
                 <div class="quantity-index">
                     <input placeholder="10">
@@ -152,20 +158,5 @@
         </div>
         </div>
         </section>          
-        <script>
-            function openSection(evt, sectionName) {
-              var i, tabcontent, tablinks;
-              tabcontent = document.getElementsByClassName("tabcontent");
-              for (i = 0; i < tabcontent.length; i++) {
-                tabcontent[i].style.display = "none";
-              }
-              tablinks = document.getElementsByClassName("tablinks");
-              for (i = 0; i < tablinks.length; i++) {
-                tablinks[i].className = tablinks[i].className.replace(" active", "");
-              }
-              document.getElementById(sectionName).style.display = "block";
-              evt.currentTarget.className += " active";
-            }
-        </script>
     </body>
 </html>
