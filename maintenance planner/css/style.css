@@ -327,6 +327,7 @@ tbody tr:nth-child(odd){
     display: flex; 
     flex-direction: row; 
     justify-content: space-between; 
+    flex-wrap: wrap; 
 }
 
 .edit-general-information-form-left, .edit-general-information-form-right{
@@ -335,11 +336,11 @@ tbody tr:nth-child(odd){
 }
 
 .edit-general-information-form-left{
-    width: 45%; 
+    min-width: 300px; 
 }
 
 .edit-general-information-form-right{
-    width: 45%; 
+    min-width: 300px; 
 }
 
 .edit-general-information-form-right input{
@@ -379,6 +380,7 @@ tbody tr:nth-child(odd){
 .checklist-service-information-text{
     display: flex; 
     margin-bottom: var(--margin-r);
+    flex-wrap: wrap; 
 }
 
 .checklist-service-information-text-single{
