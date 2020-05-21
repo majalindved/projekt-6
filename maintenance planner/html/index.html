@@ -11,6 +11,7 @@
     <script src="../js/sorttable.js" defer></script>
     <script src="../js/filter.js" defer></script>
     <script src="../js/modal.js" defer></script>
+    <script src="../js/dropdown.js" defer></script>
 </head>
 <body>
     <header class="header-index">
@@ -108,8 +109,8 @@
                                                 </form>
                                             </div>
                                             <p class="edit-heading heading-line">Service information</p>
-                                            <form>
-                                                <div class="edit-service-information-form">
+                                            <form class="edit-service-information-form">
+                                                <div class="edit-service-information">
                                                     <label>Last service</label>
                                                     <input type="text">
                                                     <label>Service interval</label>
@@ -191,7 +192,15 @@
                                     </div>
                                 </div>
                             <a class="fas fa-history"></a>
-                            <a class="fas fa-ellipsis-h"></a>
+                            <div class="dropdown functions">
+                                <button onclick="dropdownFunction()"><i class="fas fa-ellipsis-h dropbtn"></i></button>
+                                <div id="myDropdown" class="dropdown-content">
+                                    <a href="#"><i class="fas fa-cog"></i>Add repair log</a>
+                                    <a href="#"><i class="far fa-flag"></i>toggle service flag</a>
+                                    <a href="#"><i class="far fa-copy"></i>Copy</a>
+                                    <a href="#"><i class="fas fa-trash"></i>Delete</a>
+                                </div>
+                            </div>
                         </td>
                     </tr>
                     <tr>

@@ -323,7 +323,7 @@ tbody tr:nth-child(odd){
     margin-bottom: var(--margin-r); 
 }
 
-.edit-general-information-form{
+.edit-general-information-form, .edit-service-information-form{
     display: flex; 
     flex-direction: row; 
     justify-content: space-between; 
@@ -347,13 +347,12 @@ tbody tr:nth-child(odd){
     height: 170px;
 }
 
-.edit-general-information-form-left input, .edit-general-information-form-right input, .edit-service-information-form input{
-    margin-bottom: var(--margin-s); 
+.edit-service-information label{
+    display: block;  
 }
 
-.edit-service-information-form{
-    display: flex; 
-    flex-direction: column;
+.edit-general-information-form-left input, .edit-general-information-form-right input, .edit-service-information-form input{
+    margin-bottom: var(--margin-s); 
 }
 
 .checklist-service-information, .checklist-checklist, .checklist-comments, .edit-checklist, .search-edit, .edit-general-information-form, .edit-service-information-form{
@@ -447,6 +446,47 @@ tbody tr:nth-child(odd){
     background-color: var(--green);
     font-weight: 900; 
     color: var(--white); 
+}
+
+/*dropdown functions*/
+.dropdown{
+    position: relative; 
+    display: inline-block; 
+}
+
+.dropdown button{
+    border: none; 
+    background-color: transparent; 
+}
+
+.dropdown-content{
+    display: none; 
+    position: absolute; 
+    background-color: var(--white);  
+    min-width: 170px;
+    overflow: auto; 
+    box-shadow: 1px 1px 10px 0px rgba(0,0,0,0.2);
+    z-index: 1; 
+}
+
+.dropdown-content a{
+    color: var(--dark-grey); 
+    padding: var(--padding-xs);
+    text-decoration: none; 
+    display: block; 
+    border-bottom: 1px solid var(--light-grey);
+}
+
+.dropdown-content a:hover{
+    background-color: var(--light-grey); 
+}
+
+.dropdown-content i{
+    margin-right: var(--margin-xs); 
+}
+
+.show{
+    display: block; 
 }
 
 /*pagination*/
