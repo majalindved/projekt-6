@@ -255,7 +255,7 @@ tbody tr:nth-child(odd){
 .modal {
     display: none; /* Hidden by default */
     position: fixed; /* Stay in place */
-    z-index: 1; /* Sit on top */
+    z-index: 10; /* Sit on top */
     padding-top: 100px; /* Location of the box */
     left: 0;
     top: 0;
@@ -355,20 +355,20 @@ tbody tr:nth-child(odd){
     margin-bottom: var(--margin-s); 
 }
 
-.checklist-service-information, .checklist-checklist, .checklist-comments, .edit-checklist, .search-edit, .edit-general-information-form, .edit-service-information-form{
+.checklist-service-information, .checklist-checklist, .checklist-comments, .edit-checklist, .add-edit, .edit-general-information-form, .edit-service-information-form{
     padding: 0 var(--padding-l);
 }
 
-.search-edit{
+.add-edit{
     margin-bottom: var(--margin-xxs); 
 }
 
-.search-edit ::placeholder{
+.add-edit ::placeholder{
     font-size: var(--fontsize-xxs); 
     padding: var(--padding-xxs);
 }
 
-.search-edit button{
+.add-edit button{
     width: 30px; 
     height: 30px; 
     background-color: var(--blue); 
@@ -499,6 +499,8 @@ tbody tr:nth-child(odd){
 .show{
     display: block; 
 }
+
+/*warning message delete*/
 
 /*pagination*/
 .pagination-index{
