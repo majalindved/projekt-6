@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+<html>
 <head>
 <meta charset="UTF-8">
     <meta name="description" content="">
@@ -33,7 +34,8 @@ window.onclick = function(event) {
     </div>
   <div class="modal-content">
 <body>
-    <div class="left-resource">
+    <div class="container-1">
+    <div class="box-1">
     <title>Create Resource</title>
     <form action="index.html" id="form1" enctype="multipart/form-data">
       <div>
@@ -56,6 +58,7 @@ window.onclick = function(event) {
         </div>
          </form>
         </div>
+    <div class="box-2">   
     <form>
     <div class="right-resource">
     <label for="description">Description</label>
@@ -66,8 +69,12 @@ window.onclick = function(event) {
     <input id="file" type="file" name="file">
     </div>
     </form>
+    </div>
+    </div>
     
+    <div class="container-2">
     
+    <div class="box-3">
     <p>Service Information</p>
     <form id="form2">
     <div>
@@ -81,11 +88,13 @@ window.onclick = function(event) {
     <div>
     <label for="time-interval">Time interval</label>   
     <input name="time-interval" id="time-interval">
-        </div>
+    </div>
     <div>
     <label for="next-service">Next service</label>
     </div>
     </form>
+    </div>
+    <div class="box-4">
     <form id="form3">
     <div>
     <label for="notify-days">Notify days</label>
@@ -96,14 +105,11 @@ window.onclick = function(event) {
     <input name="notify-to-email" id="notify-to-email">
     </div>
     </form>
-    
-    <p>Checklist</p>
-    <label for="checklist-box"></label>
-    <input name="checklist-box" id="checklist-box">
-    <button type="button2">+</button>
-    
-    <div>
+    </div>
+    </div>
 
+    <div class="container-3">
+    <div class="box5">
 <script src="tasker.js"></script>
 
 <body onload="tasker.construct();">
@@ -127,8 +133,6 @@ window.onclick = function(event) {
             </div>
         </div>
     </body>
-
     </div>
-
-</body>
-    
+    </div>
+      </body>
