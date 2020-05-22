@@ -156,6 +156,10 @@ main{
     margin-right: var(--margin-r);
 }
 
+.inputfield {
+    width: 50px;
+}
+
 .filters-index button{ 
     border: none; 
     padding: 0 var(--padding-xs);
@@ -549,3 +553,22 @@ tbody tr:nth-child(odd){
     font-weight: 900; 
 }
 
+.quantity-index {
+    display: flex;
+}
+
+.quantity-index i{
+    padding: var(--padding-xxs)
+}
+
+@media only screen and (max-width: 537px)  {
+.paragraf-entry-index {
+    display: none;
+}
+}
+
+@media only screen and (max-width: 802px)  {
+.paragraf-entry-history {
+    display: none;
+}
+}
