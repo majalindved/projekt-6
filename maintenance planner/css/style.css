@@ -217,6 +217,15 @@ table{
     width: 100%; 
 }
 
+tr {
+    display: grid;  
+    grid-template-columns: repeat(auto-fit, minmax(110px, 1fr));
+}
+
+.tablewrap th{
+    width: 130px;
+}
+
 th{
     text-align: left;
     padding: 0 0 var(--padding-s) 0; 
@@ -230,6 +239,37 @@ th .fa-sort{
 td{
     text-align: left; 
     padding: var(--padding-xs) var(--padding-xxs); 
+    display: flex;
+    justify-content: space-between;
+}
+
+td .fa-caret-down {
+    font-size: 25px; 
+    display: none;
+    cursor: pointer;    
+}
+
+
+.sortgroup .fa-caret-down{
+    display: none;    
+}
+
+@media only screen and (max-width: 746px) and (min-width: 100px)  {
+.sortnservice .fa-caret-down{
+    
+}
+}
+
+@media only screen and (max-width: 859px) and (min-width: 736px)  {
+.sortlservice i{
+    display: block;
+}
+}
+
+
+.td-icons {
+    display: flex;
+    flex-wrap: nowrap;
 }
 
 .fa-circle{
@@ -567,7 +607,7 @@ tbody tr:nth-child(odd){
 }
 }
 
-@media only screen and (max-width: 802px)  {
+@media only screen and (max-width: 836px)  {
 .paragraf-entry-history {
     display: none;
 }

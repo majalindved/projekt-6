@@ -11,11 +11,13 @@
     <script src="https://kit.fontawesome.com/9068d98231.js" crossorigin="anonymous"></script>
     <script src="../js/sorttable.js" defer></script>
     <script src="../js/filter.js" defer></script>
-    <script src="../js/search.js" defer></script>     
+    <script src="../js/search.js" defer></script> 
+    <script src="../js/expand.js" defer></script>           
     <script src="../js/modal.js" defer></script>    
-    <script src="../js/tab.js" defer></script>          
+    <script src="../js/tab.js" defer></script>   
+
 </head>
-    <body>
+    <body>  
         <!-- Åben Modal -->
         <a class="fas fa-history modal-button" href="#myModal1"></a>
 
@@ -52,34 +54,35 @@
                                             <th class="sortdate" title="Sort by date"onclick="sortTable(1)">Date<i class="fas fa-sort"></i></th>
                                             <th class="sortprogress" title="Sort by progress"onclick="sortTable(2)">Progress<i class="fas fa-sort"></i></th>
                                             <th class="sortservice" title="Sort by service value"onclick="sortTable(3)">Service value<i class="fas fa-sort"></i></th>
-                                            <th class="sorttime" title="Sort by time"onclick="sortTable(4)">Time<i class="fas fa-sort"></i></th>                                    
+                                            <th class="sorttime" title="Sort by time"onclick="sortTable(4)">Time<i class="fas fa-sort"></i></th>   
+                                            <th title="Sort by time"onclick="sortTable(5)"></th>
                                         </tr>
                                     </thead>
                                     <tbody>
                                         <tr class="tablewrap keyword">                           
-                                            <td class="htc history-table-content1">
+                                            <td class="history-table-content1">
                                                 <p>mhj@trondlog.io</p>
                                                 <i class="fas fa-caret-down"></i> 
                                             </td>
-                                            <td class="htc history-table-content2">
+                                            <td class="history-table-content2">
                                                 <p>18-05-2020</p>
                                                 <i class="fas fa-caret-down"></i> 
                                             </td>
-                                            <td class="htc history-table-content3 bar100 bar-lightblue">
+                                            <td class="history-table-content3 bar100 bar-lightblue">
                                                 <p>100%</p>
                                                 <i class="fas fa-caret-down"></i> 
                                             </td>                                               
-                                            <td class="htc history-table-content4">
+                                            <td class="history-table-content4">
                                                 <p>475000</p>
                                                 <i class="fas fa-caret-down"></i> 
                                             </td>
-                                            <td class="htc history-table-content5">
+                                            <td class="history-table-content5">
                                                 <p>58m</p>
                                                 <i class="fas fa-caret-down"></i> 
                                             </td>
                                             <td class="first-time">
                                                 <div class="tab">
-                                                    <a title="View servicereport" class="fas fa-eye tablinks" onclick="openSection(event, 'servicereport-section')"></a>
+                                                    <i title="View servicereport" class="fas fa-eye tablinks" onclick="openSection(event, 'servicereport-section')"></i>
                                                 </div> 
                                             </td>                          
                                         </tr>
