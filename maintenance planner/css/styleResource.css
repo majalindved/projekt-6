@@ -319,16 +319,7 @@ tbody tr:nth-child(odd){
 
 .container-1{
     display: flex;
-     border: 1px #ccc solid;
     padding: 10px;
-}
-
-}
-.container-2{
-    display: flex;
-     border: 1px #ccc solid;
-    padding: 10px;
-    flex-direction: column;
 }
 
 }
@@ -348,15 +339,6 @@ tbody tr:nth-child(odd){
     order: 2;
 }
 
-.box-3{
- flex:1;
-order: 1;   
-}
-
-.box-4{
- flex:1;
-order: 2;   
-}
 
 .box-5{
 flex: 1
@@ -376,6 +358,7 @@ background-color: #347AB5
 .form2 {
     display: inline-block;
     width: auto;
+    border: none;
 }
 
 .tasker ul, .tasker li,
