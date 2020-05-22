@@ -265,6 +265,43 @@ tbody tr:nth-child(odd){
   display: inline-block;
   font-size: 16px;
 }
+
+.name{
+    margin: 25px;
+}
+
+.type{
+    margin: 25px;
+}
+
+.group{
+    margin: 25px;
+}
+
+.last-service{
+    margin: 25px;
+}
+
+.service-interval{
+    margin: 25px;
+}
+
+.time-interval{
+    margin: 25px;
+}
+
+.next-service{
+    margin: 25px;
+}
+
+.notify-days{
+    margin: 25px;
+}
+
+.notify-to-email{
+    margin: 25px;
+}
+
 .container-1{
     display: flex;
      border: 1px #ccc solid;
