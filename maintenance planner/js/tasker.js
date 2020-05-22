@@ -15,6 +15,7 @@ let tasker = {
 		let taskListItem, taskValue, taskButton, taskTrash;
 		taskListItem = document.createElement("li");
 		taskListItem.setAttribute("class", "task");
+        
 		taskValue = document.createTextNode(this.taskInput.value);
 
 		taskButton = document.createElement("button");
@@ -52,18 +53,17 @@ let tasker = {
 	},
 	bindEvents: function(){
 		
-		//add click event to button
 		this.addButton.onclick = this.addTask.bind(this);
 
-		//add enter key to task textbox
 		this.taskInput.onkeypress = this.enterKey.bind(this);
 	},
 	scanTaskList: function() {
 		let taskListItem, deleteButton;
 
-
 		for (i = 0; i < this.taskListChildren.length; i++){
 			taskListItem = this.taskListChildren[i];
+            
+			deleteButton = taskListItem.getElementsByTagName("button")[0];
 
 			deleteButton.onclick = this.deleteTask.bind(this, i);
 		}
@@ -71,3 +71,6 @@ let tasker = {
 	deleteTask: function(i) {
 		this.taskListChildren[i].remove();
 		this.scanTaskList();
+	},
+	
+};
