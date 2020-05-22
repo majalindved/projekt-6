@@ -26,153 +26,168 @@
           <div class="modal-content">
             <div class="modal-body">
      
-        <section id="history-section" class="tabcontent">   
-            <div class="service-header-history">        
-                <h2 class="header-history-text">History - Robot ID: #312</h2>
-                <span title="Close window" class="header-history-text close">&times</span>        
-            </div>  
-            <section class="history-content">
-            <div class="functions-index">
-                <div class="quantity-index">
-                    <input placeholder="10">
-                    <i class="fas fa-sort-down"></i>
-                    <p>Entries per page</p>                
-                </div>
-                <div class="search-index">
-                    <input type="search" id="searchbar" onkeyup="searchTable()" placeholder="Search for name, type, date etc.">
-                    <button title="Search button" class="searchbutton"><i class="fas fa-search"></i></button>
-                </div>
-            </div>    
-
-            <div class="table-container">
-                <table id="resourcesTable">
-                    <thead>
-                        <tr class="tablewrap">
-                            <th class="table1" title="Sort by user" onclick="sortTable(0)">User<i class="fas fa-sort"></i></th>
-                            <th class="table1" title="Sort by date"onclick="sortTable(1)">Date<i class="fas fa-sort"></i></th>
-                            <th class="table1" title="Sort by progress"onclick="sortTable(2)">Progress<i class="fas fa-sort"></i></th>
-                            <th class="table1" title="Sort by service value"onclick="sortTable(3)">Service value<i class="fas fa-sort"></i></th>
-                            <th class="table1" title="Sort by time"onclick="sortTable(4)">Time<i class="fas fa-sort"></i></th>                         
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr class="tablewrap keyword">
-                            <td class="table1">mhj@trendlog.io</td>
-                            <td class="table1">16-04-2020</td>
-                            <td class="table1 bar100 bar-lightblue">100%</td>
-                            <td class="table1"><div>450000</div></td>
-                            <td class="table1">58m</td>
-                            <td class="table2">
-                                <div class="tab">
-                                    <a title="View servicereport" class="fas fa-eye tablinks" onclick="openSection(event, 'servicereport-section')"></a>
-                                </div> 
-                            </td>
-                        </tr>
-                        <tr class="tablewrap keyword">
-                            <td class="table1">sms@trendlog.io</td>
-                            <td class="table1">17-04-2020</td>
-                            <td class="table1 bar100 bar-lightblue">100%</td>
-                            <td class="table1"><div>430000</div></td>
-                            <td class="table1">52m</td>
-                            <td class="table2"><i class="fas fa-eye"></i></td>
-                        </tr>
-                        <tr class="tablewrap keyword">
-                            <td class="table1">hje@trendlog.io</td>
-                            <td class="table1">18-04-2020</td>
-                            <td class="table1 bar75 bar-lightblue">75%</td>
-                            <td class="table1"><div>415000</div></td>
-                            <td class="table1">38m</td>
-                            <td class="table2"><i class="fas fa-eye"></i></td>
-                        </tr>
-                        <tr class="tablewrap keyword">
-                            <td class="table1">hje@trendlog.io</td>
-                            <td class="table1">19-04-2020</td>
-                            <td class="table1 bar50 bar-lightblue">50%</td>
-                            <td class="table1"><div>395000</div></td>
-                            <td class="table1">30m</td>
-                            <td class="table2"><i class="fas fa-eye"></i></td>
-                        </tr>
-                        <tr class="tablewrap keyword">
-                            <td class="table1">mhj@trendlog.io</td>
-                            <td class="table1">21-04-2020</td>
-                            <td class="table1 bar100 bar-lightblue">100%</td>
-                            <td class="table1"><div>375000</div></td>
-                            <td class="table1">57m</td>
-                            <td class="table2"><i class="fas fa-eye"></i></td>
-                        </tr>
-                    </tbody>
-                </table>
-                </div> 
-                </section>
-            </section>
-            <section id="servicereport-section" class="tabcontent">                   
-            <!-- Modalen -->
-            <div id="servicerapport" class="servicerapport">
-
-              <!-- Modal indhold -->
-              <div class="servicerapport-modal">
-                <div class="servicerapport-modal-body">
+                <section id="history-section" class="tabcontent">   
                     <div class="service-header-history">        
-                        <h2 class="header-history-text">Service report - Robot ID: #312</h2>
-                        <div class="tab">
-                            <a title="Close window" class="header-history-text tablinks active" onclick="openSection(event, 'history-section')">&times</i></a>
-                        </div>                         
-                    </div>    
-                    <section class="history-content">
-                    <div>
-                        <p class="service-headline">Service information</p>    
-                        <hr class="service-line">
-                        <div class="service-information">                          
-                            <div class="service-user">                           
-                                <p>User:  xxxxxxxxx</p>
-                                <p>Planned service:  15-05-2020</p>
-                                <p>Service date:  15-05-2020</p>
-                                <p>Tid:  33 minutter</p>  
-                            </div>    
-                            <div class="service-description">
-                                <p>Description</p>                          
-                                <p>text text text text text text text text text</p>
-                                <p>dokument.pdf</p>
-                            </div>   
-                        </div>                            
-                    </div>
-                    <p class="service-headline">Checklist</p>
-                    <hr class="service-line">                    
-                    <div class="service-checklist">
-                        <p class="service-progress">100%</p>                    
-                        <div class="service-checklist-wrap">
-                            <p>1v</p>
-                            <p><i class="fas fa-check"></i></p>    
-                        </div>    
-                        <div class="service-checklist-wrap">
-                            <p>2v</p>
-                            <p><i class="fas fa-check"></i></p>    
-                        </div>                       
-                        <div class="service-checklist-wrap">
-                            <p>3v</p>
-                            <p><i class="fas fa-check"></i></p>    
-                        </div>                        
-                    </div>
-                    <p class="service-headline">Comments</p>
-                    <hr class="service-line">                    
-                    <div class="service-comments">
-                        <p>text text text text text text text text text</p>
-                        <div class="service-images">
-                            <img src="../img/defaultimage.png" alt="">
-                            <img src="../img/defaultimage.png" alt=""> 
-                            <img src="../img/defaultimage.png" alt="">    
-                        </div>    
+                        <h2 class="header-history-text">History - Robot ID: #312</h2>
+                        <span title="Close window" class="header-history-text close">&times</span>        
                     </div>  
-                    <div class="printicon">    
-                        <i class="fas fa-print"></i>    
+                    <section class="history-content">
+                    <div class="functions-index">
+                        <div class="quantity-index">
+                            <input placeholder="10">
+                            <i class="fas fa-sort-down"></i>
+                            <p>Entries per page</p>                
+                        </div>
+                        <div class="search-index">
+                            <input type="search" id="searchbar" onkeyup="searchTable()" placeholder="Search for name, type, date etc.">
+                            <button title="Search button" class="searchbutton"><i class="fas fa-search"></i></button>
+                        </div>
                     </div>    
-                </section>                           
+
+                            <div class="table-container">
+                                <table id="resourcesTable">
+                                    <thead>
+                                        <tr class="tablewrap">
+                                            <th class="table1" title="Sort by user" onclick="sortTable(0)">User<i class="fas fa-sort"></i></th>
+                                            <th class="table1" title="Sort by date"onclick="sortTable(1)">Date<i class="fas fa-sort"></i></th>
+                                            <th class="table1" title="Sort by progress"onclick="sortTable(2)">Progress<i class="fas fa-sort"></i></th>
+                                            <th class="second-time" title="Sort by service value"onclick="sortTable(3)">Service value<i class="fas fa-sort"></i></th>
+                                            <th class="first-time" title="Sort by time"onclick="sortTable(4)">Time<i class="fas fa-sort"></i></th>                                    
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr class="tablewrap keyword">                           
+                                            <td class="htc history-table-content1">
+                                                <p>mhj@trondlog.io</p>
+                                                <i class="fas fa-caret-down"></i> 
+                                            </td>
+                                            <td class="htc history-table-content2">
+                                                <p>18-05-2020</p>
+                                                <i class="fas fa-caret-down"></i> 
+                                            </td>
+                                            <td class="htc history-table-content3 bar100 bar-lightblue">
+                                                <p>100%</p>
+                                                <i class="fas fa-caret-down"></i> 
+                                            </td>                                               
+                                            <td class="htc history-table-content4">
+                                                <p>475000</p>
+                                                <i class="fas fa-caret-down"></i> 
+                                            </td>
+                                            <td class="htc history-table-content5">
+                                                <p>58m</p>
+                                                <i class="fas fa-caret-down"></i> 
+                                            </td>
+                                            <td class="first-time">
+                                                <div class="tab">
+                                                    <a title="View servicereport" class="fas fa-eye tablinks" onclick="openSection(event, 'servicereport-section')"></a>
+                                                </div> 
+                                            </td>                          
+                                        </tr>
+                                        <tr class="tablewrap keyword">
+                                            <td class="table1">sms@trendlog.io</td>
+                                            <td class="table1">17-04-2020</td>
+                                            <td class="table1 bar100 bar-lightblue">100%</td>
+                                            <td class="table1"><div>430000</div></td>
+                                            <td class="table1">52m</td>
+                                            <td class="table2"><i class="fas fa-eye"></i></td>
+                                        </tr>
+                                        <tr class="tablewrap keyword">
+                                            <td class="table1">hje@trendlog.io</td>
+                                            <td class="table1">18-04-2020</td>
+                                            <td class="table1 bar75 bar-lightblue">75%</td>
+                                            <td class="table1"><div>415000</div></td>
+                                            <td class="table1">38m</td>
+                                            <td class="table2"><i class="fas fa-eye"></i></td>
+                                        </tr>
+                                        <tr class="tablewrap keyword">
+                                            <td class="table1">hje@trendlog.io</td>
+                                            <td class="table1">19-04-2020</td>
+                                            <td class="table1 bar50 bar-lightblue">50%</td>
+                                            <td class="table1"><div>395000</div></td>
+                                            <td class="table1">30m</td>
+                                            <td class="table2"><i class="fas fa-eye"></i></td>
+                                        </tr>
+                                        <tr class="tablewrap keyword">
+                                            <td class="table1">mhj@trendlog.io</td>
+                                            <td class="table1">21-04-2020</td>
+                                            <td class="table1 bar100 bar-lightblue">100%</td>
+                                            <td class="table1"><div>375000</div></td>
+                                            <td class="table1">57m</td>
+                                            <td class="table2"><i class="fas fa-eye"></i></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                                </div> 
+                                </section>
+                            </section>
+                            <section id="servicereport-section" class="tabcontent">                   
+                            <!-- Modalen -->
+                            <div id="servicerapport" class="servicerapport">
+
+                              <!-- Modal indhold -->
+                              <div class="servicerapport-modal">
+                                <div class="servicerapport-modal-body">
+                                    <div class="service-header-history">        
+                                        <h2 class="header-history-text">Service report - Robot ID: #312</h2>
+                                        <div class="tab">
+                                            <a title="Close window" class="header-history-text tablinks active" onclick="openSection(event, 'history-section')">&times</i></a>
+                                        </div>                         
+                                    </div>    
+                                    <section class="history-content">
+                                    <div>
+                                        <p class="service-headline">Service information</p>    
+                                        <hr class="service-line">
+                                        <div class="service-information">                          
+                                            <div class="service-user">                           
+                                                <p>User:  xxxxxxxxx</p>
+                                                <p>Planned service:  15-05-2020</p>
+                                                <p>Service date:  15-05-2020</p>
+                                                <p>Tid:  33 minutter</p>  
+                                            </div>    
+                                            <div class="service-description">
+                                                <p>Description</p>                          
+                                                <p>text text text text text text text text text</p>
+                                                <p>dokument.pdf</p>
+                                            </div>   
+                                        </div>                            
+                                    </div>
+                                    <p class="service-headline">Checklist</p>
+                                    <hr class="service-line">                    
+                                    <div class="service-checklist">
+                                        <p class="service-progress">100%</p>                    
+                                        <div class="service-checklist-wrap">
+                                            <p>1v</p>
+                                            <p><i class="fas fa-check"></i></p>    
+                                        </div>    
+                                        <div class="service-checklist-wrap">
+                                            <p>2v</p>
+                                            <p><i class="fas fa-check"></i></p>    
+                                        </div>                       
+                                        <div class="service-checklist-wrap">
+                                            <p>3v</p>
+                                            <p><i class="fas fa-check"></i></p>    
+                                        </div>                        
+                                    </div>
+                                    <p class="service-headline">Comments</p>
+                                    <hr class="service-line">                    
+                                    <div class="service-comments">
+                                        <p>text text text text text text text text text</p>
+                                        <div class="service-images">
+                                            <img src="../img/defaultimage.png" alt="">
+                                            <img src="../img/defaultimage.png" alt=""> 
+                                            <img src="../img/defaultimage.png" alt="">    
+                                        </div>    
+                                    </div>  
+                                    <div class="printicon">    
+                                        <i class="fas fa-print"></i>    
+                                    </div>    
+                                </section>                           
+                            </div>
+                        </div>
+                    </section>                  
+                </div>
             </div>
         </div>
-        </section>                  
-        </div>
-            </div>
-          </div>
         <!-- Åben Modal -->
         <a class="fas fa-history modal-button" href="#myModal2"></a>
 
