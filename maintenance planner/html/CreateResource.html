@@ -6,13 +6,31 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../css/styleResource.css">
     <link href="https://fonts.googleapis.com/css2?family=Titillium+Web&display=swap" rel="stylesheet">
+    
+ <script>
+var modal = document.getElementById("myModal");
+var btn = document.getElementById("myBtn");
+var span = document.getElementsByClassName("close")[0];
+btn.onclick = function() {
+  modal.style.display = "block";
+}
+span.onclick = function() {
+  modal.style.display = "none";
+}
+window.onclick = function(event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
+  }
+}
+    </script>
+
 </head>
 <body>
 
    <button type="button1">+</button>
 
 <div id="myModal" class="modal">
-
+    </div>
   <div class="modal-content">
 <body>
     <div class="left-resource">
@@ -36,7 +54,9 @@
         <option value="group1">Group1</option>
         <option value="group2">Group2</option>
         </div>
+         </form>
         </div>
+    <form>
     <div class="right-resource">
     <label for="description">Description</label>
     <textarea id="description" name="description" style="height: 300px"></textarea>
@@ -46,7 +66,6 @@
     <input id="file" type="file" name="file">
     </div>
     </form>
-    </div>
     
     
     <p>Service Information</p>
@@ -82,7 +101,6 @@
     <label for="checklist-box"></label>
     <input name="checklist-box" id="checklist-box">
     <button type="button2">+</button>
-    </div>
     
     <div>
 
@@ -111,9 +129,6 @@
     </body>
 
     </div>
-    
-    </div>
-
 
 </body>
     
