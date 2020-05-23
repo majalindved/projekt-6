@@ -61,7 +61,7 @@ h1{
 
 /*main nav*/
 .header-index{
-    display: flex; 
+    display: none; 
     justify-content: space-between; 
     align-items: center; 
     padding: 30px 5%; 
@@ -249,27 +249,65 @@ td .fa-caret-down {
     cursor: pointer;    
 }
 
-
-.sortgroup .fa-caret-down{
-    display: none;    
+.td-icons {
+    display: flex;
+    flex-wrap: nowrap;
 }
 
-@media only screen and (max-width: 746px) and (min-width: 100px)  {
-.sortnservice .fa-caret-down{
+
+@media only screen and (max-width: 493px) {
+.sortenable {
+    display: none;
+    }    
+    
+main{
+    margin: var(--margin-xs) var(--margin-xs) 0; 
+}    
+}
+
+@media only screen and (max-width: 616px)  {
+.th-sortnservice{
+    display: none;
+}
+}
+
+@media only screen and (max-width: 353px) {
+.th-sortgroup {
+    display: none;
+} 
+.sorttype i{
+        display: block;
+}   
+    
     
 }
+
+@media only screen and (max-width: 616px) and (min-width: 354px) {
+.sortgroup i{
+    display: block;    
+}
 }
 
-@media only screen and (max-width: 859px) and (min-width: 736px)  {
-.sortlservice i{
+@media only screen and (max-width: 737px)  {
+.th-sortlservice{
+    display: none;  
+}
+.td-icons {
+    display: flex;
+    flex-wrap: wrap;
+}    
+}
+
+@media only screen and (max-width: 737px) and (min-width: 616px)  {
+.sortnservice i{
     display: block;
 }
 }
 
-
-.td-icons {
-    display: flex;
-    flex-wrap: nowrap;
+@media only screen and (max-width: 859px) and (min-width: 738px)  {
+.sortlservice i{
+    display: block;
+}
 }
 
 .fa-circle{

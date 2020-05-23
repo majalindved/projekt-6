@@ -67,20 +67,20 @@
             <table id="resourcesTable">
                 <thead>
                     <tr class="tablewrap">
-                        <th onclick="sortTable(0)">Enable<i class="fas fa-sort"></i></th>
+                        <th class="sortenable" onclick="sortTable(0)">Enable<i class="fas fa-sort"></i></th>
                         <th onclick="sortTable(1)">Name<i class="fas fa-sort"></i></th>
                         <th onclick="sortTable(2)">Type<i class="fas fa-sort"></i></th>
-                        <th onclick="sortTable(3)">Group<i class="fas fa-sort"></i></th>
-                        <th onclick="sortTable(4)">Next service<i class="fas fa-sort"></i></th>
-                        <th onclick="sortTable(5)">Last service<i class="fas fa-sort"></i></th>
+                        <th class="th-sortgroup" onclick="sortTable(3)">Group<i class="fas fa-sort"></i></th>
+                        <th class="th-sortnservice" onclick="sortTable(4)">Next service<i class="fas fa-sort"></i></th>
+                        <th class="th-sortlservice" onclick="sortTable(5)">Last service<i class="fas fa-sort"></i></th>
                         <th onclick="sortTable(6)"></th>                   
                     </tr>
                 </thead>
                 <tbody>
                     <tr class="tablewrap">
-                        <td><i class="fas fa-circle"></i></td>
+                        <td class="sortenable"><i class="fas fa-circle"></i></td>
                         <td>Robot</td>
-                        <td>Preventive</td>
+                        <td class="sorttype"><p>Preventive</p><i class="fas fa-caret-down"></i></td>
                         <td class="sortgroup"><p>Machine</p><i class="fas fa-caret-down"></i></td>
                         <td class="sortnservice"><div>In 1 day</div><i class="fas fa-caret-down"></i></td>
                         <td class="sortlservice"><p>16-04-2020</p><i class="fas fa-caret-down"></i></td>
@@ -206,9 +206,9 @@
                         </td>
                     </tr>
                     <tr class="tablewrap">
-                        <td><i class="fas fa-circle"></i></td>
+                        <td class="sortenable"><i class="fas fa-circle"></i></td>
                         <td>Robotarm</td>
-                        <td>Preventive</td>
+                        <td class="sorttype"><p>Preventive</p><i class="fas fa-caret-down"></i></td>
                         <td class="sortgroup"><p>Machine</p><i class="fas fa-caret-down"></i></td>
                         <td class="sortnservice"><div>In 2 days</div><i class="fas fa-caret-down"></i></td>
                         <td class="sortlservice"><p>17-04-2020</p><i class="fas fa-caret-down"></i></td>
@@ -273,9 +273,9 @@
                         </td>
                     </tr>
                     <tr class="tablewrap">
-                        <td><i class="fas fa-circle"></i></td>
+                        <td class="sortenable"><i class="fas fa-circle"></i></td>
                         <td>Robothjælper</td>
-                        <td>Preventive</td>
+                        <td class="sorttype"><p>Preventive</p><i class="fas fa-caret-down"></i></td>
                         <td class="sortgroup"><p>Machine</p><i class="fas fa-caret-down"></i></td>
                         <td class="sortnservice"><div>In 3 days</div><i class="fas fa-caret-down"></i></td>
                         <td class="sortlservice"><p>18-04-2020</p><i class="fas fa-caret-down"></i></td>
@@ -340,9 +340,9 @@
                         </td>
                     </tr>
                     <tr class="tablewrap">
-                        <td><i class="fas fa-circle"></i></td>
+                        <td class="sortenable"><i class="fas fa-circle"></i></td>
                         <td>Kaffemaskine</td>
-                        <td>Preventive</td>
+                        <td class="sorttype"><p>Preventive</p><i class="fas fa-caret-down"></i></td>
                         <td class="sortgroup"><p>Machine</p><i class="fas fa-caret-down"></i></td>
                         <td class="sortnservice"><div>In 1 day</div><i class="fas fa-caret-down"></i></td>
                         <td class="sortlservice"><p>19-04-2020</p><i class="fas fa-caret-down"></i></td>
@@ -407,9 +407,9 @@
                         </td>
                     </tr>
                     <tr class="tablewrap">
-                        <td><i class="fas fa-circle"></i></td>
+                        <td class="sortenable"><i class="fas fa-circle"></i></td>
                         <td>Bil</td>
-                        <td>Preventive</td>
+                        <td class="sorttype"><p>Preventive</p><i class="fas fa-caret-down"></i></td>
                         <td class="sortgroup"><p>Car</p><i class="fas fa-caret-down"></i></td>
                         <td class="sortnservice"><div>In 1 day</div><i class="fas fa-caret-down"></i></td>
                         <td class="sortlservice"><p>21-04-2020</p><i class="fas fa-caret-down"></i></td>
@@ -474,9 +474,9 @@
                         </td>
                     </tr>
                     <tr class="tablewrap">
-                        <td><i class="fas fa-circle"></i></td>
+                        <td class="sortenable"><i class="fas fa-circle"></i></td>
                         <td>Plastikmaskine</td>
-                        <td>Preventive</td>
+                        <td class="sorttype"><p>Preventive</p><i class="fas fa-caret-down"></i></td>
                         <td class="sortgroup"><p>Machine</p><i class="fas fa-caret-down"></i></td>
                         <td class="sortnservice"><div>In 1 day</div><i class="fas fa-caret-down"></i></td>
                         <td class="sortlservice"><p>29-04-2020</p><i class="fas fa-caret-down"></i></td>
@@ -541,9 +541,9 @@
                         </td>
                     </tr>
                     <tr class="tablewrap">
-                        <td><i class="fas fa-circle"></i></td>
+                        <td class="sortenable"><i class="fas fa-circle"></i></td>
                         <td>Pakkemaskine</td>
-                        <td>Preventive</td>
+                        <td class="sorttype"><p>Preventive</p><i class="fas fa-caret-down"></i></td>
                         <td class="sortgroup"><p>Machine</p><i class="fas fa-caret-down"></i></td>
                         <td class="sortnservice"><div>In 1 day</div><i class="fas fa-caret-down"></i></td>
                         <td class="sortlservice"><p>16-05-2020</p><i class="fas fa-caret-down"></i></td>
@@ -608,9 +608,9 @@
                         </td>
                     </tr>
                     <tr class="tablewrap">
-                        <td><i class="fas fa-circle"></i></td>
+                        <td class="sortenable"><i class="fas fa-circle"></i></td>
                         <td>Bil</td>
-                        <td>Preventive</td>
+                        <td class="sorttype"><p>Preventive</p><i class="fas fa-caret-down"></i></td>
                         <td class="sortgroup"><p>Car</p><i class="fas fa-caret-down"></i></td>
                         <td class="sortnservice"><div>In 1 day</div><i class="fas fa-caret-down"></i></td>
                         <td class="sortlservice"><p>16-05-2020</p><i class="fas fa-caret-down"></i></td>
@@ -675,9 +675,9 @@
                         </td>
                     </tr>
                     <tr class="tablewrap">
-                        <td><i class="fas fa-circle"></i></td>
+                        <td class="sortenable"><i class="fas fa-circle"></i></td>
                         <td>Maskine</td>
-                        <td>Preventive</td>
+                        <td class="sorttype"><p>Preventive</p><i class="fas fa-caret-down"></i></td>
                         <td class="sortgroup"><p>Machine</p><i class="fas fa-caret-down"></i></td>
                         <td class="sortnservice"><div>In 1 day</div><i class="fas fa-caret-down"></i></td>
                         <td class="sortlservice"><p>18-05-2020</p><i class="fas fa-caret-down"></i></td>
@@ -742,9 +742,9 @@
                         </td>
                     </tr>
                     <tr class="tablewrap">
-                        <td><i class="fas fa-circle"></i></td>
+                        <td class="sortenable"><i class="fas fa-circle"></i></td>
                         <td>Robot</td>
-                        <td>Preventive</td>
+                        <td class="sorttype"><p>Preventive</p><i class="fas fa-caret-down"></i></td>
                         <td class="sortgroup"><p>Machine</p><i class="fas fa-caret-down"></i></td>
                         <td class="sortnservice"><div>In 1 day</div><i class="fas fa-caret-down"></i></td>
                         <td class="sortlservice"><p>16-04-2020</p><i class="fas fa-caret-down"></i></td>
