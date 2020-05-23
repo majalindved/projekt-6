@@ -5,158 +5,401 @@
     <meta charset="UTF-8">
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/style.css">    
     <link rel="stylesheet" href="../css/stylehistorik.css">
     <link href="https://fonts.googleapis.com/css2?family=Titillium+Web&display=swap" rel="stylesheet">
     <script src="https://kit.fontawesome.com/9068d98231.js" crossorigin="anonymous"></script>
     <script src="../js/sorttable.js" defer></script>
     <script src="../js/filter.js" defer></script>
-    <script src="../js/search.js" defer></script>     
+    <script src="../js/search.js" defer></script> 
+    <script src="../js/expand.js" defer></script>           
     <script src="../js/modal.js" defer></script>    
-    <script src="../js/tab.js" defer></script>        
-</head>
-    <body>     
-        <section id="history-section" class="tabcontent">   
-            <div class="header-history">        
-                <h2 class="header-history-text">History - Robot ID: #312</h2>
-                <span class="header-history-text close">×</span>        
-            </div>            
-            <div class="functions-index">
-                <div class="quantity-index">
-                    <input placeholder="10">
-                    <i class="fas fa-sort-down"></i>
-                    <p>Entries per page</p>                
-                </div>
-                <div class="search-index">
-                    <input type="search" id="searchbar" onkeyup="searchTable()" placeholder="Search for name, type, date etc.">
-                    <button class="searchbutton"><i class="fas fa-search"></i></button>
-                </div>
-            </div>    
+    <script src="../js/tab.js" defer></script>   
 
-            <div class="table-container">
-                <table id="resourcesTable">
-                    <thead>
-                        <tr>
-                            <th onclick="sortTable(0)">User<i class="fas fa-sort"></i></th>
-                            <th onclick="sortTable(1)">Date<i class="fas fa-sort"></i></th>
-                            <th onclick="sortTable(2)">Progress<i class="fas fa-sort"></i></th>
-                            <th onclick="sortTable(3)">Service value<i class="fas fa-sort"></i></th>
-                            <th onclick="sortTable(4)">Time<i class="fas fa-sort"></i></th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr class="keyword">
-                            <td>mhj@trendlog.io</td>
-                            <td>16-04-2020</td>
-                            <td class="bar-lightblue">100%</td>
-                            <td><div>450000</div></td>
-                            <td>58m</td>
-                            <td>
-                                <div class="tab">
-                                    <a class="fas fa-history tablinks" onclick="openSection(event, 'servicereport-section')"></a>
-                                </div> 
-                            </td>
-                        </tr>
-                        <tr class="keyword">
-                            <td>sms@trendlog.io</td>
-                            <td>17-04-2020</td>
-                            <td class="bar-lightblue">100%</td>
-                            <td><div>430000</div></td>
-                            <td>52m</td>
-                            <td><i class="fas fa-eye"></i></td>
-                        </tr>
-                        <tr class="keyword">
-                            <td>hje@trendlog.io</td>
-                            <td>18-04-2020</td>
-                            <td class="bar-lightblue">75%</td>
-                            <td><div>415000</div></td>
-                            <td>38m</td>
-                            <td><i class="fas fa-eye"></i></td>
-                        </tr>
-                        <tr class="keyword">
-                            <td>hje@trendlog.io</td>
-                            <td>19-04-2020</td>
-                            <td class="bar-lightblue">50%</td>
-                            <td><div>395000</div></td>
-                            <td>30m</td>
-                            <td><i class="fas fa-eye"></i></td>
-                        </tr>
-                        <tr class="keyword">
-                            <td>mhj@trendlog.io</td>
-                            <td>21-04-2020</td>
-                            <td class="bar-lightblue">100%</td>
-                            <td><div>375000</div></td>
-                            <td>57m</td>
-                            <td><i class="fas fa-eye"></i></td>
-                        </tr>
-                    </tbody>
-                </table>
+</head>
+    <body class="wrap">  
+        <section id="history-section1" class="tabcontent">   
+            <section class="history-content">
+                <div class="functions-index">
+                    <div class="quantity-index">
+                        <input class="inputfield" placeholder="10">
+                        <i class="fas fa-sort-down"></i>
+                        <p class="paragraf-entry-history">Entries per page</p>                
+                    </div>
+                    <div class="search-index">
+                        <input type="search" id="searchbar" onkeyup="searchTable()" placeholder="Search for name, type, date etc.">
+                        <button title="Search button" class="searchbutton"><i class="fas fa-search"></i></button>
+                    </div>
+                </div>    
+                <div class="table-container">
+                    <table id="resourcesTable">
+                        <thead>
+                            <tr class="tablewrap">
+                                <th class="sortuser" title="Sort by user" onclick="sortTable(0)">User<i class="fas fa-sort"></i></th>                                           <th class="sortdate" title="Sort by date"onclick="sortTable(1)">Date<i class="fas fa-sort"></i></th>
+                                <th class="sortprogress" title="Sort by progress"onclick="sortTable(2)">Progress<i class="fas fa-sort"></i></th>
+                                <th class="sortservice" title="Sort by service value"onclick="sortTable(3)">Service value<i class="fas fa-sort"></i></th>
+                                <th class="sorttime" title="Sort by time"onclick="sortTable(4)">Time<i class="fas fa-sort"></i></th>   
+                                <th title="Sort by time"onclick="sortTable(5)"></th>
+                            </tr>
+                        </thead>  
+                            <tbody>
+                                <tr class="tablewrap keyword">                           
+                                    <td class="history-table-content1">
+                                        <p>mhj@trondlog.io</p>
+                                        <i class="fas fa-caret-down"></i> 
+                                    </td>
+                                    <td class="history-table-content2">
+                                        <p>18-05-2020</p>
+                                        <i class="fas fa-caret-down"></i> 
+                                    </td>
+                                    <td class="history-table-content3 bar100 bar-lightblue">
+                                        <p>100%</p>
+                                        <i class="fas fa-caret-down"></i> 
+                                    </td>                                               
+                                    <td class="history-table-content4">
+                                        <p>475000</p>
+                                        <i class="fas fa-caret-down"></i> 
+                                    </td>
+                                    <td class="history-table-content5">
+                                        <p>58m</p>
+                                        <i class="fas fa-caret-down"></i> 
+                                    </td>
+                                    <td class="first-time">
+                                        <div class="tab">
+                                            <i title="View servicereport" class="fas fa-eye tablinks" onclick="openSection(event, 'servicereport-section1')"></i>
+                                        </div> 
+                                    </td>                          
+                                </tr>
+                                <tr class="tablewrap keyword">
+                                    <td class="table1">sms@trendlog.io</td>
+                                    <td class="table1">17-04-2020</td>
+                                    <td class="table1 bar100 bar-lightblue">100%</td>
+                                    <td class="table1"><div>430000</div></td>
+                                    <td class="table1">52m</td>
+                                    <td class="first-time">
+                                        <div class="tab">
+                                            <i title="View servicereport" class="fas fa-eye tablinks" onclick="openSection(event, 'servicereport-section2')"></i>
+                                        </div> 
+                                    </td> 
+                                </tr>
+                                <tr class="tablewrap keyword">
+                                    <td class="table1">hje@trendlog.io</td>
+                                    <td class="table1">18-04-2020</td>
+                                    <td class="table1 bar66 bar-lightblue">66%</td>
+                                    <td class="table1"><div>415000</div></td>
+                                    <td class="table1">38m</td>
+                                    <td class="first-time">
+                                        <div class="tab">
+                                            <i title="View servicereport" class="fas fa-eye tablinks" onclick="openSection(event, 'servicereport-section3')"></i>
+                                        </div>                                             
+                                    </td>
+                                </tr>
+                                <tr class="tablewrap keyword">
+                                    <td class="table1">hje@trendlog.io</td>
+                                    <td class="table1">19-04-2020</td>
+                                    <td class="table1 bar33 bar-lightblue">33%</td>
+                                    <td class="table1"><div>395000</div></td>
+                                    <td class="table1">30m</td>
+                                    <td class="first-time">
+                                        <div class="tab">
+                                            <i title="View servicereport" class="fas fa-eye tablinks" onclick="openSection(event, 'servicereport-section4')"></i>
+                                        </div>                                             
+                                    </td>
+                                </tr>
+                                <tr class="tablewrap keyword">
+                                    <td class="table1">mhj@trendlog.io</td>
+                                    <td class="table1">21-04-2020</td>
+                                    <td class="table1 bar100 bar-lightblue">100%</td>
+                                    <td class="table1"><div>375000</div></td>
+                                    <td class="table1">57m</td>
+                                    <td class="first-time">
+                                        <div class="tab">
+                                            <i title="View servicereport" class="fas fa-eye tablinks" onclick="openSection(event, 'servicereport-section5')"></i>
+                                        </div>                                             
+                                    </td>
+                                </tr>                                   
+                        </tbody>
+                    </table>
                 </div> 
             </section>
-            <section id="servicereport-section" class="tabcontent">                   
-            <!-- Modalen -->
-            <div id="servicerapport" class="servicerapport">
-
-              <!-- Modal indhold -->
-              <div class="servicerapport-modal">
-                <div class="servicerapport-modal-body">
-                    <div class="service-header-history">        
-                        <h2 class="header-history-text">Service report</h2>
+        </section>
+        <!-- Service report 1 -->
+        <section id="servicereport-section1" class="tabcontent">            
+            <!-- Tab indhold -->                      
                         <div class="tab">
-                            <a class="header-history-text tablinks active" onclick="openSection(event, 'history-section')"><i class="fas fa-reply"></i></a>
+                            <a title="Close window" class="close-button header-history-text tablinks active" onclick="openSection(event, 'history-section1')"><i class="fas fa-arrow-alt-circle-left"></i></a>
+                        </div> 
+                        <p class="service-headline">Service information - Robot ID: #312</p>    
+                        <hr class="service-line">
+                        <div class="service-information">                          
+                            <div class="service-user">                           
+                                <div class="paragraf-wrap"><p class="paragraf-  headline">User:</p><p>  mhj@trondlog.io</p></div>
+                                <div class="paragraf-wrap"><p class="paragraf-headline">Planned service:</p><p>  11-04-2019</p></div>
+                                <div class="paragraf-wrap"><p class="paragraf-headline">Service date:</p><p>  18-05-2020</p></div>
+                                <div class="paragraf-wrap"><p class="paragraf-headline">Tid:</p><p>  58 minutes</p></div>  
+                                <div class="paragraf-wrap"><p class="paragraf-headline">Service value:</p><p>  475000</p></div>                                              
+                            </div>                                        
+                            <div class="service-description">
+                                <p class="paragraf-headline">Description</p>      
+                                <p>This is a new machine. We must keep an eye on it at all times to prevent any stop in the procution from happening.</p>
+                                <br>
+                                <p class="paragraf-document">usermanual.pdf</p>
+                                <p class="paragraf-document">productmanual.pdf</p>
+                                <p class="paragraf-document">servicemanual.pdf</p>                                            
+                            </div>   
+                        </div>                            
+                        <p class="service-headline">Checklist</p>
+                        <hr class="service-line">                    
+                        <div class="service-checklist">
+                            <p class="service-progress">100%</p>                    
+                            <div class="service-checklist-wrap">
+                                <p>Oil check</p>
+                                <p><i class="fas fa-check"></i></p>    
+                            </div>    
+                            <div class="service-checklist-wrap">
+                                <p>Check filter</p>
+                                <p><i class="fas fa-check"></i></p>    
+                            </div>                       
+                            <div class="service-checklist-wrap">
+                                <p>Sharpen knives</p>
+                                <p><i class="fas fa-check"></i></p>    
+                            </div>                        
+                        </div>
+                        <p class="service-headline">Comments</p>
+                        <hr class="service-line">                    
+                        <div class="service-comments">
+                            <p>Service done, machine ran correctly. Oil and filter have been changed, knives have been sharpened.</p>
+                            <div class="service-images">
+                                <img src="../img/repair.jpg" alt="A man doing a servicecheck, and is welding on a machine, with a weldingmask">
+                                <img src="../img/tools.jpg" alt="Tools used to the service check. Chains, gears, and screwdrivers"> 
+                                <img src="../img/machine.jpg" alt="The motor of the machine">    
+                            </div>    
+                        </div>  
+                        <div class="printicon">    
+                            <i class="fas fa-print"></i>    
+                        </div>    
+        </section>
+        <!-- Service report 2 -->                
+        <section id="servicereport-section2" class="tabcontent">            
+            <!-- Tab indhold -->                        
+                        <div class="tab">
+                            <a title="Close window" class="close-button header-history-text tablinks active" onclick="openSection(event, 'history-section1')"><i class="fas fa-arrow-alt-circle-left"></i></a>
+                        </div> 
+                        <p class="service-headline">Service information - Robot ID: #312</p>    
+                        <hr class="service-line">
+                        <div class="service-information">                          
+                            <div class="service-user">                           
+                                <div class="paragraf-wrap"><p class="paragraf-headline">User:</p><p>  sms@trondlog.io</p></div>
+                                <div class="paragraf-wrap"><p class="paragraf-headline">Planned service:</p><p>  11-04-2019</p></div>
+                                <div class="paragraf-wrap"><p class="paragraf-headline">Service date:</p><p>  17-04-2020</p></div>
+                                <div class="paragraf-wrap"><p class="paragraf-headline">Tid:</p><p>  58 minutes</p></div>  
+                                <div class="paragraf-wrap"><p class="paragraf-headline">Service value:</p><p>  430000</p></div>                                              
+                            </div>                                        
+                            <div class="service-description">
+                                <p class="paragraf-headline">Description</p>      
+                                <p>This is a new machine. We must keep an eye on it at all times to prevent any stop in the procution from happening.</p>
+                                <br>
+                                <p class="paragraf-document">usermanual.pdf</p>
+                                <p class="paragraf-document">productmanual.pdf</p>
+                                <p class="paragraf-document">servicemanual.pdf</p>                                            
+                            </div>   
+                        </div>                            
+                        <p class="service-headline">Checklist</p>
+                        <hr class="service-line">                    
+                        <div class="service-checklist">
+                            <p class="service-progress">100%</p>                    
+                            <div class="service-checklist-wrap">
+                                <p>Oil check</p>
+                                <p><i class="fas fa-check"></i></p>    
+                            </div>    
+                            <div class="service-checklist-wrap">
+                                <p>Check filter</p>
+                                <p><i class="fas fa-check"></i></p>    
+                            </div>                       
+                            <div class="service-checklist-wrap">
+                                <p>Sharpen knives</p>
+                                <p><i class="fas fa-check"></i></p>    
+                            </div>                        
+                        </div>
+                        <p class="service-headline">Comments</p>
+                        <hr class="service-line">                    
+                        <div class="service-comments">
+                            <p>Service done, machine ran correctly. Oil and filter have been changed, knives have been sharpened.</p>
+                            <div class="service-images">
+                                <img src="../img/repair.jpg" alt="A man doing a servicecheck, and is welding on a machine, with a weldingmask">
+                                <img src="../img/tools.jpg" alt="Tools used to the service check. Chains, gears, and screwdrivers"> 
+                                <img src="../img/machine.jpg" alt="The motor of the machine">    
+                            </div>    
+                        </div>  
+                        <div class="printicon">    
+                            <i class="fas fa-print"></i>    
+                        </div>    
+        </section>   
+        <!-- Service report 3 -->                
+        <section id="servicereport-section3" class="tabcontent">            
+            <!-- Tab indhold -->                           
+                        <div class="tab">
+                            <a title="Close window" class="close-button header-history-text tablinks active" onclick="openSection(event, 'history-section1')"><i class="fas fa-arrow-alt-circle-left"></i></a>
                         </div>                         
-                    </div>                    
-                    <div>
                         <p class="service-headline">Service information</p>    
                         <hr class="service-line">
                         <div class="service-information">                          
                             <div class="service-user">                           
-                                <p>User:  xxxxxxxxx</p>
-                                <p>Planned service:  15-05-2020</p>
-                                <p>Service date:  15-05-2020</p>
-                                <p>Tid:  33 minutter</p>  
-                            </div>    
+                                <div class="paragraf-wrap"><p class="paragraf-headline">User:</p><p>  hje@trondlog.io</p></div>
+                                <div class="paragraf-wrap"><p class="paragraf-headline">Planned service:</p><p>  11-04-2019</p></div>
+                                <div class="paragraf-wrap"><p class="paragraf-headline">Service date:</p><p>  18-04-2020</p></div>
+                                <div class="paragraf-wrap"><p class="paragraf-headline">Tid:</p><p>  38 minutes</p></div>  
+                                <div class="paragraf-wrap"><p class="paragraf-headline">Service value:</p><p>  415000</p></div>                                              
+                            </div>                                        
                             <div class="service-description">
-                                <p>Description</p>                          
-                                <p>text text text text text text text text text</p>
-                                <p>dokument.pdf</p>
+                                <p class="paragraf-headline">Description</p>      
+                                <p>This is a new machine. We must keep an eye on it at all times to prevent any stop in the procution from happening.</p>
+                                <br>
+                                <p class="paragraf-document">usermanual.pdf</p>
+                                <p class="paragraf-document">productmanual.pdf</p>
+                                <p class="paragraf-document">servicemanual.pdf</p>                </div>   
+                        </div>                            
+                            <p class="service-headline">Checklist</p>
+                            <hr class="service-line">                    
+                            <div class="service-checklist">
+                                <p class="service-progress-66">66%</p>                    
+                                <div class="service-checklist-wrap">
+                                    <p>Oil check</p>
+                                    <p><i class="fas fa-check"></i></p>    
+                                </div>    
+                                <div class="service-checklist-wrap">
+                                    <p>Check filter</p>
+                                    <p><i class="fas fa-check"></i></p>    
+                                </div>                       
+                                <div class="service-checklist-wrap">
+                                    <p>Sharpen knives</p>
+                                    <p></p>    
+                                </div>                        
+                            </div>
+                            <p class="service-headline">Comments</p>
+                            <hr class="service-line">                    
+                            <div class="service-comments">
+                                <p>Servicecheck interrupted due to machine 3 stopped functioning, and had to be repaired. Oil have been changed, knives have been sharpened.</p>
+                                <div class="service-images">
+                                    <img src="../img/repair.jpg" alt="A man doing a servicecheck, and is welding on a machine, with a weldingmask">
+                                    <img src="../img/tools.jpg" alt="Tools used to the service check. Chains, gears, and screwdrivers"> 
+                                    <img src="../img/machine.jpg" alt="The motor of the machine">    
+                                </div>    
+                            </div>  
+                            <div class="printicon">    
+                                <i class="fas fa-print"></i>    
+                            </div>    
+        </section>
+        <!-- Service report 4 -->                
+        <section id="servicereport-section4" class="tabcontent">            
+            <!-- Tab indhold -->                           
+                        <div class="tab">
+                            <a title="Close window" class="close-button header-history-text tablinks active" onclick="openSection(event, 'history-section1')"><i class="fas fa-arrow-alt-circle-left"></i></a>
+                        </div>  
+                        <p class="service-headline">Service information - Robot ID:  #312</p>    
+                        <hr class="service-line">
+                        <div class="service-information">                          
+                            <div class="service-user">                           
+                                <div class="paragraf-wrap"><p class="paragraf-headline">User:</p><p>  hje@trondlog.io</p></div>
+                                <div class="paragraf-wrap"><p class="paragraf-headline">Planned service:</p><p>  11-04-2019</p></div>
+                                <div class="paragraf-wrap"><p class="paragraf-headline">Service date:</p><p>  19-04-2020</p></div>
+                                <div class="paragraf-wrap"><p class="paragraf-headline">Tid:</p><p>  30 minutes</p></div>  
+                                <div class="paragraf-wrap"><p class="paragraf-headline">Service value:</p><p>  395000</p></div>                                              
+                            </div>                                        
+                            <div class="service-description">
+                                <p class="paragraf-headline">Description</p>      
+                                <p>This is a new machine. We must keep an eye on it at all times to prevent any stop in the procution from happening.</p>
+                                <br>
+                                <p class="paragraf-document">usermanual.pdf</p>
+                                <p class="paragraf-document">productmanual.pdf</p>
+                                <p class="paragraf-document">servicemanual.pdf</p>                   </div>   
+                        </div>                            
+                        <p class="service-headline">Checklist</p>
+                        <hr class="service-line">                    
+                        <div class="service-checklist">
+                            <p class="service-progress-33">33%</p>                    
+                            <div class="service-checklist-wrap">
+                                <p>Oil check</p>
+                                <p><i class="fas fa-check"></i></p>    
+                            </div>    
+                            <div class="service-checklist-wrap">
+                                <p>Check filter</p>
+                                <p></p>    
+                            </div>                       
+                            <div class="service-checklist-wrap">
+                                <p>Sharpen knives</p>
+                                <p></p>    
+                            </div>                        
+                        </div>
+                        <p class="service-headline">Comments</p>
+                        <hr class="service-line">                    
+                        <div class="service-comments">
+                            <p>Servicecheck interrupted due to machine 3 stopped functioning, and had to be repaired. Oil have been changed, knives have been sharpened.</p>
+                            <div class="service-images">
+                                <img src="../img/repair.jpg" alt="A man doing a servicecheck, and is welding on a machine, with a weldingmask">
+                                <img src="../img/tools.jpg" alt="Tools used to the service check. Chains, gears, and screwdrivers"> 
+                                <img src="../img/machine.jpg" alt="The motor of the machine">    
+                            </div>    
+                        </div>  
+                        <div class="printicon">    
+                            <i class="fas fa-print"></i>    
+                        </div>    
+                    </section>  
+        <!-- Service report 5 -->
+        <section id="servicereport-section5" class="tabcontent">            
+            <!-- Tab indhold -->                        
+                        <div class="tab">
+                            <a title="Close window" class="close-button header-history-text tablinks active" onclick="openSection(event, 'history-section1')"><i class="fas fa-arrow-alt-circle-left"></i></a>
+                        </div>  
+                        <p class="service-headline">Service information - Robot ID:  #312</p>    
+                        <hr class="service-line">
+                        <div class="service-information">                          
+                            <div class="service-user">                           
+                                <div class="paragraf-wrap"><p class="paragraf-headline">User:</p><p>  mhj@trondlog.io</p></div>
+                                <div class="paragraf-wrap"><p class="paragraf-headline">Planned service:</p><p>  11-04-2019</p></div>
+                                <div class="paragraf-wrap"><p class="paragraf-headline">Service date:</p><p>  21-04-2020</p></div>
+                                <div class="paragraf-wrap"><p class="paragraf-headline">Tid:</p><p>  57 minutes</p></div>  
+                                <div class="paragraf-wrap"><p class="paragraf-headline">Service value:</p><p>  375000</p></div>                                              
+                            </div>                                        
+                            <div class="service-description">
+                                <p class="paragraf-headline">Description</p>      
+                                <p>This is a new machine. We must keep an eye on it at all times to prevent any stop in the procution from happening.</p>
+                                <br>
+                                <p class="paragraf-document">usermanual.pdf</p>
+                                <p class="paragraf-document">productmanual.pdf</p>
+                                <p class="paragraf-document">servicemanual.pdf</p>                
                             </div>   
                         </div>                            
-                    </div>
-                    <p class="service-headline">Checklist</p>
-                    <hr class="service-line">                    
-                    <div class="service-checklist">
-                        <p class="service-progress">100%</p>                    
-                        <div class="service-checklist-wrap">
-                            <p>1v</p>
-                            <p><i class="fas fa-check"></i></p>    
+                        <p class="service-headline">Checklist</p>
+                        <hr class="service-line">                    
+                        <div class="service-checklist">
+                            <p class="service-progress">100%</p>                    
+                            <div class="service-checklist-wrap">
+                                <p>Oil check</p>
+                                <p><i class="fas fa-check"></i></p>    
+                            </div>    
+                            <div class="service-checklist-wrap">
+                                <p>Check filter</p>
+                                <p><i class="fas fa-check"></i></p>    
+                            </div>                       
+                            <div class="service-checklist-wrap">
+                                <p>Sharpen knives</p>
+                                <p><i class="fas fa-check"></i></p>    
+                            </div>                        
+                        </div>
+                        <p class="service-headline">Comments</p>
+                        <hr class="service-line">                    
+                        <div class="service-comments">
+                            <p>Service done, machine ran correctly. Oil and filter have been changed, knives have been sharpened.</p>
+                            <div class="service-images">
+                                <img src="../img/repair.jpg" alt="A man doing a servicecheck, and is welding on a machine, with a weldingmask">
+                                <img src="../img/tools.jpg" alt="Tools used to the service check. Chains, gears, and screwdrivers"> 
+                                <img src="../img/machine.jpg" alt="The motor of the machine">    
+                            </div>    
+                        </div>  
+                        <div class="printicon">    
+                            <i class="fas fa-print"></i>    
                         </div>    
-                        <div class="service-checklist-wrap">
-                            <p>2v</p>
-                            <p><i class="fas fa-check"></i></p>    
-                        </div>                       
-                        <div class="service-checklist-wrap">
-                            <p>3v</p>
-                            <p><i class="fas fa-check"></i></p>    
-                        </div>                        
-                    </div>
-                    <p class="service-headline">Comments</p>
-                    <hr class="service-line">                    
-                    <div class="service-comments">
-                        <p>text text text text text text text text text</p>
-                        <div class="service-images">
-                            <img src="../img/defaultimage.png" alt="">
-                            <img src="../img/defaultimage.png" alt=""> 
-                            <img src="../img/defaultimage.png" alt="">    
-                        </div>    
-                    </div>  
-                <div class="header-history">        
-                    <div class="header-history-text"></div>
-                    <span class="header-history-text close">Print</span>        
-                </div>                    
-            </div>
-        </div>
-        </div>
-        </section>          
+        </section>                     
     </body>
 </html>
