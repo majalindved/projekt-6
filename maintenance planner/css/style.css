@@ -144,7 +144,8 @@ main{
 .functions-index{
     display: flex; 
     justify-content: space-between; 
-    align-items: center; 
+    align-items: center;
+    padding-bottom: var(--padding-r);
 }
 
 /*filterfunktion*/
@@ -238,7 +239,7 @@ th .fa-sort{
 
 td{
     text-align: left; 
-    padding: var(--padding-xs) var(--padding-xxs); 
+    padding: var(--padding-xs) 0; 
     display: flex;
     justify-content: space-between;
 }
@@ -312,10 +313,15 @@ main{
 .fa-circle{
     font-size: var(--fontsize-xxs);
     color: var(--trendlog-green);
+    margin-top: var(--margin-xs); 
 }
 
 tbody tr:nth-child(odd){
     background-color: var(--light-grey);
+}
+
+tbody tr:nth-child(even){
+    border-bottom: 1px solid var(--light-grey);    
 }
 
 .bar-yellow{
@@ -618,6 +624,7 @@ tbody tr:nth-child(odd){
 .pagination-index{
     display: flex; 
     justify-content: flex-end; 
+    margin-top: var(--margin-r); 
 }
 
 .pagination-index a{  
