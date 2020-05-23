@@ -52,37 +52,62 @@
                 <div class="filters-index">
                     <button onclick="filter()" class="dropbtn">Filters<i class="fas fa-sort-amount-down-alt"></i></button>
                     <div id="dropdown-filter" class="dropdown-filter-content">
-                        <select name="Enable" id="Enable">
-                            <option value="all">All</option>
-                            <option value="enabled">Enabled</option>
-                            <option value="disabled">Disabled</option>
-                        </select> 
-                        <select name="Enable" id="Enable">
-                            <option value="all">All</option>
-                            <option value="enabled">Enabled</option>
-                            <option value="disabled">Disabled</option>
-                        </select> 
-                        <select name="Enable" id="Enable">
-                            <option value="all">All</option>
-                            <option value="enabled">Enabled</option>
-                            <option value="disabled">Disabled</option>
-                        </select> 
-                        <select name="Enable" id="Enable">
-                            <option value="all">All</option>
-                            <option value="enabled">Enabled</option>
-                            <option value="disabled">Disabled</option>
-                        </select> 
-                        <select name="Enable" id="Enable">
-                            <option value="all">All</option>
-                            <option value="enabled">Enabled</option>
-                            <option value="disabled">Disabled</option>
-                        </select> 
+                        <div class="filter-container">
+                            <div class="filter-single">
+                                <label for="enable">Enable</label>
+                                <select name="enable" id="enable">
+                                    <option value="enabled">Enabled</option>
+                                    <option value="disabled">Disabled</option>
+                                    <option value="all">All</option>
+                                </select>
+                            </div>
+                            <div class="filter-single">
+                                <label for="type">Type</label>
+                                <select name="type" id="type">
+                                    <option value="preventive">Preventive</option>
+                                    <option value="predictive">Predictive</option>
+                                    <option value="all">All</option>
+                                </select>
+                            </div>
+                            <div class="filter-single">
+                                <label for="group">Group</label>
+                                <select name="group" id="group">
+                                    <option value="group 1">Gruppe 1</option>
+                                    <option value="group 2">Gruppe 2</option>
+                                    <option value="all">All</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="filter-container">
+                            <div class="filter-single">
+                                <label for="nservice">Next service</label>
+                                <select name="nservice" id="nservice">
+                                    <option value="1week">1 week</option>
+                                    <option value="2weeks">2 weeks</option>
+                                    <option value="1month">1 month</option>
+                                    <option value="2months">2 months</option>
+                                    <option value="3months">3 months</option>
+                                    <option value="all">All</option>
+                                </select>
+                            </div>
+                            <div class="filter-single">
+                                <label for="lservice">Last service</label>
+                                <select name="lservice" id="lservice">
+                                    <option value="1week">1 week</option>
+                                    <option value="2weeks">2 weeks</option>
+                                    <option value="1month">1 month</option>
+                                    <option value="2months">2 months</option>
+                                    <option value="3months">3 months</option>
+                                    <option value="all">All</option>
+                                </select>
+                            </div>
+                        </div>
                         <div class="filters-applied">
                             <p class="filters">Filters:</p>
                             <p class="clear-filter">Clear</p>
                         </div>
                         <div class="filter-btns">
-                            <button class="cancel-btn">Cancel</button>
+                            <button class="cancel-btn-filter">Cancel</button>
                             <button class="apply-btn">Apply filters</button>
                         </div>
                     </div>
