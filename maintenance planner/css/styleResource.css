@@ -421,7 +421,7 @@ body {
 
 .tasker-header input,
 .tasker-header button {
-  color: #fff;
+  color: #000;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   font-size: 1.25em;
@@ -439,6 +439,7 @@ body {
   border-left: 1px solid #1eddb8;
 }
 
+
 .tasker-body .task {
   display: block;
   position: relative;
@@ -450,15 +451,28 @@ body {
   border-bottom: none;
 }
 
+.tasker-body .task:hover > button {
+  opacity: 1;
+}
+
+.tasker-body .task.completed {
+  color: #cdcdcd;
+  text-decoration: line-through;
+}
+
 .tasker-body .task input {
   margin-right: 10px;
 }
 
 .tasker-body .task button {
-  color: #000000;
+  color: #cdcdcd;
   margin: 14px;
   position: absolute;
   top: 0;
   right: 0;
   opacity: 0;
+}
+
+.tasker-body .task button:hover {
+  color: #ed1c24;
 }
