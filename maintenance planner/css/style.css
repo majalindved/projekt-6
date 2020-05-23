@@ -189,6 +189,8 @@ main{
     box-shadow: 1px 1px 10px 0px rgba(0,0,0,0.2); 
     min-width: 300px;
     z-index: 1; 
+    height: 200px; 
+    padding: var(--padding-xs) var(--padding-r);
 }
 
 .show-filter-content{
@@ -277,9 +279,7 @@ main{
 } 
 .sorttype i{
         display: block;
-}   
-    
-    
+}       
 }
 
 @media only screen and (max-width: 616px) and (min-width: 354px) {
