@@ -61,7 +61,7 @@ h1{
 
 /*main nav*/
 .header-index{
-    display: flex; 
+    display: none; 
     justify-content: space-between; 
     align-items: center; 
     padding: 30px 5%; 
@@ -630,3 +630,22 @@ tbody tr:nth-child(odd){
     font-weight: 900; 
 }
 
+.quantity-index {
+    display: flex;
+}
+
+.quantity-index i{
+    padding: var(--padding-xxs)
+}
+
+@media only screen and (max-width: 537px)  {
+.paragraf-entry-index {
+    display: none;
+}
+}
+
+@media only screen and (max-width: 836px)  {
+.paragraf-entry-history {
+    display: none;
+}
+}
