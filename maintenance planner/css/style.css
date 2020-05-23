@@ -156,6 +156,10 @@ main{
     margin-right: var(--margin-r);
 }
 
+.inputfield {
+    width: 50px;
+}
+
 .filters-index button{ 
     border: none; 
     padding: 0 var(--padding-xs);
@@ -213,6 +217,15 @@ table{
     width: 100%; 
 }
 
+tr{
+    display: grid; 
+    grid-template-columns: repeat(auto-fit, minmax(110px, 1fr))
+}
+
+.tablewrap th{
+    width: 130px;
+}
+
 th{
     text-align: left;
     padding: 0 0 var(--padding-s) 0; 
@@ -226,6 +239,74 @@ th .fa-sort{
 td{
     text-align: left; 
     padding: var(--padding-xs) var(--padding-xxs); 
+    display: flex;
+    justify-content: space-between;
+}
+
+td .fa-caret-down {
+    font-size: 25px; 
+    display: none;
+    cursor: pointer;    
+}
+
+.td-icons {
+    display: flex;
+    flex-wrap: nowrap;
+}
+
+@media only screen and (max-width: 493px) {
+.sortenable {
+    display: none;
+    }    
+    
+main{
+    margin: var(--margin-xs) var(--margin-xs) 0; 
+}    
+}
+
+@media only screen and (max-width: 616px)  {
+.th-sortnservice{
+    display: none;
+}
+}
+
+@media only screen and (max-width: 353px) {
+.th-sortgroup {
+    display: none;
+} 
+.sorttype i{
+        display: block;
+}   
+    
+    
+}
+
+@media only screen and (max-width: 616px) and (min-width: 354px) {
+.sortgroup i{
+    display: block;    
+}
+}
+
+@media only screen and (max-width: 737px)  {
+.th-sortlservice{
+    display: none;  
+}
+.td-icons {
+    display: flex;
+    flex-wrap: wrap;
+}    
+}
+
+@media only screen and (max-width: 737px) and (min-width: 616px)  {
+.sortnservice i{
+    display: block;
+}
+}
+
+@media only screen and (max-width: 859px) and (min-width: 738px)  {
+.sortlservice i{
+    display: block;
+}
 }
 
 .fa-circle{
