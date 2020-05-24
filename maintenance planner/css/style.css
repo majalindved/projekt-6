@@ -540,6 +540,15 @@ tbody tr:nth-child(even){
     flex-wrap: wrap; 
 }
 
+.create-service-information{
+    display: flex; 
+    flex-wrap: wrap; 
+}
+
+.create-service-information-single{
+    margin-right: var(--margin-xxs); 
+}
+
 .edit-general-information-form-left, .edit-general-information-form-right, .create-general-information-form-left, .create-general-information-form-right{
     display: flex; 
     flex-direction: column;
