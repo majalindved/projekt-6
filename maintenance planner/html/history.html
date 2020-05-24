@@ -6,13 +6,12 @@
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../css/style.css">    
-    <link rel="stylesheet" href="../css/stylehistorik.css">
     <link href="https://fonts.googleapis.com/css2?family=Titillium+Web&display=swap" rel="stylesheet">
     <script src="https://kit.fontawesome.com/9068d98231.js" crossorigin="anonymous"></script>
     <script src="../js/sorttable.js" defer></script>
     <script src="../js/filter.js" defer></script>
     <script src="../js/search.js" defer></script> 
-    <script src="../js/expand.js" defer></script>           
+    <script src="../js/expandhistory.js" defer></script>           
     <script src="../js/modal.js" defer></script>    
     <script src="../js/tab.js" defer></script>   
 
@@ -43,77 +42,138 @@
                             </tr>
                         </thead>  
                             <tbody>
-                                <tr class="tablewrap keyword">                           
+                                <tr id="Toggle1" class="tablewrap keyword">                           
                                     <td class="history-table-content1">
-                                        <p>mhj@trondlog.io</p>
+                                        <div>mhj@trondlog.io</div>
                                         <i class="fas fa-caret-down"></i> 
                                     </td>
                                     <td class="history-table-content2">
-                                        <p>18-05-2020</p>
+                                        <div class="expand1">18-05-2020</div>
                                         <i class="fas fa-caret-down"></i> 
                                     </td>
                                     <td class="history-table-content3 bar100 bar-lightblue">
-                                        <p>100%</p>
+                                        <div class="expand1">100%</div>
                                         <i class="fas fa-caret-down"></i> 
                                     </td>                                               
                                     <td class="history-table-content4">
-                                        <p>475000</p>
+                                        <div class="expand1">475000</div>
                                         <i class="fas fa-caret-down"></i> 
                                     </td>
                                     <td class="history-table-content5">
-                                        <p>58m</p>
+                                        <div class="expand1">58m</div>
                                         <i class="fas fa-caret-down"></i> 
                                     </td>
                                     <td class="first-time">
-                                        <div class="tab">
+                                        <div class="expand1">
                                             <i title="View servicereport" class="fas fa-eye tablinks" onclick="openSection(event, 'servicereport-section1')"></i>
                                         </div> 
                                     </td>                          
                                 </tr>
-                                <tr class="tablewrap keyword">
-                                    <td class="table1">sms@trendlog.io</td>
-                                    <td class="table1">17-04-2020</td>
-                                    <td class="table1 bar100 bar-lightblue">100%</td>
-                                    <td class="table1"><div>430000</div></td>
-                                    <td class="table1">52m</td>
+                                <tr id="Toggle2" class="tablewrap keyword">
+                                    <td class="history-table-content1">
+                                        <div>sms@trendlog.io</div>
+                                        <i class="fas fa-caret-down"></i>
+                                    </td>
+                                    <td class="history-table-content2">
+                                        <div class="expand2">17-04-2020</div>
+                                        <i class="fas fa-caret-down"></i>
+                                    </td>
+                                    <td class="history-table-content3 bar100 bar-lightblue">
+                                        <div class="expand2">100%</div>
+                                        <i class="fas fa-caret-down"></i>
+                                    </td>
+                                    <td class="history-table-content4">
+                                        <div class="expand2">430000</div>
+                                        <i class="fas fa-caret-down"></i>
+                                    </td>
+                                    <td class="history-table-content5">
+                                        <div class="expand2">52m</div>
+                                        <i class="fas fa-caret-down"></i>
+                                    </td>
                                     <td class="first-time">
-                                        <div class="tab">
+                                        <div class="expand2">
                                             <i title="View servicereport" class="fas fa-eye tablinks" onclick="openSection(event, 'servicereport-section2')"></i>
                                         </div> 
                                     </td> 
                                 </tr>
-                                <tr class="tablewrap keyword">
-                                    <td class="table1">hje@trendlog.io</td>
-                                    <td class="table1">18-04-2020</td>
-                                    <td class="table1 bar66 bar-lightblue">66%</td>
-                                    <td class="table1"><div>415000</div></td>
-                                    <td class="table1">38m</td>
+                                <tr id="Toggle3" class="tablewrap keyword">
+                                    <td class="history-table-content1">
+                                        <div>hje@trendlog.io</div>
+                                        <i class="fas fa-caret-down"></i>
+                                    </td>
+                                    <td class="history-table-content2">
+                                        <div class="expand3">18-04-2020</div>
+                                        <i class="fas fa-caret-down"></i>
+                                    </td>
+                                    <td class="history-table-content3 bar66 bar-lightblue">
+                                        <div class="expand3">66%</div>
+                                        <i class="fas fa-caret-down"></i>
+                                    </td>
+                                    <td class="history-table-content4">
+                                        <div class="expand3">415000</div>
+                                        <i class="fas fa-caret-down"></i>
+                                    </td>
+                                    <td class="history-table-content5">
+                                        <div class="expand3">38m</div>
+                                        <i class="fas fa-caret-down"></i>
+                                    </td>
                                     <td class="first-time">
-                                        <div class="tab">
+                                        <div class="expand3">
                                             <i title="View servicereport" class="fas fa-eye tablinks" onclick="openSection(event, 'servicereport-section3')"></i>
                                         </div>                                             
                                     </td>
                                 </tr>
-                                <tr class="tablewrap keyword">
-                                    <td class="table1">hje@trendlog.io</td>
-                                    <td class="table1">19-04-2020</td>
-                                    <td class="table1 bar33 bar-lightblue">33%</td>
-                                    <td class="table1"><div>395000</div></td>
-                                    <td class="table1">30m</td>
+                                <tr id="Toggle4" class="tablewrap keyword">
+                                    <td class="history-table-content1">
+                                        <div>hje@trendlog.io</div>
+                                        <i class="fas fa-caret-down"></i>
+                                    </td>
+                                    <td class="history-table-content2">
+                                        <div class="expand4">19-04-2020</div>
+                                        <i class="fas fa-caret-down"></i>
+                                    </td>
+                                    <td class="history-table-content3 bar33 bar-lightblue">
+                                        <div class="expand4">33%</div>
+                                        <i class="fas fa-caret-down"></i>
+                                    </td>
+                                    <td class="history-table-content4">
+                                        <div class="expand4">395000</div>
+                                        <i class="fas fa-caret-down"></i>
+                                    </td>
+                                    <td class="history-table-content5">
+                                        <div class="expand4">30m</div>
+                                        <i class="fas fa-caret-down"></i>
+                                    </td>
                                     <td class="first-time">
-                                        <div class="tab">
+                                        <div class="expand4">
                                             <i title="View servicereport" class="fas fa-eye tablinks" onclick="openSection(event, 'servicereport-section4')"></i>
                                         </div>                                             
                                     </td>
                                 </tr>
-                                <tr class="tablewrap keyword">
-                                    <td class="table1">mhj@trendlog.io</td>
-                                    <td class="table1">21-04-2020</td>
-                                    <td class="table1 bar100 bar-lightblue">100%</td>
-                                    <td class="table1"><div>375000</div></td>
-                                    <td class="table1">57m</td>
+                                <tr id="Toggle5" class="tablewrap keyword">
+                                              
+                                    <td class="history-table-content1">
+                                        <div>mhj@trendlog.io</div>
+                                        <i class="fas fa-caret-down"></i>
+                                    </td>
+                                    <td class="history-table-content2">
+                                        <div class="expand5">21-04-2020</div>
+                                        <i class="fas fa-caret-down"></i>
+                                    </td>
+                                    <td class="history-table-content3 bar100 bar-lightblue">
+                                        <div class="expand5">100%</div>
+                                        <i class="fas fa-caret-down"></i>
+                                    </td>
+                                    <td class="history-table-content4">
+                                        <div class="expand5">375000</div>              
+                                        <i class="fas fa-caret-down"></i>
+                                    </td> 
+                                    <td class="history-table-content5">
+                                        <div class="expand5">57m</div>
+                                        <i class="fas fa-caret-down"></i>
+                                    </td>
                                     <td class="first-time">
-                                        <div class="tab">
+                                        <div class="expand5">
                                             <i title="View servicereport" class="fas fa-eye tablinks" onclick="openSection(event, 'servicereport-section5')"></i>
                                         </div>                                             
                                     </td>
@@ -399,7 +459,7 @@
                         </div>  
                         <div class="printicon">    
                             <i class="fas fa-print"></i>    
-                        </div>    
-        </section>                     
+                        </div>
+        </section>                  
     </body>
 </html>
