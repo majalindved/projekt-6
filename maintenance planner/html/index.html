@@ -41,12 +41,76 @@
     <main>
         <div class="heading-index">
             <p class="h1">Resources</p>
-            <button><i class="fas fa-plus"></i></button>
+            <a class="fas fa-plus modal-button" href="#myModalCreate"></a>
+            <div id="myModalCreate" class="modal">
+                <div class="modal-content">
+                    <div class="header-create">
+                        <p class="h1">Create resource</p>
+                        <span class="header-edit-text close">&times;</span>
+                    </div>
+                    <div class="modal-body">
+                        <p class="create-heading heading-line">General information</p>
+                        <div class="general-information-content">
+                            <form class="create-general-information-form">
+                                <div class="create-general-information-form-left">
+                                    <label>Name</label>
+                                    <input type="text">
+                                    <label>Type</label>
+                                    <input type="text">
+                                    <label>Group</label>
+                                    <input type="text">
+                                </div>
+                                <div class="create-general-information-form-right">
+                                    <label>Description</label>
+                                    <input class="general-information-description" type="text">
+                                </div>
+                            </form>
+                        </div>
+                        <p class="create-heading heading-line">Service information</p>
+                        <form class="create-service-information-form">
+                            <div class="create-service-information">
+                                <label>Last service</label>
+                                <input type="text">
+                                <label>Service interval</label>
+                                <input type="text">
+                                <label>Time interval</label>
+                                <input type="text">
+                                <label>Next service</label>
+                                <input type="text">
+                                <label>Notify days</label>
+                                <input type="text">
+                                <label>Notify to email</label>
+                                <input type="text">
+                            </div>
+                        </form>
+                        <p class="create-heading heading-line">Checklist</p>
+                        <div class="add-create">
+                            <input type="search" id="search" onsearch="searchFunction()" placeholder="Write your new to-do ">
+                            <button><i class="fas fa-plus"></i></button>
+                        </div>
+                        <div class="create-checklist">
+                            <ul class="create-checklist-list">
+                                <li>Oil check<i class="fas fa-pen"><i class="fas fa-trash"></i></i></li>
+                                <li>Check filter<i class="fas fa-pen"><i class="fas fa-trash"></i></i></li>
+                                <li>Sharpen knives<i class="fas fa-pen"><i class="fas fa-trash"></i></i></li>
+                            </ul>
+                        </div>
+                        <div class="create-btns">
+                            <button class="cancel-btn">Cancel</button>
+                            <button class="save-btn">Save</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
         <div class="functions-index">
             <div class="quantity-index">
-                <input class="inputfield" placeholder="10">
-                <i class="fas fa-sort-down"></i>
+                <select name="pagenmb" id="pagenmb">
+                    <option>10</option>
+                    <option>20</option>
+                    <option>50</option>
+                    <option>100</option>
+                </select>
                 <p class="paragraf-entry-index">Entries per page</p>                
             </div>
             <div class="filter-and-search">

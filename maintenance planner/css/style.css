@@ -129,12 +129,19 @@ main{
     align-items: center;
 }
 
-.heading-index button{
+.heading-index a{
     width: 40px;
     height: 40px; 
     background-color: var(--trendlog-green);
     cursor: pointer; 
     border: none; 
+}
+
+.fa-plus{
+    color: var(--white); 
+    font-size: var(--fontsize-xl); 
+    padding-left: var(--padding-xs);
+    padding-top: var(--padding-xs);
 }
 
 .heading-index .fa-plus{
@@ -147,6 +154,11 @@ main{
     justify-content: space-between; 
     align-items: center;
     padding-bottom: var(--padding-r);
+}
+
+/*Entries per page*/
+.paragraf-entry-index{
+    margin-left: var(--margin-xs)
 }
 
 /*filterfunktion*/
@@ -414,7 +426,6 @@ main{
 }
 }
 
-
 .fa-circle{
     font-size: var(--fontsize-xxs);
     color: var(--trendlog-green);
@@ -442,7 +453,6 @@ tbody tr:nth-child(even){
     cursor: pointer; 
 }
 
-/*checklist*/
 /* The Modal (background) */
 .modal {
     display: none; /* Hidden by default */
@@ -495,15 +505,15 @@ tbody tr:nth-child(even){
     height: auto;
 }
 
-/*edit + checklist + history*/ 
-.header-checklist, .header-edit, .service-header-history {
+/*create + edit + checklist + history*/ 
+.header-create, .header-checklist, .header-edit, .service-header-history {
     display: flex; 
     justify-content: space-between; 
     padding: var(--padding-l);
     background: var(--white);
 }
 
-.checklist-heading, .edit-heading .service-header-history{
+.create-heading, .checklist-heading, .edit-heading .service-header-history{
     padding: 0 var(--padding-l);
     font-size: var(--fontsize-l);
     font-weight: 900;
@@ -523,52 +533,52 @@ tbody tr:nth-child(even){
     margin-left: 0;    
 }
 
-.edit-general-information-form, .edit-service-information-form{
+.edit-general-information-form, .edit-service-information-form, .create-general-information-form, .create-service-information-form{
     display: flex; 
     flex-direction: row; 
     justify-content: space-between; 
     flex-wrap: wrap; 
 }
 
-.edit-general-information-form-left, .edit-general-information-form-right{
+.edit-general-information-form-left, .edit-general-information-form-right, .create-general-information-form-left, .create-general-information-form-right{
     display: flex; 
     flex-direction: column;
 }
 
-.edit-general-information-form-left{
+.edit-general-information-form-left, .create-general-information-form-left{
     min-width: 300px; 
 }
 
-.edit-general-information-form-right{
+.edit-general-information-form-right, .create-general-information-form-right{
     min-width: 300px; 
 }
 
-.edit-general-information-form-right input{
+.edit-general-information-form-right input, .create-general-information-form-right input{
     height: 170px;
 }
 
-.edit-service-information label{
+.edit-service-information label, .create-service-information label{
     display: block;  
 }
 
-.edit-general-information-form-left input, .edit-general-information-form-right input, .edit-service-information-form input{
+.edit-general-information-form-left input, .edit-general-information-form-right input, .edit-service-information-form input, .create-general-information-form-left input, .create-general-information-form-right input, .create-service-information-form input{
     margin-bottom: var(--margin-s); 
 }
 
-.checklist-service-information, .checklist-checklist, .checklist-comments, .edit-checklist, .add-edit, .edit-general-information-form, .edit-service-information-form, .checklist-comments-textarea{
+.checklist-service-information, .checklist-checklist, .checklist-comments, .edit-checklist, .add-edit, .edit-general-information-form, .edit-service-information-form, .checklist-comments-textarea, .create-checklist, .add-create, .create-general-information-form, .create-service-information-form{
     padding: 0 var(--padding-l);
 }
 
-.add-edit{
+.add-edit, .add-create{
     margin-bottom: var(--margin-xxs); 
 }
 
-.add-edit ::placeholder{
+.add-edit ::placeholder, .add-create ::placeholder{
     font-size: var(--fontsize-xxs); 
     padding: var(--padding-xxs);
 }
 
-.add-edit button{
+.add-edit button, .add-create button{
     width: 30px; 
     height: 30px; 
     background-color: var(--blue); 
@@ -576,7 +586,7 @@ tbody tr:nth-child(even){
     border: none; 
 }
 
-.edit-checklist ul li.checked::after{
+.edit-checklist ul li.checked::after, .create-checklist ul li.checked::after{
     content: ""; 
     position: absolute;
     border: 0 2px 2px 0 solid var(--green);
@@ -597,7 +607,7 @@ tbody tr:nth-child(even){
     margin-right: var(--margin-xl);
 }
 
-.checklist-service-information-description, .checklist-checklist, .edit-checklist, .edit-general-information-form{
+.checklist-service-information-description, .checklist-checklist, .edit-checklist, .edit-general-information-form, .create-checklist, .create-general-information-form{
     margin-bottom: var(--margin-r); 
 }
 
@@ -605,13 +615,13 @@ tbody tr:nth-child(even){
     margin-bottom: var(--margin-r);
 }
 
-.checklist-list, .edit-checklist-list{
+.checklist-list, .edit-checklist-list, .create-checklist-list{
     border: 1px solid var(--dark-grey);
     display: flex; 
     flex-direction: column;
 }
 
-.checklist-list li, .edit-checklist-list li{
+.checklist-list li, .edit-checklist-list li, .create-checklist-list li{
     cursor: pointer; 
     list-style-type: none;
     padding: var(--padding-xs); 
@@ -654,7 +664,7 @@ tbody tr:nth-child(even){
     margin-right: var(--margin-xs); 
 }
 
-.checklist-btns, .edit-btns{
+.checklist-btns, .edit-btns, .create-btns{
     padding: var(--padding-r) var(--padding-l);
     display: flex; 
     justify-content: flex-end;
@@ -730,8 +740,6 @@ tbody tr:nth-child(even){
 .show{
     display: block; 
 }
-
-/*warning message delete*/
 
 /*pagination*/
 .pagination-index{
