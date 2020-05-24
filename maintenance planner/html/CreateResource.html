@@ -33,7 +33,7 @@ window.onclick = function(event) {
 } 
     </script> -->
 </head>
-<body>
+<body onload="tasker.construct();">
 
     <!-- Åben Modal -->    
     <a class="fas fa-plus modal-button" href="#myModal2"></a>
@@ -112,16 +112,27 @@ window.onclick = function(event) {
                     </div>  
                     <div class="container-3">
                         <div class="box5">
-                            <div onload="tasker.construct();">
-                                <div id="tasker" class="tasker">
-                                    <div id="error" class="error">Please enter an item
-                                    </div>
-                                    <div id="tasker-header" class="tasker-header">
-                                        <input type="text" id="input-task" placeholder="Enter an item">
-                                        <button id="add-task-btn"><i class="fa fa-fw fa-plus"></i></button>
-                                    </div>
-                                    <div class="tasker-body">
-                                        <ul id="tasks"></ul>
+                            <script src="tasker.js"></script>
+
+<div id="tasker" class="tasker">
+
+        <div id="error" class="error">Please enter a task</div>
+
+            <div id="tasker-header" class="tasker-header">
+
+    
+                <input type="text" id="input-task" placeholder="Enter a task">
+
+                <button id="add-task-btn"><i class="fa fa-fw fa-plus"></i></button>
+
+            </div>
+
+            <div class="tasker-body">
+
+            <ul id="tasks"></ul>
+            
+            </div>
+        </div> 
                                     </div>
                                 </div>
                             </div>
