@@ -495,14 +495,15 @@ tbody tr:nth-child(even){
     height: auto;
 }
 
-/*edit + checklist*/ 
-.header-checklist, .header-edit {
+/*edit + checklist + history*/ 
+.header-checklist, .header-edit, .service-header-history {
     display: flex; 
     justify-content: space-between; 
     padding: var(--padding-l);
+    background: var(--white);
 }
 
-.checklist-heading, .edit-heading{
+.checklist-heading, .edit-heading .service-header-history{
     padding: 0 var(--padding-l);
     font-size: var(--fontsize-l);
     font-weight: 900;
@@ -510,9 +511,16 @@ tbody tr:nth-child(even){
 
 .heading-line{
     border-bottom: 1px solid var(--dark-grey); 
+    margin-left: var(--fontsize-xxxl);
+    padding: 0;
     width: 250px; 
     color: var(--dark-grey);
     margin-bottom: var(--margin-r); 
+    font-weight: bold;
+}
+
+.history-heading-line{
+    margin-left: 0;    
 }
 
 .edit-general-information-form, .edit-service-information-form{
@@ -949,30 +957,22 @@ tbody tr:nth-child(even){
     color: var(--black);
 }
 
-.service-header-history {
-    display: block; 
-    justify-content: center;  
-    padding: 0 var(--padding-xs);      
-}
 
 .service-user {   
-    min-width: 250px;  
+    width: 45%;  
     padding-bottom: var(--padding-s);
-}
-
-@media only screen and (max-width: 900px)  {
-.service-user {    
-    min-width: 100%;  
-    padding-bottom: var(--padding-s);
-}
 }
 
 .service-description {
-    width: 250px;
+    width: 45%;
 }
     
-@media only screen and (max-width: 1101px)  {
+@media only screen and (max-width: 530px)  {
 .service-description {
+    width: auto;
+
+}
+.service-user { 
     width: auto;
 }
 }
@@ -987,11 +987,11 @@ tbody tr:nth-child(even){
 
 .paragraf-wrap {
     display: flex;
-    justify-content: space-between;
 }
 
 .paragraf-headline {
-    font-weight: 600;
+    font-weight: bold;
+    margin-right: var(--margin-s)
 }
 
 .paragraf-document {
@@ -1002,7 +1002,7 @@ tbody tr:nth-child(even){
 
 @media only screen and (max-width: 1164px) and (min-width: 545px)  {
 /* The Modal (background) */
-.historik-modal-content {
+.modal-content {
     position: relative;
     background-color: var(--white);
     margin: auto;
@@ -1016,7 +1016,7 @@ tbody tr:nth-child(even){
 
 @media only screen and (max-width: 544px) and (min-width: 464px)  {
 /* The Modal (background) */
-.historik-modal-content {
+.modal-content {
     position: relative;
     background-color: var(--white);
     margin: auto;
@@ -1030,7 +1030,7 @@ tbody tr:nth-child(even){
 
 @media only screen and (max-width: 464px)  {
 /* The Modal (background) */
-.historik-modal {
+.modal {
     position: fixed; /* Stay in place */
     z-index: 1; /* Sit on top */
     padding-top: 0vh; /* Location of the box */
@@ -1043,32 +1043,20 @@ tbody tr:nth-child(even){
     background-color: rgba(0,0,0,0.0); /* Black w/ opacity */
 }  
 
-.historik-modal-content {
+.modal-content {
     position: relative;
     background-color: var(--white);
     margin: auto;
     padding: 0;
     border: 1px solid #888;
-    width: 50vw;
+    width: 100%;
     height: auto;
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
 }
 
-.historik-modal-body {
+.modal-body {
     height: auto;    
 }   
-    
-.service-header-history {
-    width: 100%;
-    position: fixed;
-    display: flex; 
-    justify-content: space-around; 
-    padding: 0 var(--padding-s);      
-}   
-.header-history-text {
-    font-size: 20px; 
-    padding-top: 10px
-}    
 }
 
 .service-checklist {
@@ -1116,9 +1104,6 @@ tbody tr:nth-child(even){
     padding: var(--padding-xs);
 }
 
-.service-headline {
-    font-weight: 600;
-}
 .service-comments {
     margin-bottom: var(--margin-s);    
 }
@@ -1135,21 +1120,8 @@ tbody tr:nth-child(even){
     min-width: 130px;  
 }
 
-.service-line {
-    width: 50%;
-    margin-bottom: var(--padding-s);
-    color: var(--dark-gray);
-}
-
 .service-checklist-line {
     border-top: solid 1px;
-}
-
-.service-header-history {   
-    display: flex; 
-    justify-content: space-between; 
-    padding: 0 var(--padding-s);  
-    background-color: var(--white);      
 }
 
 .tabcontent {
@@ -1183,13 +1155,14 @@ iframe {
     width: 100%;
     height: 500px;
     border: none;
-    padding: 0 var(--padding-s);
+    padding: 0 var(--padding-l);
+    background: var(--white);
 }
 
 @media only screen and (max-width: 463px) {
 iframe {
     width: 100%;
-    height: 101vh;
+    height: 100vh;
     border: none;
     padding: 0;
 }
