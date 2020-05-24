@@ -635,6 +635,12 @@ tbody tr:nth-child(even){
     list-style-type: none;
     padding: var(--padding-xs); 
     border-bottom: 1px solid var(--light-grey); 
+    display: flex; 
+    justify-content: space-between; 
+}
+
+.create-checklist-list i{
+    margin: 0 var(--margin-s);
 }
 
 .checklist-checkboxes{
