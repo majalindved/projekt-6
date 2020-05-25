@@ -540,12 +540,12 @@ tbody tr:nth-child(even){
     flex-wrap: wrap; 
 }
 
-.create-service-information{
+.create-service-information, edit-service-information{
     display: flex; 
     flex-wrap: wrap; 
 }
 
-.create-service-information-single{
+.create-service-information-single, .edit-service-information-single{
     margin-right: var(--margin-xxs); 
 }
 
@@ -574,7 +574,7 @@ tbody tr:nth-child(even){
     margin-bottom: var(--margin-s); 
 }
 
-.checklist-service-information, .checklist-checklist, .checklist-comments, .edit-checklist, .add-edit, .edit-general-information-form, .edit-service-information-form, .checklist-comments-textarea, .create-checklist, .add-create, .create-general-information-form, .create-service-information-form{
+.checklist-service-information, .checklist-checklist, .checklist-comments, .edit-checklist, .add-edit, .edit-general-information-form, .edit-service-information-form, .checklist-comments-textarea, .create-checklist, .add-create, .create-general-information-form, .create-service-information-form, .tasker{
     padding: 0 var(--padding-l);
 }
 
@@ -624,6 +624,37 @@ tbody tr:nth-child(even){
     margin-bottom: var(--margin-r);
 }
 
+.tasker-header{
+    display: flex;
+}
+
+.tasker{
+    margin-bottom: var(--margin-xs);
+}
+
+.tasker ::placeholder{
+    font-size: var(--fontsize-xs); 
+    padding: var(--padding-xxs);
+}
+
+.tasker button{
+    background-color: var(--blue); 
+    border: none; 
+    height: 30px; 
+    width: 30px; 
+    cursor: pointer; 
+}
+
+.tasker .error {
+  display: none;
+  background: rgba(237, 28, 36, 0.7);
+  color: #fff;
+  padding: 14px;
+  margin-bottom: 10px;
+  border-radius: 5px;
+  text-align: center;
+}
+
 .checklist-list, .edit-checklist-list, .create-checklist-list{
     border: 1px solid var(--dark-grey);
     display: flex; 
@@ -639,7 +670,7 @@ tbody tr:nth-child(even){
     justify-content: space-between; 
 }
 
-.create-checklist-list i{
+.create-checklist-list i, .edit-checklist-list i{
     margin: 0 var(--margin-s);
 }
 
