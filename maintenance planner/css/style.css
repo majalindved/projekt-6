@@ -62,13 +62,47 @@ h1, h2, h3, p{
 
 /*main nav*/
 .header-index{
-    display: none; 
+    display: flex; 
     justify-content: space-between; 
     align-items: center; 
     padding: 30px 5%; 
     background-color: var(--dark-grey); 
     max-height: 30px; 
 }
+
+@media only screen and (max-width: 1553px) {
+.header-index .nav-right {
+    display: none;
+}
+}
+
+@media only screen and (max-width: 1125px) {
+.header-index .nav-links {
+    display: none;
+}
+}
+
+@media only screen and (max-width: 1553px) {
+.burgermenu {
+    color: var(--white);
+    display: block;
+    cursor: pointer;
+}
+
+.burgermenu i {
+    font-size: 30px;
+}
+.burgermenu i {
+    text-decoration: none;
+    color: var(--white); 
+    transition: all 0.3s ease 0s; 
+}
+
+.burgermenu i:hover{
+     color: var(--green); 
+}    
+}
+
 
 .nav-logo{
     cursor: pointer;
