@@ -158,7 +158,15 @@ main{
 
 /*Entries per page*/
 .paragraf-entry-index{
-    margin-left: var(--margin-xs)
+    margin-left: var(--margin-xs);
+    width: 110px;
+    color: var(--black);
+    height: 31px;
+}
+
+#pagenmb {
+    width: 50px;
+    height: 31px;     
 }
 
 /*filterfunktion*/
@@ -199,9 +207,14 @@ main{
 
 .filters-index button{ 
     border: none; 
-    padding: 0 var(--padding-xs);
     background-color: var(--white); 
     cursor: pointer;
+    height: 31px;    
+}
+
+.filters-index button img{ 
+    padding-left: var(--padding-xxs);
+    height: 16px;    
 }
 
 .filters-index .fa-sort-amount-down-alt{
@@ -313,6 +326,10 @@ table{
 tr{
     display: grid; 
     grid-template-columns: repeat(auto-fit, minmax(110px, 1fr))
+}
+
+.tabcontent tr {
+    grid-column-gap: 10px;
 }
 
 .tablewrap th{
@@ -475,7 +492,7 @@ tbody tr:nth-child(even){
     position: relative;
     background-color: var(--white);
     margin: auto;
-    padding: 0;
+    padding: var(--padding-xl);
     border: 1px solid #888;
     width: 50vw;
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
@@ -503,7 +520,6 @@ tbody tr:nth-child(even){
 .header-create, .header-checklist, .header-edit, .service-header-history {
     display: flex; 
     justify-content: space-between; 
-    padding: var(--padding-l);
     background: var(--white);
 }
 
@@ -672,7 +688,6 @@ tbody tr:nth-child(even){
     border: 1px solid var(--dark-grey); 
     padding: var(--padding-xxs);
     height: 200px;
-    margin: 0 var(--margin-l);
 }
 
 .checklist-comments-textarea{
@@ -695,7 +710,7 @@ tbody tr:nth-child(even){
 }
 
 .checklist-btns, .edit-btns, .create-btns{
-    padding: var(--padding-r) var(--padding-l);
+    padding: var(--padding-r) 0;
     display: flex; 
     justify-content: flex-end;
     align-items: center; 
@@ -792,10 +807,6 @@ tbody tr:nth-child(even){
     display: flex;
 }
 
-.quantity-index i{
-    padding: var(--padding-xxs)
-}
-
 @media only screen and (max-width: 537px)  {
 .paragraf-entry-index {
     display: none;
@@ -808,13 +819,13 @@ tbody tr:nth-child(even){
 }
 }
 
-@media only screen and (max-width: 553px) {
+@media only screen and (max-width: 593px) {
 .sorttime{
     display: none;
   }  
 }
 
-@media only screen and (max-width: 463px)  {
+@media only screen and (max-width: 473px)  {
 .sortservice{
     display: none;
   }  
@@ -843,38 +854,38 @@ tbody tr:nth-child(even){
 }
 
 
-@media only screen and (max-width: 333px) {
+@media only screen and (max-width: 353px) {
 .sortprogress{
     display: none;
   }     
 }
 
-@media only screen and (max-width: 663px) and (min-width: 554px)  {
+@media only screen and (max-width: 713px) and (min-width: 594px)  {
 .history-table-content5 i{
     display: block;
   }   
 }    
 
-@media only screen and (max-width: 553px) and (min-width: 464px)  {
+@media only screen and (max-width: 593px) and (min-width: 474px)  {
 .history-table-content4 i{
     display: block;
   }    
 }
 
-@media only screen and (max-width: 463px) and (min-width: 364px)  {
+@media only screen and (max-width: 473px) and (min-width: 354px)  {
 .history-table-content3 i{
     display: block;
   }      
 }
 
-@media only screen and (max-width: 363px) {
+@media only screen and (max-width: 353px) {
 .history-table-content2 i{
     display: block;
   }      
 }
 
 /*expand start*/
-@media only screen and (max-width: 663px) {
+@media only screen and (max-width: 713px) {
 .first-time {
     padding: 0;                
 }    
@@ -884,7 +895,7 @@ tbody tr:nth-child(even){
 }
 }
 
-@media only screen and (max-width: 553px) {
+@media only screen and (max-width: 593px) {
 .history-table-content5 {
     padding: 0;                
 }  
@@ -894,7 +905,7 @@ tbody tr:nth-child(even){
 }
 }
     
-@media only screen and (max-width: 463px) {
+@media only screen and (max-width: 473px) {
 .history-table-content4 {
     padding: 0;                
 }      
@@ -904,7 +915,7 @@ tbody tr:nth-child(even){
 }    
 }
     
-@media only screen and (max-width: 363px) {
+@media only screen and (max-width: 353px) {
 .history-table-content3 {
     padding: 0;                
 }      
@@ -986,6 +997,9 @@ tbody tr:nth-child(even){
 }    
 .sorttype i {
     display: block;
+} 
+.th-sortgroup {
+    display: none;
 }    
 }
 
@@ -1044,7 +1058,7 @@ tbody tr:nth-child(even){
     position: relative;
     background-color: var(--white);
     margin: auto;
-    padding: 0;
+    padding: var(--padding-l);
     border: 1px solid #888;
     min-width: 540px;
     height: auto;
@@ -1058,7 +1072,7 @@ tbody tr:nth-child(even){
     position: relative;
     background-color: var(--white);
     margin: auto;
-    padding: 0;
+    padding: var(--padding-r);
     border: 1px solid #888;
     min-width: 464px;
     height: auto;
@@ -1085,16 +1099,12 @@ tbody tr:nth-child(even){
     position: relative;
     background-color: var(--white);
     margin: auto;
-    padding: 0;
+    padding: var(--padding-s);
     border: 1px solid #888;
     width: 100%;
     height: auto;
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
-}
-
-.modal-body {
-    height: auto;    
-}   
+}  
 }
 
 .service-checklist {
@@ -1193,7 +1203,6 @@ iframe {
     width: 100%;
     height: 500px;
     border: none;
-    padding: 0 var(--padding-l);
     background: var(--white);
 }
 
@@ -1206,8 +1215,7 @@ iframe {
 }
     
 .tabcontent {
-    padding: 0 var(--padding-s);
-    padding-top: px;    
+    padding: 0; 
     height: auto;
     min-height: 100vh;
     background: white;
@@ -1253,7 +1261,7 @@ iframe {
     min-width: 250px;
     margin-left: var(--margin-s);    
 }
-@media only screen and (max-width: 1224px) {
+@media only screen and (max-width: 1384px) {
 .rowline-description {
     width: 100%; 
     min-width: 0px;
@@ -1266,11 +1274,12 @@ iframe {
     height: 132px;
 }
 
-.rowline input, select{
+.rowline input, select, textarea {
     width: 100%;
     padding: 0;
     margin: 0;
     height: auto;
+    border: 1px solid var(--black);
 }
 
 .row error {
@@ -1281,12 +1290,24 @@ iframe {
     width: 100%;
 }
 
+.rowline-checklist input {
+    height: 100%;
+    border: none;
+}
+
 .tasker {
-    width: 100%;
+    width: 100%;    
+}
+
+.tasker .error {
+    display: none;   
 }
 
 .tasker-header {
     width: 250px;
+    border: 1px solid var(--black);  
+    height: 30px;
+    margin-bottom: var(--padding-s);
 }
 
 .tasker input {
@@ -1329,32 +1350,6 @@ iframe {
   color: #ed1c24;
 }
 
-.action-buttons {
-    width: 100%;
-    display: flex;
-    justify-content: flex-end;
-}
-
-.resource-button {
-    font-size: 20px;
-    font-weight: bold;
-    color: var(--black);
-    width: 100px;
-    height: 40px;   
-}
-
-.close-button {
-    background-color: rgba(0,0,0,0.0);
-    border: none;
-}
-
-.save-button {
-    background-color: var(--green);
-    cursor: pointer;
-    border: none;
-    color: var(--white)
-}
-
 #add-task-btn, #add-task-btn1 {
     color: var(--white); 
     font-size: var(--fontsize-r); 
@@ -1364,10 +1359,6 @@ iframe {
     padding-left: 0;
     padding-top: var(--padding-xxxs);
     height:28px;
-}
-
-.resource-content-form {
-    padding: var(--padding-l);
 }
 
 .error {
