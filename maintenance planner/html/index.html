@@ -13,9 +13,12 @@
     <script src="../js/search.js" defer></script>
     <script src="../js/modal.js" defer></script>
     <script src="../js/dropdown.js" defer></script>
-    <script src="../js/expandindex.js" defer></script>    
+    <script src="../js/expandindex.js" defer></script>
+    <script src="../js/validatorfields.js" defer></script>  
+    <script src="../js/validatorfieldsedit.js" defer></script>      
+    <script src="../js/tasker.js" defer></script>
 </head>
-<body>
+<body onload="tasker.construct();">
     <header class="header-index">
         <a href="index.html"><img class="nav-logo" src="../img/trendlog-io-white-thin.png" alt="Trendlog logo"></a>
         <nav>
@@ -40,80 +43,150 @@
     </header>
     <main>
         <div class="heading-index">
-            <p class="h1">Resources</p>
-            <a class="fas fa-plus modal-button" href="#myModalCreate"></a>
-            <div id="myModalCreate" class="modal">
+            <p class="h1">Resources</p>   
+            <a class="fas fa-plus modal-button" href="#CreateNew"></a>
+            <div id="CreateNew" class="modal">
                 <div class="modal-content">
-                    <div class="header-create">
-                        <p class="h1">Create resource</p>
-                        <span class="header-edit-text close">&times;</span>
-                    </div>
                     <div class="modal-body">
-                        <p class="create-heading heading-line">General information</p>
-                        <div class="general-information-content">
-                            <form class="create-general-information-form">
-                                <div class="create-general-information-form-left">
-                                    <label>Name</label>
-                                    <input type="text">
-                                    <label>Type</label>
-                                    <input type="text">
+                        <div class="header-create">
+                            <p class="h1">Create resource</p>
+                            <span class="header-edit-text close">&times;</span>
+                         </div>                
+                        <form class="resource-content-form" name="contactForm" onsubmit="return validateForm()" href="#myModal2" method="post">
+                            <p class="edit-heading heading-line">General information</p>        
+                            <div class="edit-service-information-form">
+                                <div class="rowwrapper">            
+                                <div class="row">
+                                    <div class="rowline">
+                                        <label>Name</label>
+                                        <input type="text" name="name">
+                                        <div class="error" id="nameErr"></div>
+                                    </div>    
+                                </div>
+                                <div class="row">
+                                    <div class="rowline">                
+                                        <label>Type</label>
+                                        <select name="type">
+                                            <option>Select</option>            
+                                            <option>Predictive</option>
+                                            <option>Preventive</option>
+                                        </select>
+                                        <div class="error" id="typeErr"></div>
+                                    </div>
+                                </div> 
+                                <div class="row">
+                                    <div class="rowline">                
                                     <label>Group</label>
-                                    <input type="text">
-                                </div>
-                                <div class="create-general-information-form-right">
-                                    <label>Description</label>
-                                    <input class="general-information-description" type="text">
-                                </div>
-                            </form>
-                        </div>
-                        <p class="create-heading heading-line">Service information</p>
-                        <form class="create-service-information-form">
-                            <div class="create-service-information">
-                                <div class="create-service-information-single">
-                                    <label>Last service</label>
-                                    <input type="text">
-                                </div>
-                                <div class="create-service-information-single">
-                                    <label>Service interval</label>
-                                    <input type="text">
-                                </div>
-                                <div class="create-service-information-single">
-                                    <label>Time interval</label>
-                                    <input type="text">
-                                </div>
-                                <div class="create-service-information-single">
-                                    <label>Next service</label>
-                                    <input type="text">
-                                </div>
-                                <div class="create-service-information-single">
-                                    <label>Notify days</label>
-                                    <input type="text">
-                                </div>
-                                <div class="create-service-information-single">
-                                    <label>Notify to email</label>
-                                    <input type="text">
-                                </div>
+                                    <select name="group">
+                                        <option>Select</option>
+                                        <option>Robot</option>
+                                        <option>Vehicle</option>
+                                        <option>Production</option>
+                                    </select>
+                                    <div class="error" id="groupErr"></div>                    
+                                    </div>
+                                </div>    
+                                </div>    
+                                <div class="rowline-description">                 
+                                    <p>Description</p>
+                                    <textarea type="text" name="description"></textarea>
+                                </div>  
                             </div>
+                            <div class="edit-service-information-form">        
+                                <p class="edit-heading heading-line">Service information</p>
+                                <div class="row">
+                                    <div class="rowline">                 
+                                        <label>Select source</label>
+                                        <input type="text" name="selectsource">
+                                        <div class="error" id="selectsourceErr"></div> 
+                                    </div>   
+                                </div>    
+                                <div class="row">
+                                    <div class="rowline">                 
+                                        <label>Time range</label>
+                                        <input type="text" name="timerange">
+                                        <div class="error" id="timerangeErr"></div>
+                                    </div>
+                                </div>  
+                                <div class="row">
+                                    <div class="rowline">                  
+                                        <label>Next service</label>
+                                        <input type="name" name="nextservice">
+                                        <div class="error" id="nextserviceErr"></div>
+                                    </div>    
+                                </div>     
+                                <div class="row">
+                                    <div class="rowline">                  
+                                        <label>Start value</label>
+                                        <input type="text" name="startvalue">
+                                        <div class="error" id="startvalueErr"></div>
+                                    </div>    
+                                </div>     
+                                <div class="row">
+                                    <div class="rowline">                  
+                                        <label>Internal value</label>
+                                        <input type="text" name="internalvalue">
+                                        <div class="error" id="internalvalueErr"></div>
+                                    </div>
+                                </div>     
+                                <div class="row">
+                                    <div class="rowline">      
+                                        <label>Max interval</label>
+                                        <input type="text" name="maxinterval">
+                                        <div class="error" id="maxintervalErr"></div>
+                                    </div>
+                                </div>     
+                                <div class="row">
+                                    <div class="rowline">                  
+                                        <label>Next value</label>
+                                        <input type="name" name="nextvalue">
+                                        <div class="error" id="nextvalueErr"></div>
+                                    </div>    
+                                </div>      
+                                <div class="row">
+                                    <div class="rowline">  
+                                        <label>Notify days</label>
+                                        <input type="name" name="notifydays">
+                                        <div class="error" id="notifydaysErr"></div>
+                                    </div>
+                                </div>  
+                                <div class="row">
+                                    <div class="rowline">  
+                                        <label>Notify to email</label>
+                                        <input type="text" name="notifytoemail">
+                                        <div class="error" id="notifytoemailErr"></div>
+                                    </div>    
+                                </div> 
+                            </div>
+                            <div class="edit-service-information-form">        
+                                <p class="edit-heading heading-line">Checklist</p>
+                                <div class="row">
+                                    <div class="rowline-checklist">  
+                                        <div class="container-3">
+                                            <div class="box5">
+                                                <div id="tasker" class="tasker">
+                                                    <div id="error" class="error">Please enter a task</div>
+                                                    <div id="tasker-header" class="tasker-header">
+                                                    <input type="text" id="input-task" placeholder="Enter a task">
+                                                    <button class="fa fa-fw fa-plus" id="add-task-btn"></button>
+                                                    </div>
+                                                    <div class="tasker-body">
+                                                        <ul id="tasks"></ul>    
+                                                    </div>
+                                                </div> 
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>     
+                                <div class="action-buttons">
+                                    <button class="resource-button close close-button">Cancel</button>
+                                    <input class="resource-button save-button" type="submit" value="Save">
+                                </div>
+                            </div>    
                         </form>
-                        <p class="create-heading heading-line">Checklist</p>
-                        <div class="add-create">
-                            <input type="search" id="search" onsearch="searchFunction()" placeholder="Write your new to-do ">
-                            <button><i class="fas fa-plus"></i></button>
-                        </div>
-                        <div class="create-checklist">
-                            <ul class="create-checklist-list">
-                                <li>Oil check<i class="fas fa-pen"><i class="fas fa-trash"></i></i></li>
-                                <li>Check filter<i class="fas fa-pen"><i class="fas fa-trash"></i></i></li>
-                                <li>Sharpen knives<i class="fas fa-pen"><i class="fas fa-trash"></i></i></li>
-                            </ul>
-                        </div>
-                        <div class="create-btns">
-                            <button class="cancel-btn">Cancel</button>
-                            <button class="save-btn">Save</button>
-                        </div>
                     </div>
                 </div>
-            </div>
+            </div>           
         </div>
         <div class="functions-index">
             <div class="quantity-index">
@@ -220,63 +293,149 @@
                             <div class="expand1">
                                 <a class="fas fa-pen modal-button" href="#myModalEdit"></a>
                             </div>                                
-                                <div id="myModalEdit" class="modal">
-                                    <div class="modal-content">
-                                        <div class="header-edit">
+                            <div id="myModalEdit" class="modal">
+                                <div class="modal-content">
+                                    <div class="modal-body">
+                                        <div class="header-create">
                                             <p class="h1">Edit resource</p>
                                             <span class="header-edit-text close">&times;</span>
-                                        </div>
-                                        <div class="modal-body">
-                                            <p class="edit-heading heading-line">General information</p>
-                                            <div class="general-information-content">
-                                                <form class="edit-general-information-form">
-                                                    <div class="edit-general-information-form-left">
-                                                        <label>Name</label>
-                                                        <input type="text">
-                                                        <label>Type</label>
-                                                        <input type="text">
-                                                        <label>Group</label>
-                                                        <input type="text">
-                                                    </div>
-                                                    <div class="edit-general-information-form-right">
-                                                        <label>Description</label>
-                                                        <input class="general-information-description" type="text">
-                                                    </div>
-                                                </form>
-                                            </div>
-                                            <p class="edit-heading heading-line">Service information</p>
-                                            <form class="edit-service-information-form">
-                                                <div class="edit-service-information">
-                                                    <label>Last service</label>
-                                                    <input type="text">
-                                                    <label>Service interval</label>
-                                                    <input type="text">
-                                                    <label>Time interval</label>
-                                                    <input type="text">
-                                                    <label>Next service</label>
-                                                    <input type="text">
-                                                    <label>Notify days</label>
-                                                    <input type="text">
-                                                    <label>Notify to email</label>
-                                                    <input type="text">
+                                        </div>                
+                                        <form class="resource-content-form" name="contactForm1" onsubmit="return validateForm1()" href="index.html" method="post">
+                                                <p class="edit-heading heading-line">General information</p>        
+                                                <div class="edit-service-information-form">
+                                                    <div class="rowwrapper">            
+                                                        <div class="row">
+                                                            <div class="rowline">
+                                                                <label>Name</label>
+                                                                <input type="text" name="name1">
+                                                                <div class="error" id="name1Err"></div>
+                                                            </div>    
+                                                        </div>
+                                                        <div class="row">
+                                                            <div class="rowline">                
+                                                                <label>Type</label>
+                                                                <select name="type1">
+                                                                    <option>Select</option>            
+                                                                    <option>Predictive</option>
+                                                                    <option>Preventive</option>
+                                                                </select>
+                                                                <div class="error" id="type1Err"></div>
+                                                            </div>
+                                                        </div> 
+                                                        <div class="row">
+                                                            <div class="rowline">                
+                                                                <label>Group</label>
+                                                                <select name="group1">
+                                                                    <option>Select</option>
+                                                                    <option>Robot</option>
+                                                                    <option>Vehicle</option>
+                                                                    <option>Production</option>
+                                                                </select>
+                                                                <div class="error" id="group1Err"></div>    
+                                                            </div>
+                                                        </div>    
+                                                    </div>    
+                                                    <div class="rowline-description">                 
+                                                        <p>Description</p>
+                                                        <textarea type="text" name="description"></textarea>
+                                                    </div>  
                                                 </div>
+                                                <div class="edit-service-information-form">        
+                                                    <p class="edit-heading heading-line">Service information</p>
+                                                    <div class="row">
+                                                        <div class="rowline">                 
+                                                            <label>Select source</label>
+                                                            <input type="text" name="selectsource1">
+                                                            <div class="error" id="selectsource1Err"></div> 
+                                                        </div>   
+                                                    </div>    
+                                                    <div class="row">
+                                                        <div class="rowline">                 
+                                                            <label>Time range</label>
+                                                            <input type="text" name="timerange1">
+                                                            <div class="error" id="timerange1Err"></div>
+                                                        </div>
+                                                    </div>  
+                                                    <div class="row">
+                                                        <div class="rowline">                  
+                                                            <label>Next service</label>
+                                                            <input type="name" name="nextservice1">
+                                                            <div class="error" id="nextservice1Err"></div>
+                                                        </div>    
+                                                    </div>     
+                                                    <div class="row">
+                                                        <div class="rowline">                  
+                                                            <label>Start value</label>
+                                                            <input type="text" name="startvalue1">
+                                                            <div class="error" id="startvalue1Err"></div>
+                                                        </div>    
+                                                    </div>     
+                                                    <div class="row">
+                                                        <div class="rowline">                  
+                                                            <label>Internal value</label>
+                                                            <input type="text" name="internalvalue1">
+                                                            <div class="error" id="internalvalue1Err"></div>
+                                                        </div>
+                                                    </div>     
+                                                    <div class="row">
+                                                        <div class="rowline">      
+                                                            <label>Max interval</label>
+                                                            <input type="text" name="maxinterval1">
+                                                            <div class="error" id="maxinterval1Err"></div>
+                                                        </div>
+                                                    </div>     
+                                                    <div class="row">
+                                                        <div class="rowline">                  
+                                                            <label>Next value</label>
+                                                            <input type="name" name="nextvalue1">
+                                                            <div class="error" id="nextvalue1Err"></div>
+                                                        </div>    
+                                                    </div>      
+                                                    <div class="row">
+                                                        <div class="rowline">  
+                                                            <label>Notify days</label>
+                                                            <input type="name" name="notifydays1">
+                                                            <div class="error" id="notifydays1Err"></div>
+                                                        </div>
+                                                    </div>  
+                                                    <div class="row">
+                                                        <div class="rowline">  
+                                                            <label>Notify to email</label>
+                                                            <input type="text" name="notifytoemail1">
+                                                            <div class="error" id="notifytoemail1Err"></div>
+                                                        </div>    
+                                                    </div> 
+                                                </div>
+                                                <div class="edit-service-information-form">        
+                                                    <p class="edit-heading heading-line">Checklist</p>
+                                                    <div class="row">
+                                                        <div class="rowline-checklist">  
+                                                            <div class="container-3">
+                                                                <div class="box5">
+                                                                    <div id="tasker1" class="tasker">
+                                                                        <div id="error1" class="error">Please enter a task</div>
+                                                                        <div id="tasker-header1" class="tasker-header">
+                                                                            <input type="text" id="input-task1" placeholder="Enter a task">
+                                                                            <button class="fa fa-fw fa-plus" id="add-task-btn1"></button>
+                                                                        </div>
+                                                                        <div class="edit-checklist">
+                                                                            <ul class="edit-checklist-list">
+                                                                                <li>Oil check<i class="fas fa-pen"><i class="fas fa-trash"></i></i></li>
+                                                                                <li>Check filter<i class="fas fa-pen"><i class="fas fa-trash"></i></i></li>
+                                                                                <li>Sharpen knives<i class="fas fa-pen"><i class="fas fa-trash"></i></i></li>
+                                                                            </ul>
+                                                                        </div>
+                                                                    </div> 
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>     
+                                                    <div class="action-buttons">
+                                                        <button class="resource-button close close-button">Cancel</button>
+                                                        <input class="resource-button save-button" type="submit" value="Save">
+                                                    </div>
+                                                </div>    
                                             </form>
-                                            <p class="edit-heading heading-line">Checklist</p>
-                                            <div class="add-edit">
-                                                <input type="search" id="search" onsearch="searchFunction()" placeholder="Write your new to-do ">
-                                                <button><i class="fas fa-plus"></i></button>
-                                            </div>
-                                            <div class="edit-checklist">
-                                                <ul class="edit-checklist-list">
-                                                    <li>Oil check<i class="fas fa-pen"><i class="fas fa-trash"></i></i></li>
-                                                    <li>Check filter<i class="fas fa-pen"><i class="fas fa-trash"></i></i></li>
-                                                    <li>Sharpen knives<i class="fas fa-pen"><i class="fas fa-trash"></i></i></li>
-                                                </ul>
-                                            </div>
-                                            <div class="edit-btns">
-                                                <button class="cancel-btn">Cancel</button>
-                                                <button class="save-btn">Save</button>
-                                            </div>
                                         </div>
                                     </div>
                                 </div>
@@ -340,7 +499,7 @@
                                         <div class="historik-modal modal-body">
                                             <div class="service-header-history">        
                                                 <p class="h1 header-history-text">History - Robot ID: #312</p>
-                                                <span title="Close window" class="close-button close">&times</span>        
+                                                <span title="Close window" class="close-button close">&times</span>   
                                             </div>                      
                                             <iframe src="../html/history.html"></iframe>                    
                                         </div>
