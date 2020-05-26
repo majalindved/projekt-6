@@ -13,10 +13,10 @@
     <script src="../js/search.js" defer></script>
     <script src="../js/modal.js" defer></script>
     <script src="../js/dropdown.js" defer></script>
-    <script src="../js/expandindex.js" defer></script>
+    <script src="../js/expandindex.js" defer></script>    
     <script src="../js/validatorfields.js" defer></script>  
     <script src="../js/validatorfieldsedit.js" defer></script>      
-    <script src="../js/tasker.js" defer></script>
+    <script src="../js/tasker.js" defer></script>      
 </head>
 <body onload="tasker.construct();">
     <header class="header-index">
@@ -43,150 +43,155 @@
     </header>
     <main>
         <div class="heading-index">
-            <p class="h1">Resources</p>   
-            <a class="fas fa-plus modal-button" href="#CreateNew"></a>
-            <div id="CreateNew" class="modal">
-                <div class="modal-content">
-                    <div class="modal-body">
-                        <div class="header-create">
-                            <p class="h1">Create resource</p>
-                            <span class="header-edit-text close">&times;</span>
-                         </div>                
-                        <form class="resource-content-form" name="contactForm" onsubmit="return validateForm()" href="#myModal2" method="post">
-                            <p class="edit-heading heading-line">General information</p>        
-                            <div class="edit-service-information-form">
-                                <div class="rowwrapper">            
-                                <div class="row">
-                                    <div class="rowline">
-                                        <label>Name</label>
-                                        <input type="text" name="name">
-                                        <div class="error" id="nameErr"></div>
-                                    </div>    
-                                </div>
-                                <div class="row">
-                                    <div class="rowline">                
-                                        <label>Type</label>
-                                        <select name="type">
-                                            <option>Select</option>            
-                                            <option>Predictive</option>
-                                            <option>Preventive</option>
-                                        </select>
-                                        <div class="error" id="typeErr"></div>
-                                    </div>
-                                </div> 
-                                <div class="row">
-                                    <div class="rowline">                
-                                    <label>Group</label>
-                                    <select name="group">
-                                        <option>Select</option>
-                                        <option>Robot</option>
-                                        <option>Vehicle</option>
-                                        <option>Production</option>
-                                    </select>
-                                    <div class="error" id="groupErr"></div>                    
-                                    </div>
-                                </div>    
-                                </div>    
-                                <div class="rowline-description">                 
-                                    <p>Description</p>
-                                    <textarea type="text" name="description"></textarea>
-                                </div>  
-                            </div>
-                            <div class="edit-service-information-form">        
-                                <p class="edit-heading heading-line">Service information</p>
-                                <div class="row">
-                                    <div class="rowline">                 
-                                        <label>Select source</label>
-                                        <input type="text" name="selectsource">
-                                        <div class="error" id="selectsourceErr"></div> 
-                                    </div>   
-                                </div>    
-                                <div class="row">
-                                    <div class="rowline">                 
-                                        <label>Time range</label>
-                                        <input type="text" name="timerange">
-                                        <div class="error" id="timerangeErr"></div>
-                                    </div>
-                                </div>  
-                                <div class="row">
-                                    <div class="rowline">                  
-                                        <label>Next service</label>
-                                        <input type="name" name="nextservice">
-                                        <div class="error" id="nextserviceErr"></div>
-                                    </div>    
-                                </div>     
-                                <div class="row">
-                                    <div class="rowline">                  
-                                        <label>Start value</label>
-                                        <input type="text" name="startvalue">
-                                        <div class="error" id="startvalueErr"></div>
-                                    </div>    
-                                </div>     
-                                <div class="row">
-                                    <div class="rowline">                  
-                                        <label>Internal value</label>
-                                        <input type="text" name="internalvalue">
-                                        <div class="error" id="internalvalueErr"></div>
-                                    </div>
-                                </div>     
-                                <div class="row">
-                                    <div class="rowline">      
-                                        <label>Max interval</label>
-                                        <input type="text" name="maxinterval">
-                                        <div class="error" id="maxintervalErr"></div>
-                                    </div>
-                                </div>     
-                                <div class="row">
-                                    <div class="rowline">                  
-                                        <label>Next value</label>
-                                        <input type="name" name="nextvalue">
-                                        <div class="error" id="nextvalueErr"></div>
-                                    </div>    
-                                </div>      
-                                <div class="row">
-                                    <div class="rowline">  
-                                        <label>Notify days</label>
-                                        <input type="name" name="notifydays">
-                                        <div class="error" id="notifydaysErr"></div>
-                                    </div>
-                                </div>  
-                                <div class="row">
-                                    <div class="rowline">  
-                                        <label>Notify to email</label>
-                                        <input type="text" name="notifytoemail">
-                                        <div class="error" id="notifytoemailErr"></div>
-                                    </div>    
-                                </div> 
-                            </div>
-                            <div class="edit-service-information-form">        
-                                <p class="edit-heading heading-line">Checklist</p>
-                                <div class="row">
-                                    <div class="rowline-checklist">  
-                                        <div class="container-3">
-                                            <div class="box5">
-                                                <div id="tasker" class="tasker">
-                                                    <div id="error" class="error">Please enter a task</div>
-                                                    <div id="tasker-header" class="tasker-header">
-                                                    <input type="text" id="input-task" placeholder="Enter a task">
-                                                    <button class="fa fa-fw fa-plus" id="add-task-btn"></button>
-                                                    </div>
-                                                    <div class="tasker-body">
-                                                        <ul id="tasks"></ul>    
-                                                    </div>
-                                                </div> 
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>     
-                                <div class="action-buttons">
-                                    <button class="resource-button close close-button">Cancel</button>
-                                    <input class="resource-button save-button" type="submit" value="Save">
-                                </div>
+            <p class="h1">Resources</p>
+    <!-- Åben Modal -->    
+    <a class="fas fa-plus modal-button" href="#CreateNew"></a>
+
+    <!-- Modalen -->
+    <div id="CreateNew" class="modal">
+
+         <!-- Modal indhold -->
+        <div class="modal-content">
+            <div class="modal-body">
+                <div class="header-create">
+                    <p class="h1">Create resource</p>
+                    <span class="header-edit-text close">&times;</span>
+                 </div>                
+                <form class="resource-content-form" name="contactForm" onsubmit="return validateForm()" href="#myModal2" method="post">
+                    <p class="edit-heading heading-line">General information</p>        
+                    <div class="edit-service-information-form">
+                        <div class="rowwrapper">            
+                        <div class="row">
+                            <div class="rowline">
+                                <label>Name</label>
+                                <input type="text" name="name">
+                                <div class="error" id="nameErr"></div>
                             </div>    
-                        </form>
+                        </div>
+                        <div class="row">
+                            <div class="rowline">                
+                                <label>Type</label>
+                                <select name="type">
+                                    <option>Select</option>            
+                                    <option>Predictive</option>
+                                    <option>Preventive</option>
+                                </select>
+                                <div class="error" id="typeErr"></div>
+                            </div>
+                        </div> 
+                        <div class="row">
+                            <div class="rowline">                
+                            <label>Group</label>
+                            <select name="group">
+                                <option>Select</option>
+                                <option>Robot</option>
+                                <option>Vehicle</option>
+                                <option>Production</option>
+                            </select>
+                            <div class="error" id="groupErr"></div>                    
+                            </div>
+                        </div>    
+                        </div>    
+                        <div class="rowline-description">                 
+                            <p>Description</p>
+                            <textarea type="text" name="description"></textarea>
+                        </div>  
                     </div>
-                </div>
-            </div>           
+                    <div class="edit-service-information-form">        
+                        <p class="edit-heading heading-line">Service information</p>
+                        <div class="row">
+                            <div class="rowline">                 
+                                <label>Select source</label>
+                                <input type="text" name="selectsource">
+                                <div class="error" id="selectsourceErr"></div> 
+                            </div>   
+                        </div>    
+                        <div class="row">
+                            <div class="rowline">                 
+                                <label>Time range</label>
+                                <input type="text" name="timerange">
+                                <div class="error" id="timerangeErr"></div>
+                            </div>
+                        </div>  
+                        <div class="row">
+                            <div class="rowline">                  
+                                <label>Next service</label>
+                                <input type="name" name="nextservice">
+                                <div class="error" id="nextserviceErr"></div>
+                            </div>    
+                        </div>     
+                        <div class="row">
+                            <div class="rowline">                  
+                                <label>Start value</label>
+                                <input type="text" name="startvalue">
+                                <div class="error" id="startvalueErr"></div>
+                            </div>    
+                        </div>     
+                        <div class="row">
+                            <div class="rowline">                  
+                                <label>Internal value</label>
+                                <input type="text" name="internalvalue">
+                                <div class="error" id="internalvalueErr"></div>
+                            </div>
+                        </div>     
+                        <div class="row">
+                            <div class="rowline">      
+                                <label>Max interval</label>
+                                <input type="text" name="maxinterval">
+                                <div class="error" id="maxintervalErr"></div>
+                            </div>
+                        </div>     
+                        <div class="row">
+                            <div class="rowline">                  
+                                <label>Next value</label>
+                                <input type="name" name="nextvalue">
+                                <div class="error" id="nextvalueErr"></div>
+                            </div>    
+                        </div>      
+                        <div class="row">
+                            <div class="rowline">  
+                                <label>Notify days</label>
+                                <input type="name" name="notifydays">
+                                <div class="error" id="notifydaysErr"></div>
+                            </div>
+                        </div>  
+                        <div class="row">
+                            <div class="rowline">  
+                                <label>Notify to email</label>
+                                <input type="text" name="notifytoemail">
+                                <div class="error" id="notifytoemailErr"></div>
+                            </div>    
+                        </div> 
+                    </div>
+                    <div class="edit-service-information-form">        
+                        <p class="edit-heading heading-line">Checklist</p>
+                        <div class="row">
+                            <div class="rowline-checklist">  
+                                <div class="container-3">
+                                    <div class="box5">
+                                        <div id="tasker" class="tasker">
+                                            <div id="error" class="error">Please enter a task</div>
+                                            <div id="tasker-header" class="tasker-header">
+                                            <input type="text" id="input-task" placeholder="Enter a task">
+                                            <button class="fa fa-fw fa-plus" id="add-task-btn"></button>
+                                            </div>
+                                            <div class="tasker-body">
+                                                <ul id="tasks"></ul>    
+                                            </div>
+                                        </div> 
+                                    </div>
+                                </div>
+                            </div>
+                        </div>     
+                        <div class="action-buttons">
+                            <button class="resource-button close close-button">Cancel</button>
+                            <input class="resource-button save-button" type="submit" value="Save">
+                        </div>
+                    </div>    
+                </form>
+            </div>
+        </div>
+    </div>           
         </div>
         <div class="functions-index">
             <div class="quantity-index">
@@ -293,47 +298,47 @@
                             <div class="expand1">
                                 <a class="fas fa-pen modal-button" href="#myModalEdit"></a>
                             </div>                                
-                            <div id="myModalEdit" class="modal">
-                                <div class="modal-content">
-                                    <div class="modal-body">
-                                        <div class="header-create">
-                                            <p class="h1">Edit resource</p>
-                                            <span class="header-edit-text close">&times;</span>
-                                        </div>                
-                                        <form class="resource-content-form" name="contactForm1" onsubmit="return validateForm1()" href="index.html" method="post">
+                                <div id="myModalEdit" class="modal">
+                                    <div class="modal-content">
+                                        <div class="modal-body">
+                                            <div class="header-create">
+                                                <p class="h1">Edit resource</p>
+                                                <span class="header-edit-text close">&times;</span>
+                                             </div>                
+                                            <form class="resource-content-form" name="contactForm1" onsubmit="return validateForm1()" href="index.html" method="post">
                                                 <p class="edit-heading heading-line">General information</p>        
                                                 <div class="edit-service-information-form">
                                                     <div class="rowwrapper">            
-                                                        <div class="row">
-                                                            <div class="rowline">
-                                                                <label>Name</label>
-                                                                <input type="text" name="name1">
-                                                                <div class="error" id="name1Err"></div>
-                                                            </div>    
-                                                        </div>
-                                                        <div class="row">
-                                                            <div class="rowline">                
-                                                                <label>Type</label>
-                                                                <select name="type1">
-                                                                    <option>Select</option>            
-                                                                    <option>Predictive</option>
-                                                                    <option>Preventive</option>
-                                                                </select>
-                                                                <div class="error" id="type1Err"></div>
-                                                            </div>
-                                                        </div> 
-                                                        <div class="row">
-                                                            <div class="rowline">                
-                                                                <label>Group</label>
-                                                                <select name="group1">
-                                                                    <option>Select</option>
-                                                                    <option>Robot</option>
-                                                                    <option>Vehicle</option>
-                                                                    <option>Production</option>
-                                                                </select>
-                                                                <div class="error" id="group1Err"></div>    
-                                                            </div>
+                                                    <div class="row">
+                                                        <div class="rowline">
+                                                            <label>Name</label>
+                                                            <input type="text" name="name1">
+                                                            <div class="error" id="name1Err"></div>
                                                         </div>    
+                                                    </div>
+                                                    <div class="row">
+                                                        <div class="rowline">                
+                                                            <label>Type</label>
+                                                            <select name="type1">
+                                                                <option>Select</option>            
+                                                                <option>Predictive</option>
+                                                                <option>Preventive</option>
+                                                            </select>
+                                                            <div class="error" id="type1Err"></div>
+                                                        </div>
+                                                    </div> 
+                                                    <div class="row">
+                                                        <div class="rowline">                
+                                                        <label>Group</label>
+                                                        <select name="group1">
+                                                            <option>Select</option>
+                                                            <option>Robot</option>
+                                                            <option>Vehicle</option>
+                                                            <option>Production</option>
+                                                        </select>
+                                                        <div class="error" id="group1Err"></div>                    
+                                                        </div>
+                                                    </div>    
                                                     </div>    
                                                     <div class="rowline-description">                 
                                                         <p>Description</p>
@@ -348,6 +353,7 @@
                                                             <input type="text" name="selectsource1">
                                                             <div class="error" id="selectsource1Err"></div> 
                                                         </div>   
+
                                                     </div>    
                                                     <div class="row">
                                                         <div class="rowline">                 
@@ -415,8 +421,8 @@
                                                                     <div id="tasker1" class="tasker">
                                                                         <div id="error1" class="error">Please enter a task</div>
                                                                         <div id="tasker-header1" class="tasker-header">
-                                                                            <input type="text" id="input-task1" placeholder="Enter a task">
-                                                                            <button class="fa fa-fw fa-plus" id="add-task-btn1"></button>
+                                                                        <input type="text" id="input-task1" placeholder="Enter a task">
+                                                                        <button class="fa fa-fw fa-plus" id="add-task-btn1"></button>
                                                                         </div>
                                                                         <div class="edit-checklist">
                                                                             <ul class="edit-checklist-list">
@@ -499,7 +505,7 @@
                                         <div class="historik-modal modal-body">
                                             <div class="service-header-history">        
                                                 <p class="h1 header-history-text">History - Robot ID: #312</p>
-                                                <span title="Close window" class="close-button close">&times</span>   
+                                                <span title="Close window" class="close-button close">&times</span>        
                                             </div>                      
                                             <iframe src="../html/history.html"></iframe>                    
                                         </div>
@@ -525,7 +531,7 @@
                         <td class="sortlservice"><div class="expand2">17-04-2020</div><i id="Toggle1.1" class="fas fa-caret-down"></i></td>
                         <td class="td-icons">
                             <div class="expand2">
-                                <a class="fas fa-pen"></a>
+                                <a class="fas fa-pen modal-button" href="#myModalEdit"></a>
                             </div>
                             <div class="expand2">                            
                                 <a class="fas fa-list modal-button" href="#myModalChecklist"></a>
@@ -615,7 +621,7 @@
                         <td class="sortlservice"><div class="expand3">18-04-2020</div><i id="Toggle1.2" class="fas fa-caret-down"></i></td>
                         <td class="td-icons">
                             <div class="expand3">
-                            <a class="fas fa-pen"></a>
+                                <a class="fas fa-pen modal-button" href="#myModalEdit"></a>
                             </div>
                             <div class="expand3">                                
                             <a class="fas fa-list modal-button" href="#myModalChecklist"></a>
@@ -705,7 +711,7 @@
                         <td class="sortlservice"><div class="expand4">23-04-2020</div><i id="Toggle1.3" class="fas fa-caret-down"></i></td>
                         <td class="td-icons">
                             <div class="expand4">
-                                <a class="fas fa-pen"></a>
+                                <a class="fas fa-pen modal-button" href="#myModalEdit"></a>
                             </div>
                             <div class="expand4">
                                 <a class="fas fa-list modal-button" href="#myModalChecklist"></a>
@@ -795,7 +801,7 @@
                         <td class="sortlservice"><div class="expand5">30-04-2020</div><i id="Toggle1.4" class="fas fa-caret-down"></i></td>
                         <td class="td-icons">
                             <div class="expand5">
-                                <a class="fas fa-pen"></a>
+                                <a class="fas fa-pen modal-button" href="#myModalEdit"></a>
                             </div>    
                             <div class="expand5">    
                                 <a class="fas fa-list modal-button" href="#myModalChecklist"></a>
@@ -885,7 +891,7 @@
                         <td class="sortlservice"><div class="expand6">16-05-2020</div><i id="Toggle1.5" class="fas fa-caret-down"></i></td>
                         <td class="td-icons">
                             <div class="expand6">
-                                <a class="fas fa-pen"></a>
+                                <a class="fas fa-pen modal-button" href="#myModalEdit"></a>
                             </div>    
                             <div class="expand6">    
                                 <a class="fas fa-list modal-button" href="#myModalChecklist"></a>
@@ -975,7 +981,7 @@
                         <td class="sortlservice"><div class="expand7">17-05-2020</div><i id="Toggle1.6" class="fas fa-caret-down"></i></td>
                         <td class="td-icons">
                             <div class="expand7">
-                                <a class="fas fa-pen"></a>
+                                <a class="fas fa-pen modal-button" href="#myModalEdit"></a>
                             </div>    
                             <div class="expand7">    
                                 <a class="fas fa-list modal-button" href="#myModalChecklist"></a>
@@ -1065,7 +1071,7 @@
                         <td class="sortlservice"><div class="expand8">16-04-2020</div><i id="Toggle1.7" class="fas fa-caret-down"></i></td>
                         <td class="td-icons">
                             <div class="expand8">
-                                <a class="fas fa-pen"></a>
+                                <a class="fas fa-pen modal-button" href="#myModalEdit"></a>
                             </div>    
                             <div class="expand8">    
                                 <a class="fas fa-list modal-button" href="#myModalChecklist"></a>
@@ -1155,7 +1161,7 @@
                         <td class="sortlservice"><div class="expand9">18-04-2020</div><i id="Toggle1.8" class="fas fa-caret-down"></i></td>
                         <td class="td-icons">
                             <div class="expand9">
-                                <a class="fas fa-pen"></a>
+                                <a class="fas fa-pen modal-button" href="#myModalEdit"></a>
                             </div>
                             <div class="expand9">    
                                 <a class="fas fa-list modal-button" href="#myModalChecklist"></a>
@@ -1245,7 +1251,7 @@
                         <td class="sortlservice"><div class="expand10">23-04-2020</div><i id="Toggle1.9" class="fas fa-caret-down"></i></td>
                         <td class="td-icons">
                             <div class="expand10">
-                                <a class="fas fa-pen"></a>
+                                <a class="fas fa-pen modal-button" href="#myModalEdit"></a>
                             </div>    
                             <div class="expand10">
                                 <a class="fas fa-list modal-button" href="#myModalChecklist"></a>
@@ -1327,7 +1333,7 @@
                         </td>
                     </tr>
                 </tbody>
-            </table>
+            </table>    
         </div>
         <div class="pagination-index">
             <a href="#">Previous</a>

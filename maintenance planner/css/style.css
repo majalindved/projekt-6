@@ -92,7 +92,7 @@ h1, h2, h3, p{
 }
 
 .nav-links li a:hover{
-     color: var(--trendlog-green); 
+     color: var(--green); 
 }
 
 .nav-right input{
@@ -220,7 +220,7 @@ main{
 
 .dropdown-filter-content{
     display: none; 
-    position: absolute;  
+    position: absolute; 
     background-color: var(--white); 
     box-shadow: 1px 1px 10px 0px rgba(0,0,0,0.2); 
     z-index: 1; 
@@ -479,13 +479,13 @@ tbody tr:nth-child(even){
     color: var(--dark-grey);
     padding: 0;
     margin: 0;
-    font-size: var(--fontsize-xxl); 
+    font-size: var(--fontsize-xxl);
     cursor: pointer;
 }
 
 .modal-button {
     text-decoration: none;
-    color: var(--dark-grey);
+    color: var(--black);
 }
 
 .modal-body {
@@ -508,7 +508,6 @@ tbody tr:nth-child(even){
 
 .heading-line{
     border-bottom: 1px solid var(--dark-grey); 
-    margin-left: var(--fontsize-xxxl);
     padding: 0;
     width: 250px; 
     color: var(--dark-grey);
@@ -529,6 +528,7 @@ tbody tr:nth-child(even){
     flex-direction: row; 
     justify-content: space-between; 
     flex-wrap: wrap; 
+ 
 }
 
 .create-service-information, edit-service-information{
@@ -817,7 +817,8 @@ tbody tr:nth-child(even){
   }  
 }
 
-/*Hitorik*/
+ /*Hitorik css*/
+
 .bar-lightblue{ 
     height: auto; 
     background-color: var(--lightblue);
@@ -990,6 +991,7 @@ tbody tr:nth-child(even){
     text-decoration: none;
     color: var(--black);
 }
+
 
 .service-user {   
     width: 45%;  
@@ -1210,8 +1212,8 @@ iframe {
 .quantity-index {
     display: none;
 }  
-    
-    /*pagination*/
+
+/*pagination*/
 .pagination-index{
     display: flex; 
     justify-content: center;  
