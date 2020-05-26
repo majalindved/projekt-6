@@ -10,8 +10,15 @@
     <script src="https://kit.fontawesome.com/9068d98231.js" crossorigin="anonymous"></script>
     <script src="../js/sorttable.js" defer></script>
     <script src="../js/filter.js" defer></script>
+    <script src="../js/search.js" defer></script>
+    <script src="../js/modal.js" defer></script>
+    <script src="../js/dropdown.js" defer></script>
+    <script src="../js/expandindex.js" defer></script>    
+    <script src="../js/validatorfields.js" defer></script>  
+    <script src="../js/validatorfielsedit.js" defer></script>      
+    <script src="../js/tasker.js" defer></script>      
 </head>
-<body>
+<body onload="tasker.construct();">
     <header class="header-index">
         <a href="index.html"><img class="nav-logo" src="../img/trendlog-io-white-thin.png" alt="Trendlog logo"></a>
         <nav>
@@ -33,128 +40,1301 @@
             <li class="user-name">Navn</li>
             <li class="user-profile"><a><i class="fas fa-user"></i></a></li>
         </ul>
+        <p class="burgermenu"><i class="fas fa-bars"></i></p>
     </header>
     <main>
         <div class="heading-index">
-            <h1>Resources</h1>
-            <button><i class="fas fa-plus"></i></button>
+            <p class="h1">Resources</p>
+    <!-- Åben Modal -->    
+    <a class="fas fa-plus modal-button" href="#CreateNew"></a>
+
+    <!-- Modalen -->
+    <div id="CreateNew" class="modal">
+
+         <!-- Modal indhold -->
+        <div class="modal-content">
+            <div class="modal-body">
+                <div class="header-create">
+                    <p class="h1">Create resource</p>
+                    <span class="header-edit-text close">&times;</span>
+                 </div>                
+                <form class="resource-content-form" name="contactForm" onsubmit="return validateForm()" href="#myModal2" method="post">
+                    <p class="edit-heading heading-line">General information</p>        
+                    <div class="edit-service-information-form">
+                        <div class="rowwrapper">            
+                        <div class="row">
+                            <div class="rowline">
+                                <label>Name</label>
+                                <input type="text" name="name">
+                                <div class="error" id="nameErr"></div>
+                            </div>    
+                        </div>
+                        <div class="row">
+                            <div class="rowline">                
+                                <label>Type</label>
+                                <select name="type">
+                                    <option>Select</option>            
+                                    <option>Predictive</option>
+                                    <option>Preventive</option>
+                                </select>
+                                <div class="error" id="typeErr"></div>
+                            </div>
+                        </div> 
+                        <div class="row">
+                            <div class="rowline">                
+                            <label>Group</label>
+                            <select name="group">
+                                <option>Select</option>
+                                <option>Robot</option>
+                                <option>Vehicle</option>
+                                <option>Production</option>
+                            </select>
+                            <div class="error" id="groupErr"></div>                    
+                            </div>
+                        </div>    
+                        </div>    
+                        <div class="rowline-description">                 
+                            <p>Description</p>
+                            <textarea type="text" name="description"></textarea>
+                        </div>  
+                    </div>
+                    <div class="edit-service-information-form">        
+                        <p class="edit-heading heading-line">Service information</p>
+                        <div class="row">
+                            <div class="rowline">                 
+                                <label>Select source</label>
+                                <input type="text" name="selectsource">
+                                <div class="error" id="selectsourceErr"></div> 
+                            </div>   
+                        </div>    
+                        <div class="row">
+                            <div class="rowline">                 
+                                <label>Time range</label>
+                                <input type="text" name="timerange">
+                                <div class="error" id="timerangeErr"></div>
+                            </div>
+                        </div>  
+                        <div class="row">
+                            <div class="rowline">                  
+                                <label>Next service</label>
+                                <input type="name" name="nextservice">
+                                <div class="error" id="nextserviceErr"></div>
+                            </div>    
+                        </div>     
+                        <div class="row">
+                            <div class="rowline">                  
+                                <label>Start value</label>
+                                <input type="text" name="startvalue">
+                                <div class="error" id="startvalueErr"></div>
+                            </div>    
+                        </div>     
+                        <div class="row">
+                            <div class="rowline">                  
+                                <label>Internal value</label>
+                                <input type="text" name="internalvalue">
+                                <div class="error" id="internalvalueErr"></div>
+                            </div>
+                        </div>     
+                        <div class="row">
+                            <div class="rowline">      
+                                <label>Max interval</label>
+                                <input type="text" name="maxinterval">
+                                <div class="error" id="maxintervalErr"></div>
+                            </div>
+                        </div>     
+                        <div class="row">
+                            <div class="rowline">                  
+                                <label>Next value</label>
+                                <input type="name" name="nextvalue">
+                                <div class="error" id="nextvalueErr"></div>
+                            </div>    
+                        </div>      
+                        <div class="row">
+                            <div class="rowline">  
+                                <label>Notify days</label>
+                                <input type="name" name="notifydays">
+                                <div class="error" id="notifydaysErr"></div>
+                            </div>
+                        </div>  
+                        <div class="row">
+                            <div class="rowline">  
+                                <label>Notify to email</label>
+                                <input type="text" name="notifytoemail">
+                                <div class="error" id="notifytoemailErr"></div>
+                            </div>    
+                        </div> 
+                    </div>
+                    <div class="edit-service-information-form">        
+                        <p class="edit-heading heading-line">Checklist</p>
+                        <div class="row">
+                            <div class="rowline-checklist">  
+                                <div class="container-3">
+                                    <div class="box5">
+                                        <div id="tasker" class="tasker">
+                                            <div id="error" class="error">Please enter a task</div>
+                                            <div id="tasker-header" class="tasker-header">
+                                            <input type="text" id="input-task" placeholder="Enter a task">
+                                            <button class="fa fa-fw fa-plus" id="add-task-btn"></button>
+                                            </div>
+                                            <div class="tasker-body">
+                                                <ul id="tasks"></ul>    
+                                            </div>
+                                        </div> 
+                                    </div>
+                                </div>
+                            </div>
+                        </div> 
+                    </div>                          
+                    <div class="checklist-btns">
+                        <button class="close cancel-btn">Cancel</button>
+                        <input class="save-btn" type="submit" value="Save">
+                    </div>    
+                </form>
+            </div>
+        </div>
+    </div>           
         </div>
         <div class="functions-index">
             <div class="quantity-index">
-                <input placeholder="10">
-                <i class="fas fa-sort-down"></i>
+                <select name="pagenmb" id="pagenmb">
+                    <option>10</option>
+                    <option>20</option>
+                    <option>50</option>
+                    <option>100</option>
+                </select>
+                <p class="paragraf-entry-index">Entries per page</p>                
             </div>
             <div class="filter-and-search">
                 <div class="filters-index">
-                    <button onclick="filter()" class="dropbtn">Filters<i class="fas fa-sort-amount-down-alt"></i></button>
+                    <button onclick="filter()" class="dropbtn">Filters <img src="../img/filterimg.png" alt="Filter icon that illustrates the filter functon"> </button>
                     <div id="dropdown-filter" class="dropdown-filter-content">
-                        <p>hhh</p>
-                        <p>hhh</p>
-                        <p>hhh</p>
-                        <p>hhh</p>
+                        <div class="filter-container">
+                            <div class="filter-single">
+                                <label for="enable">Enable</label>
+                                <select name="enable" id="enable">
+                                    <option value="enabled">Enabled</option>
+                                    <option value="disabled">Disabled</option>
+                                    <option value="all">All</option>
+                                </select>
+                            </div>
+                            <div class="filter-single">
+                                <label for="type">Type</label>
+                                <select name="type" id="type">
+                                    <option value="preventive">Preventive</option>
+                                    <option value="predictive">Predictive</option>
+                                    <option value="all">All</option>
+                                </select>
+                            </div>
+                            <div class="filter-single">
+                                <label for="group">Group</label>
+                                <select name="group" id="group">
+                                    <option value="group 1">Gruppe 1</option>
+                                    <option value="group 2">Gruppe 2</option>
+                                    <option value="all">All</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="filter-container">
+                            <div class="filter-single">
+                                <label for="nservice">Next service</label>
+                                <select name="nservice" id="nservice">
+                                    <option value="1week">1 week</option>
+                                    <option value="2weeks">2 weeks</option>
+                                    <option value="1month">1 month</option>
+                                    <option value="2months">2 months</option>
+                                    <option value="3months">3 months</option>
+                                    <option value="all">All</option>
+                                </select>
+                            </div>
+                            <div class="filter-single">
+                                <label for="lservice">Last service</label>
+                                <select name="lservice" id="lservice">
+                                    <option value="1week">1 week</option>
+                                    <option value="2weeks">2 weeks</option>
+                                    <option value="1month">1 month</option>
+                                    <option value="2months">2 months</option>
+                                    <option value="3months">3 months</option>
+                                    <option value="all">All</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="filters-applied">
+                            <p class="filters">Filters:</p>
+                            <p class="clear-filter">Clear</p>
+                        </div>
+                        <div class="filter-btns">
+                            <button class="cancel-btn-filter">Cancel</button>
+                            <button class="apply-btn">Apply filters</button>
+                        </div>
                     </div>
                 </div>
                 <div class="search-index">
-                    <input type="search" id="search" onsearch="searchFunction()" placeholder="Search for name, type, date etc.">
-                    <button><i class="fas fa-search"></i></button>
+                    <input type="search" id="searchbar" onkeyup="searchTable()" placeholder="Search for name, type, group etc.">
+                    <button title="Search button" class="searchbutton"><i class="fas fa-search"></i></button>
                 </div>
             </div>
         </div>
         <div class="table-container">
             <table id="resourcesTable">
                 <thead>
-                    <tr>
-                        <th onclick="sortTable(0)">Enable<i class="fas fa-sort"></i></th>
+                    <tr class="tablewrap">
+                        <th class="sortenable" onclick="sortTable(0)">Enable<i class="fas fa-sort"></i></th>
                         <th onclick="sortTable(1)">Name<i class="fas fa-sort"></i></th>
                         <th onclick="sortTable(2)">Type<i class="fas fa-sort"></i></th>
-                        <th onclick="sortTable(3)">Group<i class="fas fa-sort"></i></th>
-                        <th onclick="sortTable(4)">Next service<i class="fas fa-sort"></i></th>
-                        <th onclick="sortTable(5)">Last service<i class="fas fa-sort"></i></th>
+                        <th class="th-sortgroup" onclick="sortTable(3)">Group<i class="fas fa-sort"></i></th>
+                        <th class="th-sortnservice" onclick="sortTable(4)">Next service<i class="fas fa-sort"></i></th>
+                        <th class="th-sortlservice" onclick="sortTable(5)">Last service<i class="fas fa-sort"></i></th>
+                        <th onclick="sortTable(6)"></th>
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                        <td><i class="fas fa-circle"></i></td>
-                        <td>Robot</td>
-                        <td>Preventive</td>
-                        <td>Machine</td>
-                        <td>In 1 day</td>
-                        <td>16-04-2020</td>
+                    <tr class="tablewrap keyword">
+                        <td class="sortenable"><i class="fas fa-circle"></i></td>
+                        <td><div class="expand10">Robot</div></td>
+                        <td class="sorttype"><div class="expand1">Preventive</div><i id="Toggle4" class="fas fa-caret-down"></i></td>
+                        <td class="sortgroup"><div class="expand1">Robot</div><i id="Toggle3" class="fas fa-caret-down"></i></td>
+                        <td class="sortnservice"><div class="expand1">In 1 day</div><i id="Toggle2" class="fas fa-caret-down"></i></td>
+                        <td class="sortlservice"><div class="expand1">16-04-2020</div><i id="Toggle1" class="fas fa-caret-down"></i></td>
+                        <td class="td-icons">
+                            <div class="expand1">
+                                <a class="fas fa-pen modal-button" href="#myModalEdit"></a>
+                            </div>                                
+                                <div id="myModalEdit" class="modal">
+                                    <div class="modal-content">
+                                        <div class="modal-body">
+                                            <div class="header-create">
+                                                <p class="h1">Edit resource</p>
+                                                <span class="header-edit-text close">&times;</span>
+                                             </div>                
+                                            <form class="resource-content-form" name="contactForm1" onsubmit="return validateForm1()" href="index.html" method="post">
+                                                <p class="edit-heading heading-line">General information</p>        
+                                                <div class="edit-service-information-form">
+                                                    <div class="rowwrapper">            
+                                                    <div class="row">
+                                                        <div class="rowline">
+                                                            <label>Name</label>
+                                                            <input type="text" name="name1">
+                                                            <div class="error" id="name1Err"></div>
+                                                        </div>    
+                                                    </div>
+                                                    <div class="row">
+                                                        <div class="rowline">                
+                                                            <label>Type</label>
+                                                            <select name="type1">
+                                                                <option>Select</option>            
+                                                                <option>Predictive</option>
+                                                                <option>Preventive</option>
+                                                            </select>
+                                                            <div class="error" id="type1Err"></div>
+                                                        </div>
+                                                    </div> 
+                                                    <div class="row">
+                                                        <div class="rowline">                
+                                                        <label>Group</label>
+                                                        <select name="group1">
+                                                            <option>Select</option>
+                                                            <option>Robot</option>
+                                                            <option>Vehicle</option>
+                                                            <option>Production</option>
+                                                        </select>
+                                                        <div class="error" id="group1Err"></div>                    
+                                                        </div>
+                                                    </div>    
+                                                    </div>    
+                                                    <div class="rowline-description">                 
+                                                        <p>Description</p>
+                                                        <textarea type="text" name="description"></textarea>
+                                                    </div>  
+                                                </div>
+                                                <div class="edit-service-information-form">        
+                                                    <p class="edit-heading heading-line">Service information</p>
+                                                    <div class="row">
+                                                        <div class="rowline">                 
+                                                            <label>Select source</label>
+                                                            <input type="text" name="selectsource1">
+                                                            <div class="error" id="selectsource1Err"></div> 
+                                                        </div>   
+
+                                                    </div>    
+                                                    <div class="row">
+                                                        <div class="rowline">                 
+                                                            <label>Time range</label>
+                                                            <input type="text" name="timerange1">
+                                                            <div class="error" id="timerange1Err"></div>
+                                                        </div>
+                                                    </div>  
+                                                    <div class="row">
+                                                        <div class="rowline">                  
+                                                            <label>Next service</label>
+                                                            <input type="name" name="nextservice1">
+                                                            <div class="error" id="nextservice1Err"></div>
+                                                        </div>    
+                                                    </div>     
+                                                    <div class="row">
+                                                        <div class="rowline">                  
+                                                            <label>Start value</label>
+                                                            <input type="text" name="startvalue1">
+                                                            <div class="error" id="startvalue1Err"></div>
+                                                        </div>    
+                                                    </div>     
+                                                    <div class="row">
+                                                        <div class="rowline">                  
+                                                            <label>Internal value</label>
+                                                            <input type="text" name="internalvalue1">
+                                                            <div class="error" id="internalvalue1Err"></div>
+                                                        </div>
+                                                    </div>     
+                                                    <div class="row">
+                                                        <div class="rowline">      
+                                                            <label>Max interval</label>
+                                                            <input type="text" name="maxinterval1">
+                                                            <div class="error" id="maxinterval1Err"></div>
+                                                        </div>
+                                                    </div>     
+                                                    <div class="row">
+                                                        <div class="rowline">                  
+                                                            <label>Next value</label>
+                                                            <input type="name" name="nextvalue1">
+                                                            <div class="error" id="nextvalue1Err"></div>
+                                                        </div>    
+                                                    </div>      
+                                                    <div class="row">
+                                                        <div class="rowline">  
+                                                            <label>Notify days</label>
+                                                            <input type="name" name="notifydays1">
+                                                            <div class="error" id="notifydays1Err"></div>
+                                                        </div>
+                                                    </div>  
+                                                    <div class="row">
+                                                        <div class="rowline">  
+                                                            <label>Notify to email</label>
+                                                            <input type="text" name="notifytoemail1">
+                                                            <div class="error" id="notifytoemail1Err"></div>
+                                                        </div>    
+                                                    </div> 
+                                                </div>
+                                                <div class="edit-service-information-form">        
+                                                    <p class="edit-heading heading-line">Checklist</p>
+                                                    <div class="row">
+                                                        <div class="rowline-checklist">  
+                                                            <div class="container-3">
+                                                                <div class="box5">
+                                                                    <div id="tasker1" class="tasker">
+                                                                        <div id="error1" class="error">Please enter a task</div>
+                                                                        <div id="tasker-header1" class="tasker-header">
+                                                                        <input type="text" id="input-task1" placeholder="Enter a task">
+                                                                        <button class="fa fa-fw fa-plus" id="add-task-btn1"></button>
+                                                                        </div>
+                                                                        <div class="edit-checklist">
+                                                                            <ul class="edit-checklist-list">
+                                                                                <li>Oil check<i class="fas fa-pen"><i class="fas fa-trash"></i></i></li>
+                                                                                <li>Check filter<i class="fas fa-pen"><i class="fas fa-trash"></i></i></li>
+                                                                                <li>Sharpen knives<i class="fas fa-pen"><i class="fas fa-trash"></i></i></li>
+                                                                            </ul>
+                                                                        </div>
+                                                                    </div> 
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>  
+                                                </div>                                                  
+                                                <div class="checklist-btns">
+                                                    <button class="close cancel-btn">Cancel</button>
+                                                      <input class="save-btn" type="submit" value="Save">
+                                                 </div>    
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+                            <div class="expand1">                            
+                                <a class="fas fa-list modal-button" href="#myModalChecklist"></a>
+                            </div>    
+                                <div id="myModalChecklist" class="modal">
+                                    <div class="modal-content">
+                                        <div class="header-checklist">
+                                            <p class="h1">Checklist</p>
+                                            <span class="header-checklist-text close">&times;</span>
+                                        </div>
+                                        <div  class="modal-body">
+                                            <p class="checklist-heading heading-line">Service information</p>
+                                            <div class="checklist-service-information">
+                                                <div class="checklist-service-information-text">
+                                                    <div class="checklist-service-information-text-single">
+                                                        <p><b>User:</b> idb@trendlog.io</p>
+                                                    </div>
+                                                    <div class="checklist-service-information-text-single">
+                                                        <p><b>Planned service:</b> 15-05-2020</p>
+                                                    </div>
+                                                </div>
+                                                <div class="checklist-service-information-description">
+                                                    <div class="checklist-service-information-description-text">
+                                                        <p><b>Description</b> <br>This is a new machine. We must keep an eye on it at all times to prevent any stop in the procution from happening.</p>
+                                                    </div>
+                                                    <div class="checklist-service-information-description-documents">
+                                                        <p class="paragraf-document">Machine-manual.pdf</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <p class="checklist-heading heading-line">Checklist</p>
+                                            <div class="checklist-checklist">
+                                                <ul class="checklist-list">
+                                                    <li>Oil check<input class="checklist-checkboxes" type="checkbox" name="check1"></li>
+                                                    <li>Check filter<input class="checklist-checkboxes" type="checkbox" name="check2"></li>
+                                                    <li>Sharpen knives<input class="checklist-checkboxes" type="checkbox" name="check3"></li>
+                                                </ul>
+                                            </div>
+                                            <p class="checklist-heading heading-line">Comments</p>
+                                            <div class="checklist-comments">
+                                                <input class="checklist-comments-textarea">
+                                                <button class="checklist-comments-pictures"><i class="fas fa-camera"></i>Attach pictures</button>
+                                            </div>
+                                            <div class="checklist-btns">
+                                                <button class="close cancel-btn">Cancel</button>
+                                                <button class="close save-btn">Save</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Åben Historik Modal 1--> 
+                                <div class="expand1"> 
+                                    <a class="fas fa-history modal-button" href="#ModalHistory1"></a>
+                                </div>
+                                <!-- Historik Modal 1 -->
+                                <div id="ModalHistory1" class="historik-modal modal">
+                                  <!-- Modal indhold -->
+                                    <div class="historik-modal-content modal-content">
+                                        <div class="historik-modal modal-body">
+                                            <div class="service-header-history">        
+                                                <p class="h1 header-history-text">History - Robot ID: #312</p>
+                                                <span title="Close window" class="close-button close">&times</span>        
+                                            </div>                      
+                                            <iframe src="../html/history.html"></iframe>                    
+                                        </div>
+                                    </div>         
+                                </div>
+                            <div class="dropdown functions">
+                                <div class="expand1"><button onclick="dropdownFunction()"><i class="fas fa-ellipsis-h dropbtn"></i></button></div>
+                                <div id="myDropdown" class="dropdown-content">
+                                    <a href="#"><i class="fas fa-cog"></i>Add repair log</a>
+                                    <a href="#"><div class="service-flag">Service</div>Toggle service</a>
+                                    <a href="#"><i class="far fa-copy"></i>Copy</a>
+                                    <a href="#"><i class="fas fa-trash"></i>Delete</a>
+                                </div>
+                            </div>
+                        </td>
                     </tr>
-                    <tr>
-                        <td><i class="fas fa-circle"></i></td>
-                        <td>Robot</td>
-                        <td>Preventive</td>
-                        <td>Machine</td>
-                        <td>In 2 days</td>
-                        <td>17-04-2020</td>
+                    <tr class="tablewrap keyword">
+                        <td class="sortenable"><i class="fas fa-circle"></i></td>
+                        <td><div class="expand2">Car</div></td>
+                        <td class="sorttype"><div class="expand2">Preventive</div><i id="Toggle4.1" class="fas fa-caret-down"></i></td>
+                        <td class="sortgroup"><div class="expand2">Vehicle</div><i id="Toggle3.1" class="fas fa-caret-down"></i></td>
+                        <td class="sortnservice"><div class="expand2">In 2 days</div><i id="Toggle2.1" class="fas fa-caret-down"></i></td>
+                        <td class="sortlservice"><div class="expand2">17-04-2020</div><i id="Toggle1.1" class="fas fa-caret-down"></i></td>
+                        <td class="td-icons">
+                            <div class="expand2">
+                                <a class="fas fa-pen modal-button" href="#myModalEdit"></a>
+                            </div>
+                            <div class="expand2">                            
+                                <a class="fas fa-list modal-button" href="#myModalChecklist"></a>
+                            </div>
+                                <div id="myModalChecklist" class="modal">
+                                    <div class="modal-content">
+                                        <div class="header-checklist">
+                                            <p class="h1">Checklist</p>
+                                            <span class="header-checklist-text close">&times;</span>
+                                        </div>
+                                        <div  class="modal-body">
+                                            <p class="checklist-heading heading-line">Service information</p>
+                                            <div class="checklist-service-information">
+                                                <div class="checklist-service-information-text">
+                                                    <div class="checklist-service-information-text-single">
+                                                        <p><b>User:</b> idb@trendlog.io</p>
+                                                    </div>
+                                                    <div class="checklist-service-information-text-single">
+                                                        <p><b>Planned service:</b> 15-05-2020</p>
+                                                    </div>
+                                                </div>
+                                                <div class="checklist-service-information-description">
+                                                    <div class="checklist-service-information-description-text">
+                                                        <p><b>Description</b> <br>This is a new machine. We must keep an eye on it at all times to prevent any stop in the procution from happening.</p>
+                                                    </div>
+                                                    <div class="checklist-service-information-description-documents">
+                                                        <p class="paragraf-document">Machine-manual.pdf</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <p class="checklist-heading heading-line">Checklist</p>
+                                            <div class="checklist-checklist">
+                                                <ul class="checklist-list">
+                                                    <li>Oil check<input class="checklist-checkboxes" type="checkbox" name="check1"></li>
+                                                    <li>Check filter<input class="checklist-checkboxes" type="checkbox" name="check2"></li>
+                                                    <li>Sharpen knives<input class="checklist-checkboxes" type="checkbox" name="check3"></li>
+                                                </ul>
+                                            </div>
+                                            <p class="checklist-heading heading-line">Comments</p>
+                                            <div class="checklist-comments">
+                                                <input class="checklist-comments-textarea">
+                                                <button class="checklist-comments-pictures"><i class="fas fa-camera"></i>Attach pictures</button>
+                                            </div>
+                                            <div class="checklist-btns">
+                                                <button class="close cancel-btn">Cancel</button>
+                                                <button class="close save-btn">Save</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Åben Historik Modal 2-->
+                                <div class="expand2">                             
+                                    <a class="fas fa-history modal-button" href="#ModalHistory2"></a>
+                                </div>
+                                <!-- Historik Modal 2 -->
+                                <div id="ModalHistory2" class="historik-modal modal">
+                                  <!-- Modal indhold -->
+                                    <div class="historik-modal-content modal-content">
+                                        <div class="historik-modal modal-body">
+                                            <div class="service-header-history">        
+                                                <p class="h1 header-history-text">History - Car ID: #556</p>
+                                                <span title="Close window" class="close-button close">&times</span>        
+                                            </div>                      
+                                            <iframe src="../html/history.html"></iframe>                    
+                                        </div>
+                                    </div>         
+                                </div>  
+                            <div class="dropdown functions">
+                            <div class="expand2">                                 
+                                <button onclick="dropdownFunction()"><i class="fas fa-ellipsis-h dropbtn"></i></button>
+                            </div>
+                                <div id="myDropdown" class="dropdown-content">
+                                    <a href="#"><i class="fas fa-cog"></i>Add repair log</a>
+                                    <a href="#"><div class="service-flag">Service</div>Toggle service</a>
+                                    <a href="#"><i class="far fa-copy"></i>Copy</a>
+                                    <a href="#"><i class="fas fa-trash"></i>Delete</a>
+                                </div>
+                            </div>
+                        </td>
                     </tr>
-                    <tr>
-                        <td><i class="fas fa-circle"></i></td>
-                        <td>Robot</td>
-                        <td>Preventive</td>
-                        <td>Machine</td>
-                        <td>In 3 days</td>
-                        <td>18-04-2020</td>
+                    <tr class="tablewrap keyword">
+                        <td class="sortenable"><i class="fas fa-circle"></i></td>
+                        <td><div class="expand3">Robotarm</div></td>
+                        <td class="sorttype"><div class="expand3">Preventive</div><i id="Toggle4.2" class="fas fa-caret-down"></i></td>
+                        <td class="sortgroup"><div class="expand3">Robot</div><i id="Toggle3.2" class="fas fa-caret-down"></i></td>
+                        <td class="sortnservice"><div class="expand3">In 3 days</div><i id="Toggle2.2" class="fas fa-caret-down"></i></td>
+                        <td class="sortlservice"><div class="expand3">18-04-2020</div><i id="Toggle1.2" class="fas fa-caret-down"></i></td>
+                        <td class="td-icons">
+                            <div class="expand3">
+                                <a class="fas fa-pen modal-button" href="#myModalEdit"></a>
+                            </div>
+                            <div class="expand3">                                
+                            <a class="fas fa-list modal-button" href="#myModalChecklist"></a>
+                            </div>    
+                                <div id="myModalChecklist" class="modal">
+                                    <div class="modal-content">
+                                        <div class="header-checklist">
+                                            <p class="h1">Checklist</p>
+                                            <span class="header-checklist-text close">&times;</span>
+                                        </div>
+                                        <div  class="modal-body">
+                                            <p class="checklist-heading heading-line">Service information</p>
+                                            <div class="checklist-service-information">
+                                                <div class="checklist-service-information-text">
+                                                    <div class="checklist-service-information-text-single">
+                                                        <p><b>User:</b> idb@trendlog.io</p>
+                                                    </div>
+                                                    <div class="checklist-service-information-text-single">
+                                                        <p><b>Planned service:</b> 15-05-2020</p>
+                                                    </div>
+                                                </div>
+                                                <div class="checklist-service-information-description">
+                                                    <div class="checklist-service-information-description-text">
+                                                        <p><b>Description</b> <br>This is a new machine. We must keep an eye on it at all times to prevent any stop in the procution from happening.</p>
+                                                    </div>
+                                                    <div class="checklist-service-information-description-documents">
+                                                        <p class="paragraf-document">Machine-manual.pdf</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <p class="checklist-heading heading-line">Checklist</p>
+                                            <div class="checklist-checklist">
+                                                <ul class="checklist-list">
+                                                    <li>Oil check<input class="checklist-checkboxes" type="checkbox" name="check1"></li>
+                                                    <li>Check filter<input class="checklist-checkboxes" type="checkbox" name="check2"></li>
+                                                    <li>Sharpen knives<input class="checklist-checkboxes" type="checkbox" name="check3"></li>
+                                                </ul>
+                                            </div>
+                                            <p class="checklist-heading heading-line">Comments</p>
+                                            <div class="checklist-comments">
+                                                <input class="checklist-comments-textarea">
+                                                <button class="checklist-comments-pictures"><i class="fas fa-camera"></i>Attach pictures</button>
+                                            </div>
+                                            <div class="checklist-btns">
+                                                <button class="close cancel-btn">Cancel</button>
+                                                <button class="close save-btn">Save</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Åben Historik Modal 3-->
+                                <div class="expand3">                              
+                                    <a class="fas fa-history modal-button" href="#ModalHistory3"></a>
+                                </div>    
+                                <!-- Historik Modal 3 -->
+                                <div id="ModalHistory3" class="historik-modal modal">
+                                  <!-- Modal indhold -->
+                                    <div class="historik-modal-content modal-content">
+                                        <div class="historik-modal modal-body">
+                                            <div class="service-header-history">        
+                                                <p class="h1 header-history-text">History - Robotarm ID: #782</p>
+                                                <span title="Close window" class="close-button close">&times</span>        
+                                            </div>                      
+                                            <iframe src="../html/history.html"></iframe>                    
+                                        </div>
+                                    </div>         
+                                </div>
+                            <div class="dropdown functions">
+                                <div class="expand3">     
+                                <button onclick="dropdownFunction()"><i class="fas fa-ellipsis-h dropbtn"></i></button>
+                                </div>
+                                <div id="myDropdown" class="dropdown-content">
+                                    <a href="#"><i class="fas fa-cog"></i>Add repair log</a>
+                                    <a href="#"><div class="service-flag">Service</div>Toggle service</a>
+                                    <a href="#"><i class="far fa-copy"></i>Copy</a>
+                                    <a href="#"><i class="fas fa-trash"></i>Delete</a>
+                                </div>
+                            </div>
+                        </td>
                     </tr>
-                    <tr>
-                        <td><i class="fas fa-circle"></i></td>
-                        <td>Maskine</td>
-                        <td>Preventive</td>
-                        <td>Machine</td>
-                        <td>In 1 day</td>
-                        <td>19-04-2020</td>
+                    <tr class="tablewrap keyword">
+                        <td class="sortenable"><i class="fas fa-circle"></i></td>
+                        <td><div class="expand4">Production machine</div></td>
+                        <td class="sorttype"><div class="expand4">Preventive</div><i id="Toggle4.3" class="fas fa-caret-down"></i></td>
+                        <td class="sortgroup"><div class="expand4">Production</div><i id="Toggle3.3" class="fas fa-caret-down"></i></td>
+                        <td class="sortnservice"><div class="expand4">In a week</div><i id="Toggle2.3" class="fas fa-caret-down"></i></td>
+                        <td class="sortlservice"><div class="expand4">23-04-2020</div><i id="Toggle1.3" class="fas fa-caret-down"></i></td>
+                        <td class="td-icons">
+                            <div class="expand4">
+                                <a class="fas fa-pen modal-button" href="#myModalEdit"></a>
+                            </div>
+                            <div class="expand4">
+                                <a class="fas fa-list modal-button" href="#myModalChecklist"></a>
+                            </div>    
+                                <div id="myModalChecklist" class="modal">
+                                    <div class="modal-content">
+                                        <div class="header-checklist">
+                                            <p class="h1">Checklist</p>
+                                            <span class="header-checklist-text close">&times;</span>
+                                        </div>
+                                        <div  class="modal-body">
+                                            <p class="checklist-heading heading-line">Service information</p>
+                                            <div class="checklist-service-information">
+                                                <div class="checklist-service-information-text">
+                                                    <div class="checklist-service-information-text-single">
+                                                        <p><b>User:</b> idb@trendlog.io</p>
+                                                    </div>
+                                                    <div class="checklist-service-information-text-single">
+                                                        <p><b>Planned service:</b> 15-05-2020</p>
+                                                    </div>
+                                                </div>
+                                                <div class="checklist-service-information-description">
+                                                    <div class="checklist-service-information-description-text">
+                                                        <p><b>Description</b> <br>This is a new machine. We must keep an eye on it at all times to prevent any stop in the procution from happening.</p>
+                                                    </div>
+                                                    <div class="checklist-service-information-description-documents">
+                                                        <p class="paragraf-document">Machine-manual.pdf</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <p class="checklist-heading heading-line">Checklist</p>
+                                            <div class="checklist-checklist">
+                                                <ul class="checklist-list">
+                                                    <li>Oil check<input class="checklist-checkboxes" type="checkbox" name="check1"></li>
+                                                    <li>Check filter<input class="checklist-checkboxes" type="checkbox" name="check2"></li>
+                                                    <li>Sharpen knives<input class="checklist-checkboxes" type="checkbox" name="check3"></li>
+                                                </ul>
+                                            </div>
+                                            <p class="checklist-heading heading-line">Comments</p>
+                                            <div class="checklist-comments">
+                                                <input class="checklist-comments-textarea">
+                                                <button class="checklist-comments-pictures"><i class="fas fa-camera"></i>Attach pictures</button>
+                                            </div>
+                                            <div class="checklist-btns">
+                                                <button class="close cancel-btn">Cancel</button>
+                                                <button class="close save-btn">Save</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Åben Historik Modal 4-->
+                                <div class="expand4">
+                                    <a class="fas fa-history modal-button" href="#ModalHistory4"></a>
+                                </div>
+                                <!-- Historik Modal 4 -->
+                                <div id="ModalHistory4" class="historik-modal modal">
+                                  <!-- Modal indhold -->
+                                    <div class="historik-modal-content modal-content">
+                                        <div class="historik-modal modal-body">
+                                            <div class="service-header-history">        
+                                                <p class="h1 header-history-text">History - Production machine ID: #828</p>
+                                                <span title="Close window" class="close-button close">&times</span>        
+                                            </div>                      
+                                            <iframe src="../html/history.html"></iframe>                    
+                                        </div>
+                                    </div>         
+                                </div>
+                            <div class="dropdown functions">
+                                <div class="expand4">
+                                    <button onclick="dropdownFunction()"><i class="fas fa-ellipsis-h dropbtn"></i></button>
+                                </div>    
+                                <div id="myDropdown" class="dropdown-content">
+                                    <a href="#"><i class="fas fa-cog"></i>Add repair log</a>
+                                    <a href="#"><div class="service-flag">Service</div>Toggle service</a>
+                                    <a href="#"><i class="far fa-copy"></i>Copy</a>
+                                    <a href="#"><i class="fas fa-trash"></i>Delete</a>
+                                </div>
+                            </div>
+                        </td>
                     </tr>
-                    <tr>
-                        <td><i class="fas fa-circle"></i></td>
-                        <td>Bil</td>
-                        <td>Preventive</td>
-                        <td>Car</td>
-                        <td>In 1 day</td>
-                        <td>21-04-2020</td>
+                    <tr class="tablewrap keyword">
+                        <td class="sortenable"><i class="fas fa-circle"></i></td>
+                        <td><div class="expand5">Production machine</div></td>
+                        <td class="sorttype"><div class="expand5">Predictive</div><i id="Toggle4.4" class="fas fa-caret-down"></i></td>
+                        <td class="sortgroup"><div class="expand5">Production</div><i id="Toggle3.4" class="fas fa-caret-down"></i></td>
+                        <td class="sortnservice"><div class="expand5">In 2 weeks</div><i id="Toggle2.4" class="fas fa-caret-down"></i></td>
+                        <td class="sortlservice"><div class="expand5">30-04-2020</div><i id="Toggle1.4" class="fas fa-caret-down"></i></td>
+                        <td class="td-icons">
+                            <div class="expand5">
+                                <a class="fas fa-pen modal-button" href="#myModalEdit"></a>
+                            </div>    
+                            <div class="expand5">    
+                                <a class="fas fa-list modal-button" href="#myModalChecklist"></a>
+                            </div>
+                                <div id="myModalChecklist" class="modal">
+                                    <div class="modal-content">
+                                        <div class="header-checklist">
+                                            <p class="h1">Checklist</p>
+                                            <span class="header-checklist-text close">&times;</span>
+                                        </div>
+                                        <div  class="modal-body">
+                                            <p class="checklist-heading heading-line">Service information</p>
+                                            <div class="checklist-service-information">
+                                                <div class="checklist-service-information-text">
+                                                    <div class="checklist-service-information-text-single">
+                                                        <p><b>User:</b> idb@trendlog.io</p>
+                                                    </div>
+                                                    <div class="checklist-service-information-text-single">
+                                                        <p><b>Planned service:</b> 15-05-2020</p>
+                                                    </div>
+                                                </div>
+                                                <div class="checklist-service-information-description">
+                                                    <div class="checklist-service-information-description-text">
+                                                        <p><b>Description</b> <br>This is a new machine. We must keep an eye on it at all times to prevent any stop in the procution from happening.</p>
+                                                    </div>
+                                                    <div class="checklist-service-information-description-documents">
+                                                        <p class="paragraf-document">Machine-manual.pdf</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <p class="checklist-heading heading-line">Checklist</p>
+                                            <div class="checklist-checklist">
+                                                <ul class="checklist-list">
+                                                    <li>Oil check<input class="checklist-checkboxes" type="checkbox" name="check1"></li>
+                                                    <li>Check filter<input class="checklist-checkboxes" type="checkbox" name="check2"></li>
+                                                    <li>Sharpen knives<input class="checklist-checkboxes" type="checkbox" name="check3"></li>
+                                                </ul>
+                                            </div>
+                                            <p class="checklist-heading heading-line">Comments</p>
+                                            <div class="checklist-comments">
+                                                <input class="checklist-comments-textarea">
+                                                <button class="checklist-comments-pictures"><i class="fas fa-camera"></i>Attach pictures</button>
+                                            </div>
+                                            <div class="checklist-btns">
+                                                <button class="close cancel-btn">Cancel</button>
+                                                <button class="close save-btn">Save</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Åben Historik Modal 5-->
+                                <div class="expand5">
+                                    <a class="fas fa-history modal-button" href="#ModalHistory5"></a>
+                                </div>    
+                                <!-- Historik Modal 5 -->
+                                <div id="ModalHistory5" class="historik-modal modal">     
+                                  <!-- Modal indhold -->
+                                    <div class="historik-modal-content modal-content">
+                                        <div class="historik-modal modal-body">
+                                            <div class="service-header-history">        
+                                                <p class="h1 header-history-text">History - Production machine ID: #929</p>
+                                                <span title="Close window" class="close-button close">&times</span>        
+                                            </div>                      
+                                            <iframe src="../html/history.html"></iframe>                    
+                                        </div>
+                                    </div>         
+                                </div>
+                            <div class="dropdown functions">
+                                <div class="expand5">
+                                    <button onclick="dropdownFunction()"><i class="fas fa-ellipsis-h dropbtn"></i></button>
+                                </div>
+                                <div id="myDropdown" class="dropdown-content">
+                                    <a href="#"><i class="fas fa-cog"></i>Add repair log</a>
+                                    <a href="#"><div class="service-flag">Service</div>Toggle service</a>
+                                    <a href="#"><i class="far fa-copy"></i>Copy</a>
+                                    <a href="#"><i class="fas fa-trash"></i>Delete</a>
+                                </div>
+                            </div>
+                        </td>
                     </tr>
-                    <tr>
-                        <td><i class="fas fa-circle"></i></td>
-                        <td>Kaffemaskine</td>
-                        <td>Preventive</td>
-                        <td>Machine</td>
-                        <td>In 1 day</td>
-                        <td>29-04-2020</td>
+                    <tr class="tablewrap keyword">
+                        <td class="sortenable"><i class="fas fa-circle"></i></td>
+                        <td><div class="expand6">Robot helper</div></td>
+                        <td class="sorttype"><div class="expand6">Predictive</div><i id="Toggle4.5" class="fas fa-caret-down"></i></td>
+                        <td class="sortgroup"><div class="expand6">Robot</div><i id="Toggle3.5" class="fas fa-caret-down"></i></td>
+                        <td class="sortnservice"><div class="expand6">In a month</div><i id="Toggle2.5" class="fas fa-caret-down"></i></td>
+                        <td class="sortlservice"><div class="expand6">16-05-2020</div><i id="Toggle1.5" class="fas fa-caret-down"></i></td>
+                        <td class="td-icons">
+                            <div class="expand6">
+                                <a class="fas fa-pen modal-button" href="#myModalEdit"></a>
+                            </div>    
+                            <div class="expand6">    
+                                <a class="fas fa-list modal-button" href="#myModalChecklist"></a>
+                            </div>    
+                                <div id="myModalChecklist" class="modal">
+                                    <div class="modal-content">
+                                        <div class="header-checklist">
+                                            <p class="h1">Checklist</p>
+                                            <span class="header-checklist-text close">&times;</span>
+                                        </div>
+                                        <div  class="modal-body">
+                                            <p class="checklist-heading heading-line">Service information</p>
+                                            <div class="checklist-service-information">
+                                                <div class="checklist-service-information-text">
+                                                    <div class="checklist-service-information-text-single">
+                                                        <p><b>User:</b> idb@trendlog.io</p>
+                                                    </div>
+                                                    <div class="checklist-service-information-text-single">
+                                                        <p><b>Planned service:</b> 15-05-2020</p>
+                                                    </div>
+                                                </div>
+                                                <div class="checklist-service-information-description">
+                                                    <div class="checklist-service-information-description-text">
+                                                        <p><b>Description</b> <br>This is a new machine. We must keep an eye on it at all times to prevent any stop in the procution from happening.</p>
+                                                    </div>
+                                                    <div class="checklist-service-information-description-documents">
+                                                        <p class="paragraf-document">Machine-manual.pdf</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <p class="checklist-heading heading-line">Checklist</p>
+                                            <div class="checklist-checklist">
+                                                <ul class="checklist-list">
+                                                    <li>Oil check<input class="checklist-checkboxes" type="checkbox" name="check1"></li>
+                                                    <li>Check filter<input class="checklist-checkboxes" type="checkbox" name="check2"></li>
+                                                    <li>Sharpen knives<input class="checklist-checkboxes" type="checkbox" name="check3"></li>
+                                                </ul>
+                                            </div>
+                                            <p class="checklist-heading heading-line">Comments</p>
+                                            <div class="checklist-comments">
+                                                <input class="checklist-comments-textarea">
+                                                <button class="checklist-comments-pictures"><i class="fas fa-camera"></i>Attach pictures</button>
+                                            </div>
+                                            <div class="checklist-btns">
+                                                <button class="close cancel-btn">Cancel</button>
+                                                <button class="close save-btn">Save</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Åben Historik Modal 6-->
+                                <div class="expand6">
+                                    <a class="fas fa-history modal-button" href="#ModalHistory6"></a>
+                                </div>
+                                <!-- Historik Modal 6 -->
+                                <div id="ModalHistory6" class="historik-modal modal">
+                                  <!-- Modal indhold -->
+                                    <div class="historik-modal-content modal-content">
+                                        <div class="historik-modal modal-body">
+                                            <div class="service-header-history">        
+                                                <p class="h1 header-history-text">History - Robot helper ID: #939</p>
+                                                <span title="Close window" class="close-button close">&times</span>        
+                                            </div>                      
+                                            <iframe src="../html/history.html"></iframe>                    
+                                        </div>
+                                    </div>         
+                                </div>
+                            <div class="dropdown functions">
+                                <div class="expand6">
+                                    <button onclick="dropdownFunction()"><i class="fas fa-ellipsis-h dropbtn"></i></button>
+                                </div>
+                                <div id="myDropdown" class="dropdown-content">
+                                    <a href="#"><i class="fas fa-cog"></i>Add repair log</a>
+                                    <a href="#"><div class="service-flag">Service</div>Toggle service</a>
+                                    <a href="#"><i class="far fa-copy"></i>Copy</a>
+                                    <a href="#"><i class="fas fa-trash"></i>Delete</a>
+                                </div>
+                            </div>
+                        </td>
                     </tr>
-                    <tr>
-                        <td><i class="fas fa-circle"></i></td>
-                        <td>Pakkemaskine</td>
-                        <td>Preventive</td>
-                        <td>Machine</td>
-                        <td>In 1 day</td>
-                        <td>16-05-2020</td>
+                    <tr class="tablewrap keyword">
+                        <td class="sortenable"><i class="fas fa-circle"></i></td>
+                        <td><div class="expand7">Company car</div></td>
+                        <td class="sorttype"><div class="expand7">Predictive</div><i id="Toggle4.6" class="fas fa-caret-down"></i></td>
+                        <td class="sortgroup"><div class="expand7">Vehicle</div><i id="Toggle3.6" class="fas fa-caret-down"></i></td>
+                        <td class="sortnservice"><div class="expand7">In a month</div><i id="Toggle2.6" class="fas fa-caret-down"></i></td>
+                        <td class="sortlservice"><div class="expand7">17-05-2020</div><i id="Toggle1.6" class="fas fa-caret-down"></i></td>
+                        <td class="td-icons">
+                            <div class="expand7">
+                                <a class="fas fa-pen modal-button" href="#myModalEdit"></a>
+                            </div>    
+                            <div class="expand7">    
+                                <a class="fas fa-list modal-button" href="#myModalChecklist"></a>
+                            </div>    
+                                <div id="myModalChecklist" class="modal">
+                                    <div class="modal-content">
+                                        <div class="header-checklist">
+                                            <p class="h1">Checklist</p>
+                                            <span class="header-checklist-text close">&times;</span>
+                                        </div>
+                                        <div  class="modal-body">
+                                            <p class="checklist-heading heading-line">Service information</p>
+                                            <div class="checklist-service-information">
+                                                <div class="checklist-service-information-text">
+                                                    <div class="checklist-service-information-text-single">
+                                                        <p><b>User:</b> idb@trendlog.io</p>
+                                                    </div>
+                                                    <div class="checklist-service-information-text-single">
+                                                        <p><b>Planned service:</b> 15-05-2020</p>
+                                                    </div>
+                                                </div>
+                                                <div class="checklist-service-information-description">
+                                                    <div class="checklist-service-information-description-text">
+                                                        <p><b>Description</b> <br>This is a new machine. We must keep an eye on it at all times to prevent any stop in the procution from happening.</p>
+                                                    </div>
+                                                    <div class="checklist-service-information-description-documents">
+                                                        <p class="paragraf-document">Machine-manual.pdf</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <p class="checklist-heading heading-line">Checklist</p>
+                                            <div class="checklist-checklist">
+                                                <ul class="checklist-list">
+                                                    <li>Oil check<input class="checklist-checkboxes" type="checkbox" name="check1"></li>
+                                                    <li>Check filter<input class="checklist-checkboxes" type="checkbox" name="check2"></li>
+                                                    <li>Sharpen knives<input class="checklist-checkboxes" type="checkbox" name="check3"></li>
+                                                </ul>
+                                            </div>
+                                            <p class="checklist-heading heading-line">Comments</p>
+                                            <div class="checklist-comments">
+                                                <input class="checklist-comments-textarea">
+                                                <button class="checklist-comments-pictures"><i class="fas fa-camera"></i>Attach pictures</button>
+                                            </div>
+                                            <div class="checklist-btns">
+                                                <button class="close cancel-btn">Cancel</button>
+                                                <button class="close save-btn">Save</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Åben Historik Modal 6-->
+                                <div class="expand7">
+                                    <a class="fas fa-history modal-button" href="#ModalHistory6"></a>
+                                </div>
+                                <!-- Historik Modal 6 -->
+                                <div id="ModalHistory6" class="historik-modal modal">
+                                  <!-- Modal indhold -->
+                                    <div class="historik-modal-content modal-content">
+                                        <div class="historik-modal modal-body">
+                                            <div class="service-header-history">        
+                                                <p class="h1 header-history-text">History - Robot helper ID: #939</p>
+                                                <span title="Close window" class="close-button close">&times</span>        
+                                            </div>                      
+                                            <iframe src="../html/history.html"></iframe>                    
+                                        </div>
+                                    </div>         
+                                </div>
+                            <div class="dropdown functions">
+                                <div class="expand7">
+                                    <button onclick="dropdownFunction()"><i class="fas fa-ellipsis-h dropbtn"></i></button>
+                                </div>
+                                <div id="myDropdown" class="dropdown-content">
+                                    <a href="#"><i class="fas fa-cog"></i>Add repair log</a>
+                                    <a href="#"><div class="service-flag">Service</div>Toggle service</a>
+                                    <a href="#"><i class="far fa-copy"></i>Copy</a>
+                                    <a href="#"><i class="fas fa-trash"></i>Delete</a>
+                                </div>
+                            </div>
+                        </td>
                     </tr>
-                    <tr>
-                        <td><i class="fas fa-circle"></i></td>
-                        <td>Bil</td>
-                        <td>Preventive</td>
-                        <td>Car</td>
-                        <td>In 1 day</td>
-                        <td>16-05-2020</td>
+                    <tr class="tablewrap keyword">
+                        <td class="sortenable"><i class="fas fa-circle"></i></td>
+                        <td><div class="expand8">Plast machine</div></td>
+                        <td class="sorttype"><div class="expand8">Preventive</div><i id="Toggle4.7" class="fas fa-caret-down"></i></td>
+                        <td class="sortgroup"><div class="expand8">Production</div><i id="Toggle3.7" class="fas fa-caret-down"></i></td>
+                        <td class="sortnservice"><div class="expand8">In 1 day</div><i id="Toggle2.7" class="fas fa-caret-down"></i></td>
+                        <td class="sortlservice"><div class="expand8">16-04-2020</div><i id="Toggle1.7" class="fas fa-caret-down"></i></td>
+                        <td class="td-icons">
+                            <div class="expand8">
+                                <a class="fas fa-pen modal-button" href="#myModalEdit"></a>
+                            </div>    
+                            <div class="expand8">    
+                                <a class="fas fa-list modal-button" href="#myModalChecklist"></a>
+                            </div>
+                                <div id="myModalChecklist" class="modal">
+                                    <div class="modal-content">
+                                        <div class="header-checklist">
+                                            <p class="h1">Checklist</p>
+                                            <span class="header-checklist-text close">&times;</span>
+                                        </div>
+                                        <div  class="modal-body">
+                                            <p class="checklist-heading heading-line">Service information</p>
+                                            <div class="checklist-service-information">
+                                                <div class="checklist-service-information-text">
+                                                    <div class="checklist-service-information-text-single">
+                                                        <p><b>User:</b> idb@trendlog.io</p>
+                                                    </div>
+                                                    <div class="checklist-service-information-text-single">
+                                                        <p><b>Planned service:</b> 15-05-2020</p>
+                                                    </div>
+                                                </div>
+                                                <div class="checklist-service-information-description">
+                                                    <div class="checklist-service-information-description-text">
+                                                        <p><b>Description</b> <br>This is a new machine. We must keep an eye on it at all times to prevent any stop in the procution from happening.</p>
+                                                    </div>
+                                                    <div class="checklist-service-information-description-documents">
+                                                        <p class="paragraf-document">Machine-manual.pdf</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <p class="checklist-heading heading-line">Checklist</p>
+                                            <div class="checklist-checklist">
+                                                <ul class="checklist-list">
+                                                    <li>Oil check<input class="checklist-checkboxes" type="checkbox" name="check1"></li>
+                                                    <li>Check filter<input class="checklist-checkboxes" type="checkbox" name="check2"></li>
+                                                    <li>Sharpen knives<input class="checklist-checkboxes" type="checkbox" name="check3"></li>
+                                                </ul>
+                                            </div>
+                                            <p class="checklist-heading heading-line">Comments</p>
+                                            <div class="checklist-comments">
+                                                <input class="checklist-comments-textarea">
+                                                <button class="checklist-comments-pictures"><i class="fas fa-camera"></i>Attach pictures</button>
+                                            </div>
+                                            <div class="checklist-btns">
+                                                <button class="close cancel-btn">Cancel</button>
+                                                <button class="close save-btn">Save</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Åben Historik Modal 8-->
+                                <div class="expand8">    
+                                    <a class="fas fa-history modal-button" href="#ModalHistory8"></a>
+                                </div>    
+                                <!-- Historik Modal 8 -->
+                                <div id="ModalHistory8" class="historik-modal modal">
+                                  <!-- Modal indhold -->
+                                    <div class="historik-modal-content modal-content">
+                                        <div class="historik-modal modal-body">
+                                            <div class="service-header-history">        
+                                                <p class="h1 header-history-text">History - Plast machine ID: #564</p>
+                                                <span title="Close window" class="close-button close">&times</span>        
+                                            </div>                      
+                                            <iframe src="../html/history.html"></iframe>                    
+                                        </div>
+                                    </div>         
+                                </div>
+                            <div class="dropdown functions">
+                                <div class="expand8">
+                                    <button onclick="dropdownFunction()"><i class="fas fa-ellipsis-h dropbtn"></i></button>
+                                </div>
+                                <div id="myDropdown" class="dropdown-content">
+                                    <a href="#"><i class="fas fa-cog"></i>Add repair log</a>
+                                    <a href="#"><div class="service-flag">Service</div>Toggle service</a>
+                                    <a href="#"><i class="far fa-copy"></i>Copy</a>
+                                    <a href="#"><i class="fas fa-trash"></i>Delete</a>
+                                </div>
+                            </div>
+                        </td>
                     </tr>
-                    <tr>
-                        <td><i class="fas fa-circle"></i></td>
-                        <td>Maskine</td>
-                        <td>Preventive</td>
-                        <td>Machine</td>
-                        <td>In 1 day</td>
-                        <td>18-05-2020</td>
+                    <tr class="tablewrap keyword">
+                        <td class="sortenable"><i class="fas fa-circle"></i></td>
+                        <td><div class="expand9">Cardboard machine</div></td>
+                        <td class="sorttype"><div class="expand9">Preventive</div><i id="Toggle4.8" class="fas fa-caret-down"></i></td>
+                        <td class="sortgroup"><div class="expand9">Production</div><i id="Toggle3.8" class="fas fa-caret-down"></i></td>
+                        <td class="sortnservice"><div class="expand9">In 3 days</div><i id="Toggle2.8" class="fas fa-caret-down"></i></td>
+                        <td class="sortlservice"><div class="expand9">18-04-2020</div><i id="Toggle1.8" class="fas fa-caret-down"></i></td>
+                        <td class="td-icons">
+                            <div class="expand9">
+                                <a class="fas fa-pen modal-button" href="#myModalEdit"></a>
+                            </div>
+                            <div class="expand9">    
+                                <a class="fas fa-list modal-button" href="#myModalChecklist"></a>
+                            </div>
+                                <div id="myModalChecklist" class="modal">
+                                    <div class="modal-content">
+                                        <div class="header-checklist">
+                                            <p class="h1">Checklist</p>
+                                            <span class="header-checklist-text close">&times;</span>
+                                        </div>
+                                        <div  class="modal-body">
+                                            <p class="checklist-heading heading-line">Service information</p>
+                                            <div class="checklist-service-information">
+                                                <div class="checklist-service-information-text">
+                                                    <div class="checklist-service-information-text-single">
+                                                        <p><b>User:</b> idb@trendlog.io</p>
+                                                    </div>
+                                                    <div class="checklist-service-information-text-single">
+                                                        <p><b>Planned service:</b> 15-05-2020</p>
+                                                    </div>
+                                                </div>
+                                                <div class="checklist-service-information-description">
+                                                    <div class="checklist-service-information-description-text">
+                                                        <p><b>Description</b> <br>This is a new machine. We must keep an eye on it at all times to prevent any stop in the procution from happening.</p>
+                                                    </div>
+                                                    <div class="checklist-service-information-description-documents">
+                                                        <p class="paragraf-document">Machine-manual.pdf</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <p class="checklist-heading heading-line">Checklist</p>
+                                            <div class="checklist-checklist">
+                                                <ul class="checklist-list">
+                                                    <li>Oil check<input class="checklist-checkboxes" type="checkbox" name="check1"></li>
+                                                    <li>Check filter<input class="checklist-checkboxes" type="checkbox" name="check2"></li>
+                                                    <li>Sharpen knives<input class="checklist-checkboxes" type="checkbox" name="check3"></li>
+                                                </ul>
+                                            </div>
+                                            <p class="checklist-heading heading-line">Comments</p>
+                                            <div class="checklist-comments">
+                                                <input class="checklist-comments-textarea">
+                                                <button class="checklist-comments-pictures"><i class="fas fa-camera"></i>Attach pictures</button>
+                                            </div>
+                                            <div class="checklist-btns">
+                                                <button class="close cancel-btn">Cancel</button>
+                                                <button class="close save-btn">Save</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Åben Historik Modal 9-->
+                                <div class="expand9">
+                                    <a class="fas fa-history modal-button" href="#ModalHistory9"></a>
+                                </div>
+                                <!-- Historik Modal 9 -->
+                                <div id="ModalHistory9" class="historik-modal modal">
+                                  <!-- Modal indhold -->
+                                    <div class="historik-modal-content modal-content">
+                                        <div class="historik-modal modal-body">
+                                            <div class="service-header-history">        
+                                                <p class="h1 header-history-text">History - Cardboard machine ID: #923</p>
+                                                <span title="Close window" class="close-button close">&times</span>        
+                                            </div>                      
+                                            <iframe src="../html/history.html"></iframe>                    
+                                        </div>
+                                    </div>         
+                                </div>
+                            <div class="dropdown functions">
+                                <div class="expand9">
+                                    <button onclick="dropdownFunction()"><i class="fas fa-ellipsis-h dropbtn"></i></button>
+                                </div>
+                                <div id="myDropdown" class="dropdown-content">
+                                    <a href="#"><i class="fas fa-cog"></i>Add repair log</a>
+                                    <a href="#"><div class="service-flag">Service</div>Toggle service</a>
+                                    <a href="#"><i class="far fa-copy"></i>Copy</a>
+                                    <a href="#"><i class="fas fa-trash"></i>Delete</a>
+                                </div>
+                            </div>    
+                        </td>
                     </tr>
-                    <tr>
-                        <td><i class="fas fa-circle"></i></td>
-                        <td>Robot</td>
-                        <td>Preventive</td>
-                        <td>Machine</td>
-                        <td>In 1 day</td>
-                        <td>16-04-2020</td>
+                    <tr class="tablewrap keyword">
+                        <td class="sortenable"><i class="fas fa-circle"></i></td>
+                        <td><div class="expand1">Robot assistant</div></td>
+                        <td class="sorttype"><div class="expand10">Predictive</div><i id="Toggle4.9" class="fas fa-caret-down"></i></td>
+                        <td class="sortgroup"><div class="expand10">Robot</div><i id="Toggle3.9" class="fas fa-caret-down"></i></td>
+                        <td class="sortnservice"><div class="expand10">In a week</div><i id="Toggle2.9" class="fas fa-caret-down"></i></td>
+                        <td class="sortlservice"><div class="expand10">23-04-2020</div><i id="Toggle1.9" class="fas fa-caret-down"></i></td>
+                        <td class="td-icons">
+                            <div class="expand10">
+                                <a class="fas fa-pen modal-button" href="#myModalEdit"></a>
+                            </div>    
+                            <div class="expand10">
+                                <a class="fas fa-list modal-button" href="#myModalChecklist"></a>
+                            </div>
+                                <div id="myModalChecklist" class="modal">
+                                    <div class="modal-content">
+                                        <div class="header-checklist">
+                                            <p class="h1">Checklist</p>
+                                            <span class="header-checklist-text close">&times;</span>
+                                        </div>
+                                        <div  class="modal-body">
+                                            <p class="checklist-heading heading-line">Service information</p>
+                                            <div class="checklist-service-information">
+                                                <div class="checklist-service-information-text">
+                                                    <div class="checklist-service-information-text-single">
+                                                        <p><b>User:</b> idb@trendlog.io</p>
+                                                    </div>
+                                                    <div class="checklist-service-information-text-single">
+                                                        <p><b>Planned service:</b> 15-05-2020</p>
+                                                    </div>
+                                                </div>
+                                                <div class="checklist-service-information-description">
+                                                    <div class="checklist-service-information-description-text">
+                                                        <p><b>Description</b> <br>This is a new machine. We must keep an eye on it at all times to prevent any stop in the procution from happening.</p>
+                                                    </div>
+                                                    <div class="checklist-service-information-description-documents">
+                                                        <p class="paragraf-document">Machine-manual.pdf</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <p class="checklist-heading heading-line">Checklist</p>
+                                            <div class="checklist-checklist">
+                                                <ul class="checklist-list">
+                                                    <li>Oil check<input class="checklist-checkboxes" type="checkbox" name="check1"></li>
+                                                    <li>Check filter<input class="checklist-checkboxes" type="checkbox" name="check2"></li>
+                                                    <li>Sharpen knives<input class="checklist-checkboxes" type="checkbox" name="check3"></li>
+                                                </ul>
+                                            </div>
+                                            <p class="checklist-heading heading-line">Comments</p>
+                                            <div class="checklist-comments">
+                                                <input class="checklist-comments-textarea">
+                                                <button class="checklist-comments-pictures"><i class="fas fa-camera"></i>Attach pictures</button>
+                                            </div>
+                                            <div class="checklist-btns">
+                                                <button class="close cancel-btn">Cancel</button>
+                                                <button class="close save-btn">Save</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Åben Historik Modal 10-->
+                                <div class="expand10">
+                                    <a class="fas fa-history modal-button" href="#ModalHistory10"></a>
+                                </div>
+                                <!-- Historik Modal 10 -->
+                                <div id="ModalHistory10" class="historik-modal modal">
+                                  <!-- Modal indhold -->
+                                    <div class="historik-modal-content modal-content">
+                                        <div class="historik-modal modal-body">
+                                            <div class="service-header-history">        
+                                                <p class="h1 header-history-text">History - Robot assistant ID: #643</p>
+                                                <span title="Close window" class="close-button close">&times</span>        
+                                            </div>                      
+                                            <iframe src="../html/history.html"></iframe>                    
+                                        </div>
+                                    </div>         
+                                </div> 
+                            <div class="dropdown functions">
+                                <div class="expand10">
+                                    <button onclick="dropdownFunction()"><i class="fas fa-ellipsis-h dropbtn"></i></button>
+                                </div>
+                                <div id="myDropdown" class="dropdown-content">
+                                    <a href="#"><i class="fas fa-cog"></i>Add repair log</a>
+                                    <a href="#"><div class="service-flag">Service</div>Toggle service</a>
+                                    <a href="#"><i class="far fa-copy"></i>Copy</a>
+                                    <a href="#"><i class="fas fa-trash"></i>Delete</a>
+                                </div>
+                            </div>
+                        </td>
                     </tr>
                 </tbody>
-            </table>
+            </table>    
         </div>
         <div class="pagination-index">
             <a href="#">Previous</a>
