@@ -276,15 +276,15 @@ main{
     font-size: var(--fontsize-r);
 }
 
-.filter-btns .cancel-btn-filter{ 
+.cancel-btn-filter{ 
     background-color: var(--white);
     border: 1px solid var(--dark-grey);
 }
 
-.filter-btns .apply-btn{
+.apply-btn{
     background-color: var(--green);
     font-weight: 900; 
-    color: var(--white);
+    color: var(--);
 }
 
 /*søgefunktion*/
@@ -440,6 +440,13 @@ tbody tr:nth-child(even){
     border-bottom: 1px solid var(--light-grey);    
 }
 
+.bar-yellow{
+    min-width: 100px; 
+    height: auto; 
+    background-color: var(--yellow);
+    margin: 0 var(--margin-xs);
+}
+
 .fa-pen,.fa-list, .fa-history,.fa-ellipsis-h{
     padding: 0 var(--padding-xs); 
     color: var(--dark-grey);
@@ -563,10 +570,6 @@ tbody tr:nth-child(even){
 
 .edit-general-information-form-left input, .edit-general-information-form-right input, .edit-service-information-form input, .create-general-information-form-left input, .create-general-information-form-right input, .create-service-information-form input{
     margin-bottom: var(--margin-s); 
-}
-
-.checklist-service-information, .checklist-checklist, .checklist-comments, .edit-checklist, .add-edit, .edit-general-information-form, .edit-service-information-form, .checklist-comments-textarea, .create-checklist, .add-create, .create-general-information-form, .create-service-information-form, .tasker{
-    padding: 0 var(--padding-l);
 }
 
 .add-edit, .add-create{
