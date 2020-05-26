@@ -220,7 +220,7 @@ main{
 
 .dropdown-filter-content{
     display: none; 
-    position: absolute; 
+    position: absolute;  
     background-color: var(--white); 
     box-shadow: 1px 1px 10px 0px rgba(0,0,0,0.2); 
     z-index: 1; 
@@ -276,15 +276,15 @@ main{
     font-size: var(--fontsize-r);
 }
 
-.cancel-btn-filter{ 
+.filter-btns .cancel-btn-filter{ 
     background-color: var(--white);
     border: 1px solid var(--dark-grey);
 }
 
-.apply-btn{
+.filter-btns .apply-btn{
     background-color: var(--green);
     font-weight: 900; 
-    color: var(--);
+    color: var(--white);
 }
 
 /*søgefunktion*/
@@ -440,13 +440,6 @@ tbody tr:nth-child(even){
     border-bottom: 1px solid var(--light-grey);    
 }
 
-.bar-yellow{
-    min-width: 100px; 
-    height: auto; 
-    background-color: var(--yellow);
-    margin: 0 var(--margin-xs);
-}
-
 .fa-pen,.fa-list, .fa-history,.fa-ellipsis-h{
     padding: 0 var(--padding-xs); 
     color: var(--dark-grey);
@@ -486,19 +479,13 @@ tbody tr:nth-child(even){
     color: var(--dark-grey);
     padding: 0;
     margin: 0;
-    font-size: var(--fontsize-xxl)
-}
-
-.close:hover,
-.close:focus {
-    color: var(--dark-grey);
-    text-decoration: none;
+    font-size: var(--fontsize-xxl); 
     cursor: pointer;
 }
 
 .modal-button {
     text-decoration: none;
-    color: var(--black);
+    color: var(--dark-grey);
 }
 
 .modal-body {
@@ -531,6 +518,10 @@ tbody tr:nth-child(even){
 
 .history-heading-line{
     margin-left: 0;    
+}
+
+.edit-service-information {
+    width: 100%;
 }
 
 .edit-general-information-form, .edit-service-information-form, .create-general-information-form, .create-service-information-form{
@@ -643,16 +634,6 @@ tbody tr:nth-child(even){
     height: 30px; 
     width: 30px; 
     cursor: pointer; 
-}
-
-.tasker .error {
-  display: none;
-  background: rgba(237, 28, 36, 0.7);
-  color: #fff;
-  padding: 14px;
-  margin-bottom: 10px;
-  border-radius: 5px;
-  text-align: center;
 }
 
 .checklist-list, .edit-checklist-list, .create-checklist-list{
@@ -836,8 +817,7 @@ tbody tr:nth-child(even){
   }  
 }
 
- /*Hitorik css*/
-
+/*Hitorik*/
 .bar-lightblue{ 
     height: auto; 
     background-color: var(--lightblue);
@@ -1010,7 +990,6 @@ tbody tr:nth-child(even){
     text-decoration: none;
     color: var(--black);
 }
-
 
 .service-user {   
     width: 45%;  
@@ -1231,8 +1210,8 @@ iframe {
 .quantity-index {
     display: none;
 }  
-
-/*pagination*/
+    
+    /*pagination*/
 .pagination-index{
     display: flex; 
     justify-content: center;  
@@ -1250,4 +1229,223 @@ iframe {
    
 .hide {
     display: block;
+}
+
+.row {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;    
+}
+
+.rowline {
+    width: 250px;    
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.rowline-description {
+    width: 50%;
+    min-width: 250px;
+    margin-left: var(--margin-s);    
+}
+@media only screen and (max-width: 1224px) {
+.rowline-description {
+    width: 100%; 
+    min-width: 0px;
+    margin-left: 0;        
+}
+}
+
+.rowline-description textarea{
+    width: 100%;
+    height: 132px;
+}
+
+.rowline input, select{
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    height: auto;
+}
+
+.row error {
+    color: var(--red);
+}
+
+.rowline-checklist {
+    width: 100%;
+}
+
+.tasker {
+    width: 100%;
+}
+
+.tasker-header {
+    width: 250px;
+}
+
+.tasker input {
+    width: 100%;
+}
+
+.tasker-body {
+    border: 1px solid var(--dark-grey);    
+}
+
+.tasker-body .task {
+  display: block;
+  position: relative;
+  padding: 14px 40px 14px 14px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.tasker-body .task:last-child {
+    border-bottom: none;
+}
+
+.tasker-body .task:hover > button {
+  opacity: 1;
+}
+
+.tasker-body .task.completed {
+  color: #cdcdcd;
+  text-decoration: line-through;
+}
+
+.tasker-body .task button {
+  color: #cdcdcd;
+  position: absolute;
+  top: 0;
+  right: 0;
+  opacity: 0;
+}
+
+.tasker-body .task button:hover {
+  color: #ed1c24;
+}
+
+.action-buttons {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.resource-button {
+    font-size: 20px;
+    font-weight: bold;
+    color: var(--black);
+    width: 100px;
+    height: 40px;   
+}
+
+.close-button {
+    background-color: rgba(0,0,0,0.0);
+    border: none;
+}
+
+.save-button {
+    background-color: var(--green);
+    cursor: pointer;
+    border: none;
+    color: var(--white)
+}
+
+#add-task-btn, #add-task-btn1 {
+    color: var(--white); 
+    font-size: var(--fontsize-r); 
+    border: none;
+    padding: 0;
+    margin: 0;
+    padding-left: 0;
+    padding-top: var(--padding-xxxs);
+    height:28px;
+}
+
+.resource-content-form {
+    padding: var(--padding-l);
+}
+
+.error {
+    color: var(--red);
+    padding-bottom: var(--padding-xs);
+}
+
+
+/* The Modal (background) */
+.pop-message {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 10; /* Sit on top */
+    padding-top: 100px; /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/*modal bokse*/ 
+
+/* Modal Content */
+.pop-message-content {
+    position: relative;
+    background-color: var(--white);
+    margin: auto;
+    padding: 0;
+    border: 1px solid #888;
+    width: 300px;
+    height: 300px;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+}
+
+.pop-message-button {
+    text-decoration: none;
+    color: var(--black);
+}
+
+.pop-message-body {
+    height: auto;
+    border-top: 
+}
+
+.pop-message-inner-body {
+    display: flex;
+    justify-content: center;
+    padding-top: 30px;    
+}
+
+/* The Close Button */
+.pop-message-close {
+    color: var(--white);
+    font-size: var(--fontsize-xxl);
+    cursor: pointer;
+    background: var(--green);
+    width: 100px;
+    text-align: center;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.pop-message-header-create {
+    display: flex;
+    justify-content: flex-end;
+    background-color: var(--green);
+    height: 30px;
+    padding: 0;  
+}
+
+.green-circel {
+    width: 75px;
+    height: 75px;
+    border-radius: 75px;
+    background: var(--green);    
+    text-align: center;
+    padding-top: 13px;
+}
+
+.green-circel i {
+    font-size: 50px; 
+    color: var(--white)
 }
