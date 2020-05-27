@@ -1479,3 +1479,22 @@ iframe {
     font-size: 50px; 
     color: var(--white)
 }
+
+.sortnservice {
+    color: var(--white)
+}
+
+.sortnservice .expand1{
+    background-color: var(--red);
+    width: 100%
+}
+
+.sortnservice .expand2, .sortnservice .expand3, .sortnservice .expand4 {
+    background-color: var(--yellow);
+    width: 100%    
+}
+
+.sortnservice .expand5, .sortnservice .expand6, .sortnservice .expand7, .sortnservice .expand8, .sortnservice .expand9, .sortnservice .expand10 {
+    background-color: var(--blue);
+    width: 100%    
+}
