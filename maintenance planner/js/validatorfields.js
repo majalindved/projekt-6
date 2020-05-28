@@ -6,27 +6,27 @@ function printError(elemId, hintMsg) {
 // Defining a function to validate form 
 function validateForm() {
     // Retrieving the values of form elements 
-    var name = document.contactForm.name.value;
-    var group = document.contactForm.group.value;
-    var type = document.contactForm.type.value; 
-    var selectsource = document.contactForm.selectsource.value;  
-    var timerange = document.contactForm.timerange.value;   
-    var nextservice = document.contactForm.nextservice.value; 
-    var startvalue = document.contactForm.startvalue.value;    
-    var internalvalue = document.contactForm.internalvalue.value;  
-    var maxinterval = document.contactForm.maxinterval.value;   
-    var nextvalue = document.contactForm.nextvalue.value; 
-    var notifydays = document.contactForm.notifydays.value;   
-    var notifytoemail = document.contactForm.notifytoemail.value;      
+    let name = document.contactForm.name.value;
+    let group = document.contactForm.group.value;
+    let type = document.contactForm.type.value; 
+    let selectsource = document.contactForm.selectsource.value;  
+    let timerange = document.contactForm.timerange.value;   
+    let nextservice = document.contactForm.nextservice.value; 
+    let startvalue = document.contactForm.startvalue.value;    
+    let internalvalue = document.contactForm.internalvalue.value;  
+    let maxinterval = document.contactForm.maxinterval.value;   
+    let nextvalue = document.contactForm.nextvalue.value; 
+    let notifydays = document.contactForm.notifydays.value;   
+    let notifytoemail = document.contactForm.notifytoemail.value;      
     
-	// Defining error variables with a default value
-    var nameErr = groupErr = typeErr = selectsourceErr = timerangeErr = nextserviceErr = startvalueErr = internalvalueErr = maxintervalErr = nextvalueErr = notifydaysErr = notifytoemailErr = true;
+	// Defining error letiables with a default value
+    let nameErr = groupErr = typeErr = selectsourceErr = timerangeErr = nextserviceErr = startvalueErr = internalvalueErr = maxintervalErr = nextvalueErr = notifydaysErr = notifytoemailErr = true;
     
     // Validate name
     if(name == "") {
         printError("nameErr", "Please enter your name");
     } else {
-        var regex = /^[a-zA-Z\s]+$/;                
+        let regex = /^[a-zA-Z\s]+$/;                
         if(regex.test(name) === false) {
             printError("nameErr", "Please enter a valid name");
         } else {
@@ -55,7 +55,7 @@ function validateForm() {
     if(selectsource == "") {
         printError("selectsourceErr", "Please select a source");
     } else {
-        var regex = /^[a-zA-Z\s]+$/;                
+        let regex = /^[a-zA-Z\s]+$/;                
         if(regex.test(selectsource) === false) {
             printError("selectsourceErr", "Please enter a valid source");
         } else {
@@ -68,7 +68,7 @@ function validateForm() {
     if(timerange == "") {
         printError("timerangeErr", "Please enter a time range");
     } else {
-        var regex = /^[a-zA-Z\s]+$/;                
+        let regex = /^[a-zA-Z\s]+$/;                
         if(regex.test(timerange) === false) {
             printError("timerangeErr", "Please enter a valid time range");
         } else {
@@ -81,7 +81,7 @@ function validateForm() {
     if(nextservice == "") {
         printError("nextserviceErr", "Please enter the next service time");
     } else {
-        var regex = /^[a-zA-Z\s]+$/;                
+        let regex = /^[a-zA-Z\s]+$/;                
         if(regex.test(nextservice) === false) {
             printError("nextserviceErr", "Please enter a valid next service time");
         } else {
@@ -94,7 +94,7 @@ function validateForm() {
     if(startvalue == "") {
         printError("startvalueErr", "Please enter a start value");
     } else {
-        var regex = /^[a-zA-Z\s]+$/;                
+        let regex = /^[a-zA-Z\s]+$/;                
         if(regex.test(startvalue) === false) {
             printError("startvalueErr", "Please enter a valid start value");
         } else {
@@ -107,7 +107,7 @@ function validateForm() {
     if(internalvalue == "") {
         printError("internalvalueErr", "Please enter an internal value");
     } else {
-        var regex = /^[a-zA-Z\s]+$/;                
+        let regex = /^[a-zA-Z\s]+$/;                
         if(regex.test(internalvalue) === false) {
             printError("internalvalueErr", "Please enter a valid internal value");
         } else {
@@ -120,7 +120,7 @@ function validateForm() {
     if(maxinterval == "") {
         printError("maxintervalErr", "Please enter a max interval");
     } else {
-        var regex = /^[a-zA-Z\s]+$/;                
+        let regex = /^[a-zA-Z\s]+$/;                
         if(regex.test(maxinterval) === false) {
             printError("maxintervalErr", "Please enter a valid max interval");
         } else {
@@ -133,7 +133,7 @@ function validateForm() {
     if(nextvalue == "") {
         printError("nextvalueErr", "Please enter the next value");
     } else {
-        var regex = /^[a-zA-Z\s]+$/;                
+        let regex = /^[a-zA-Z\s]+$/;                
         if(regex.test(nextvalue) === false) {
             printError("nextvalueErr", "Please enter a valid next value");
         } else {
@@ -146,7 +146,7 @@ function validateForm() {
     if(notifydays == "") {
         printError("notifydaysErr", "Please enter nofity day");
     } else {
-        var regex = /^[a-zA-Z\s]+$/;                
+        let regex = /^[a-zA-Z\s]+$/;                
         if(regex.test(notifydays) === false) {
             printError("notifydaysErr", "Please enter valid notify days");
         } else {
@@ -159,7 +159,7 @@ function validateForm() {
     if(notifytoemail == "") {
         printError("notifytoemailErr", "Please enter your email");
     } else {
-        var regex = /^[a-zA-Z\s]+$/;                
+        let regex = /^[a-zA-Z\s]+$/;                
         if(regex.test(notifytoemail) === false) {
             printError("notifytoemailErr", "Please enter a valid email");
         } else {

@@ -6,27 +6,27 @@ function printerror1(elemId, hintMsg) {
 // Defining a function to validate form 
 function validateForm1() {
     // Retrieving the values of form elements 
-    var name1 = document.contactForm1.name1.value;
-    var group1 = document.contactForm1.group1.value;
-    var type1 = document.contactForm1.type1.value; 
-    var selectsource1 = document.contactForm1.selectsource1.value;  
-    var timerange1 = document.contactForm1.timerange1.value;   
-    var nextservice1 = document.contactForm1.nextservice1.value; 
-    var startvalue1 = document.contactForm1.startvalue1.value;    
-    var internalvalue1 = document.contactForm1.internalvalue1.value;  
-    var maxinterval1 = document.contactForm1.maxinterval1.value;   
-    var nextvalue1 = document.contactForm1.nextvalue1.value; 
-    var notifydays1 = document.contactForm1.notifydays1.value;   
-    var notifytoemail1 = document.contactForm1.notifytoemail1.value;      
+    let name1 = document.contactForm1.name1.value;
+    let group1 = document.contactForm1.group1.value;
+    let type1 = document.contactForm1.type1.value; 
+    let selectsource1 = document.contactForm1.selectsource1.value;  
+    let timerange1 = document.contactForm1.timerange1.value;   
+    let nextservice1 = document.contactForm1.nextservice1.value; 
+    let startvalue1 = document.contactForm1.startvalue1.value;    
+    let internalvalue1 = document.contactForm1.internalvalue1.value;  
+    let maxinterval1 = document.contactForm1.maxinterval1.value;   
+    let nextvalue1 = document.contactForm1.nextvalue1.value; 
+    let notifydays1 = document.contactForm1.notifydays1.value;   
+    let notifytoemail1 = document.contactForm1.notifytoemail1.value;      
     
-	// Defining error variables with a default value
-    var name1Err = group1Err = type1Err = selectsource1Err = timerange1Err = nextservice1Err = startvalue1Err = internalvalue1Err = maxinterval1Err = nextvalue1Err = notifydays1Err = notifytoemail1Err = true;
+	// Defining error letiables with a default value
+    let name1Err = group1Err = type1Err = selectsource1Err = timerange1Err = nextservice1Err = startvalue1Err = internalvalue1Err = maxinterval1Err = nextvalue1Err = notifydays1Err = notifytoemail1Err = true;
     
     // Validate name1
     if(name1 == "") {
         printerror1("name1Err", "Please enter your name");
     } else {
-        var regex = /^[a-zA-Z\s]+$/;                
+        let regex = /^[a-zA-Z\s]+$/;                
         if(regex.test(name1) === false) {
             printerror1("name1Err", "Please enter a valid name");
         } else {
@@ -55,7 +55,7 @@ function validateForm1() {
     if(selectsource1 == "") {
         printerror1("selectsource1Err", "Please select a source");
     } else {
-        var regex = /^[a-zA-Z\s]+$/;                
+        let regex = /^[a-zA-Z\s]+$/;                
         if(regex.test(selectsource1) === false) {
             printerror1("selectsource1Err", "Please enter a valid source");
         } else {
@@ -68,7 +68,7 @@ function validateForm1() {
     if(timerange1 == "") {
         printerror1("timerange1Err", "Please enter a time range");
     } else {
-        var regex = /^[a-zA-Z\s]+$/;                
+        let regex = /^[a-zA-Z\s]+$/;                
         if(regex.test(timerange1) === false) {
             printerror1("timerange1Err", "Please enter a valid time range");
         } else {
@@ -81,7 +81,7 @@ function validateForm1() {
     if(nextservice1 == "") {
         printerror1("nextservice1Err", "Please enter the next service time");
     } else {
-        var regex = /^[a-zA-Z\s]+$/;                
+        let regex = /^[a-zA-Z\s]+$/;                
         if(regex.test(nextservice1) === false) {
             printerror1("nextservice1Err", "Please enter a valid next service time");
         } else {
@@ -94,7 +94,7 @@ function validateForm1() {
     if(startvalue1 == "") {
         printerror1("startvalue1Err", "Please enter a start value");
     } else {
-        var regex = /^[a-zA-Z\s]+$/;                
+        let regex = /^[a-zA-Z\s]+$/;                
         if(regex.test(startvalue1) === false) {
             printerror1("startvalue1Err", "Please enter a valid start value");
         } else {
@@ -107,7 +107,7 @@ function validateForm1() {
     if(internalvalue1 == "") {
         printerror1("internalvalue1Err", "Please enter an internal value");
     } else {
-        var regex = /^[a-zA-Z\s]+$/;                
+        let regex = /^[a-zA-Z\s]+$/;                
         if(regex.test(internalvalue1) === false) {
             printerror1("internalvalue1Err", "Please enter a valid internal value");
         } else {
@@ -120,7 +120,7 @@ function validateForm1() {
     if(maxinterval1 == "") {
         printerror1("maxinterval1Err", "Please enter a max interval");
     } else {
-        var regex = /^[a-zA-Z\s]+$/;                
+        let regex = /^[a-zA-Z\s]+$/;                
         if(regex.test(maxinterval1) === false) {
             printerror1("maxinterval1Err", "Please enter a valid max interval");
         } else {
@@ -133,7 +133,7 @@ function validateForm1() {
     if(nextvalue1 == "") {
         printerror1("nextvalue1Err", "Please enter the next value");
     } else {
-        var regex = /^[a-zA-Z\s]+$/;                
+        let regex = /^[a-zA-Z\s]+$/;                
         if(regex.test(nextvalue1) === false) {
             printerror1("nextvalue1Err", "Please enter a valid next value");
         } else {
@@ -146,7 +146,7 @@ function validateForm1() {
     if(notifydays1 == "") {
         printerror1("notifydays1Err", "Please enter nofity day");
     } else {
-        var regex = /^[a-zA-Z\s]+$/;                
+        let regex = /^[a-zA-Z\s]+$/;                
         if(regex.test(notifydays1) === false) {
             printerror1("notifydays1Err", "Please enter valid notify days");
         } else {
@@ -159,7 +159,7 @@ function validateForm1() {
     if(notifytoemail1 == "") {
         printerror1("notifytoemail1Err", "Please enter your email");
     } else {
-        var regex = /^[a-zA-Z\s]+$/;                
+        let regex = /^[a-zA-Z\s]+$/;                
         if(regex.test(notifytoemail1) === false) {
             printerror1("notifytoemail1Err", "Please enter a valid email");
         } else {
