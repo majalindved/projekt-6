@@ -37,7 +37,7 @@ function validateForm1() {
     
     // Validate type1
     if(type1 == "Select") {
-        printerror1("type1Err", "Please select your type1");
+        printerror1("type1Err", "Please select your type");
     } else {
         printerror1("type1Err", "");
         type1Err = false;
@@ -45,7 +45,7 @@ function validateForm1() {
     
     // Validate group1
     if(group1 == "Select") {
-        printerror1("group1Err", "Please select your group1");
+        printerror1("group1Err", "Please select your group");
     } else {
         printerror1("group1Err", "");
         group1Err = false;
