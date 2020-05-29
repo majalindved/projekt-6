@@ -574,6 +574,16 @@ tbody tr:nth-child(even){
     margin-left: 0;    
 }
 
+.row-overall{
+    display: flex; 
+}
+
+.row-overall .row .rowline{
+    display: inline-block; 
+    width: 100%; 
+    margin-right: var(--margin-s); 
+}
+
 .edit-service-information {
     width: 100%;
 }
