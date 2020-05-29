@@ -19,7 +19,7 @@ function validateForm() {
     let notifydays = document.contactForm.notifydays.value;   
     let notifytoemail = document.contactForm.notifytoemail.value;      
     
-	// Defining error letiables with a default value
+	// Defining error variabler default value
     let nameErr = groupErr = typeErr = selectsourceErr = timerangeErr = nextserviceErr = startvalueErr = internalvalueErr = maxintervalErr = nextvalueErr = notifydaysErr = notifytoemailErr = true;
     
     // Validate name

@@ -8,7 +8,8 @@ let modals = document.querySelectorAll('.modal');
 let spans = document.getElementsByClassName("close");
 
 // When the user clicks the button, open the modal
-for (let i = 0; i < btn.length; i++) {
+let arrayLenght = btn.length;
+for (let i = 0; i < arrayLenght; i++) {
  btn[i].onclick = function(e) {
     e.preventDefault();
     modal = document.querySelector(e.target.getAttribute("href"));
