@@ -323,15 +323,15 @@ main{
     font-size: var(--fontsize-r);
 }
 
-.cancel-btn-filter{ 
+.filter-btns .cancel-btn-filter{ 
     background-color: var(--white);
     border: 1px solid var(--dark-grey);
 }
 
-.apply-btn{
+.filter-btns .apply-btn{
     background-color: var(--green);
     font-weight: 900; 
-    color: var(--);
+    color: var(--white);
 }
 
 /*søgefunktion*/
@@ -406,8 +406,6 @@ td .fa-caret-down {
 main{
     margin: var(--margin-xs) var(--margin-xs) 0; 
 }    
-}
-
 }
 
 @media only screen and (max-width: 353px) {
@@ -1437,7 +1435,6 @@ iframe {
 
 .pop-message-body {
     height: auto;
-    border-top: 
 }
 
 .pop-message-inner-body {
